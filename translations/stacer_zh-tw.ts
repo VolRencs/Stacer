@@ -718,7 +718,7 @@
         <translation>處理程序 (%1)</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Processes/processes_page.cpp" line="211"/>
+        <location filename="../stacer/Pages/Processes/processes_page.cpp" line="216"/>
         <source>Refresh (%1)</source>
         <translation>更新 (每 %1 秒)</translation>
     </message>
