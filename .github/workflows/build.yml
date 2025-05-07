@@ -53,7 +53,7 @@ jobs:
 
       - name: Publish PPA package
         uses: yuezk/publish-ppa-package@main
-        if: matrix.codename == 'jammy'
+        if: matrix.codename == 'jammy' && github.event_name != 'workflow_dispatch'
         with:
           tarball: ${{ github.workspace }}/release/stacer-*.tar.gz
           debian_dir: ${{ github.workspace }}/debian/
@@ -64,3 +64,4 @@ jobs:
           gpg_passphrase: ${{ secrets.PPA_GPG_PASSPHRASE }}
           series: "noble jammy"
           new_version_template: "{VERSION}-{REVISION}+{SERIES}"
+          keep_changelog: true
