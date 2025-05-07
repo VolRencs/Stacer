@@ -11,7 +11,7 @@ Homepage: https://stacer.quentium.fr/
 
 Package: stacer
 Architecture: all
-Depends: ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, libc6 (>= 2.34), libqt6core6 (>= 6.2.4), libqt6charts6 (>= 6.2.4), libqt6svg6 (>= 6.2.4), libqt6network6 (>= 6.2.4)
 Recommends: systemd, curl
 Description: Linux system optimizer and monitoring
  Monitor your system (CPU, memory, disk) in a graphical application (qt).

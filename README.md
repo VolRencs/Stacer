@@ -41,18 +41,20 @@
 ### Ubuntu PPA Repository
 
 1. Run `sudo add-apt-repository ppa:quentiumyt/stacer`
-2. Run `sudo apt-get update`
-3. Run `sudo apt-get install stacer`
+2. Run `sudo apt update`
+3. Run `sudo apt install stacer`
 
 ### Debian / Ubuntu
 
 1. Download the stacer binary from the [Stacer releases page](https://github.com/QuentiumYT/Stacer/releases).
-2. Run `sudo dpkg -i stacer_*.deb` on the downloaded package.
-3. Launch Stacer using the installed `stacer` command.
+2. Install runtime dependencies:
+    - `sudo apt install libqt6core6 libqt6charts6 libqt6svg6 libqt6network6`
+3. Run `sudo apt install ./stacer_*.deb` on the downloaded package.
+4. Launch Stacer using the installed `stacer` command.
 
 ### Debian / Ubuntu (with APT)
 
-1. Run `sudo apt-get install stacer`
+1. Run `sudo apt install stacer`
 2. Launch Stacer using the installed `stacer` command.
 
 ### Fedora
@@ -70,25 +72,28 @@
 
 Select the AUR helper of your choice:
 
-1. Run `yay -Syu stacer`
-1. Run `paru -S stacer`
-1. Run `pacaur -a stacer`
+1. Run either:
+    - `yay -Syu stacer`
+    - `paru -S stacer`
+    - `pacaur -a stacer`
 2. Launch Stacer using the installed `stacer` command.
 
 ## Build from source (with CMake)
 
-1. Run `sudo apt-get update`
-2. Run for each dependency `sudo apt-get install <dependency>`
+1. Run `sudo apt update`
+2. Run for each dependency `sudo apt install <dependency>`
 
 Dependencies:
 
 - cmake
 - qt6-base-dev
 - qt6-tools-dev
-- qt6-charts-dev
-- qt6-svg-dev
-- qt6-wayland-dev (optional)
 - qt6-tools-dev-tools
+- qt6-l10n-tools
+- libqt6charts6-dev
+- libqt6svg6-dev
+- qt6-wayland-dev (optional)
+- libgl1-mesa-dev
 
 1. `mkdir build && cd build`
 2. `cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=g++ ..`
