@@ -1,36 +1,32 @@
-cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.16)
 project(stacer)
-
-set(MANAGERS_DIR  "${CMAKE_CURRENT_SOURCE_DIR}/Managers")
-set(PAGES_DIR     "${CMAKE_CURRENT_SOURCE_DIR}/Pages")
 
 include_directories(
   "${PROJECT_ROOT}/stacer-core"
   "${CMAKE_CURRENT_SOURCE_DIR}"
-  "${MANAGERS_DIR}"
-  "${PAGES_DIR}/Dashboard"
-  "${PAGES_DIR}/Processes"
-  "${PAGES_DIR}/Resources"
-  "${PAGES_DIR}/Services"
-  "${PAGES_DIR}/Settings"
-  "${PAGES_DIR}/StartupApps"
-  "${PAGES_DIR}/SystemCleaner"
-  "${PAGES_DIR}/Uninstaller"
-  "${CMAKE_CURRENT_BINARY_DIR}" # Necessary for CMake 3.7 and older
+  "${CMAKE_CURRENT_SOURCE_DIR}/Managers"
+  "${CMAKE_CURRENT_SOURCE_DIR}/Pages/Dashboard"
+  "${CMAKE_CURRENT_SOURCE_DIR}/Pages/Processes"
+  "${CMAKE_CURRENT_SOURCE_DIR}/Pages/Resources"
+  "${CMAKE_CURRENT_SOURCE_DIR}/Pages/Services"
+  "${CMAKE_CURRENT_SOURCE_DIR}/Pages/Settings"
+  "${CMAKE_CURRENT_SOURCE_DIR}/Pages/StartupApps"
+  "${CMAKE_CURRENT_SOURCE_DIR}/Pages/SystemCleaner"
+  "${CMAKE_CURRENT_SOURCE_DIR}/Pages/Uninstaller"
 )
 
 # Sources
-file(GLOB_RECURSE ${PROJECT_NAME}_srcs         "${CMAKE_CURRENT_SOURCE_DIR}/**.cpp")
+file(GLOB_RECURSE ${PROJECT_NAME}_srcs "${CMAKE_CURRENT_SOURCE_DIR}/**.cpp")
 file(GLOB_RECURSE ${PROJECT_NAME}_translations "${PROJECT_ROOT}/translations/**.ts")
 
 # Translations
 find_package(Qt${QT_VERSION_MAJOR}LinguistTools)
-if ("${QT_VERSION_MAJOR}" STREQUAL "5")
-  qt5_create_translation(QM_FILES  ${PROJECT_NAME}_translations  ${${PROJECT_NAME}_srcs})
+if("${QT_VERSION_MAJOR}" STREQUAL "5")
+  qt5_create_translation(QM_FILES ${PROJECT_NAME}_translations ${${PROJECT_NAME}_srcs})
 else()
-  qt6_create_translation(QM_FILES  ${PROJECT_NAME}_translations  ${${PROJECT_NAME}_srcs})
+  qt6_create_translation(QM_FILES ${PROJECT_NAME}_translations ${${PROJECT_NAME}_srcs})
 endif()
-set_directory_properties(PROPERTIES  ADDITIONAL_MAKE_CLEAN_FILES  "${QM_FILES}")
+set_directory_properties(PROPERTIES ADDITIONAL_MAKE_CLEAN_FILES "${QM_FILES}")
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
@@ -44,29 +40,9 @@ add_executable(${PROJECT_NAME}
 target_link_libraries(${PROJECT_NAME} stacer-core)
 target_link_libraries(${PROJECT_NAME} Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Gui Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Charts Qt${QT_VERSION_MAJOR}::Svg Qt${QT_VERSION_MAJOR}::Concurrent)
 
-# Running LTO in Release builds, if the C++ compiler is GNU GCC
-if("${CMAKE_BUILD_TYPE}" STREQUAL "Release"  AND  "${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
-  set(CMAKE_CXX_FLAGS_RELEASE "-O2 -DNDEBUG")
-  set(CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE OFF)
-  #target_compile_options(${PROJECT_NAME}  PRIVATE  "-flto")
-  #list(APPEND CMAKE_EXE_LINKER_FLAGS "-flto")
-endif()
+set_property(TARGET ${PROJECT_NAME} PROPERTY C_STANDARD 11)
 
 install(
-  TARGETS  ${PROJECT_NAME}
-  CONFIGURATIONS Release RelWithDebInfo MinSizeRel # Not allowing to install an unoptimized build
-  RUNTIME  DESTINATION  bin
-)
-
-install(
-  FILES           "${PROJECT_ROOT}/applications/stacer.desktop"
-  DESTINATION     share/applications
-  CONFIGURATIONS  Release RelWithDebInfo MinSizeRel
-)
-
-install(
-  FILES           "${PROJECT_ROOT}/stacer/static/logo.png"
-  DESTINATION     share/icons
-  CONFIGURATIONS  Release RelWithDebInfo MinSizeRel
-  RENAME          stacer.png
+  TARGETS ${PROJECT_NAME}
+  RUNTIME DESTINATION bin
 )

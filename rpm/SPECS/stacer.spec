@@ -18,26 +18,31 @@ can show network download/upload speeds/totals.
 %prep
 %setup -q
 
+# WARNING: Strip doesn't work for building rpm
+%define __brp_strip /bin/true
+%define __brp_strip_static_archive /bin/true
+
 %build
-echo "No build step defined"
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build -j $(nproc)
 
 %install
 rm -rf %{buildroot}
 
 # Install binary
-install -Dm755 %{_builddir}/release/%{name}-%{version}/stacer/stacer %{buildroot}/usr/bin/stacer
+install -Dm755 build/stacer/stacer %{buildroot}/usr/bin/stacer
 
 # Install .desktop file
-install -Dm644 %{_builddir}/release/%{name}-%{version}/applications/stacer.desktop %{buildroot}/usr/share/applications/stacer.desktop
+install -Dm644 desktop/stacer.desktop %{buildroot}/usr/share/applications/stacer.desktop
 
 # Install icon sizes
 for size in 16 32 64 128 256; do
-    install -Dm644 %{_builddir}/release/%{name}-%{version}/icons/hicolor/${size}x${size}/apps/stacer.png \
+    install -Dm644 icons/hicolor/${size}x${size}/apps/stacer.png \
         %{buildroot}/usr/share/icons/hicolor/${size}x${size}/apps/stacer.png
 done
 
 # Install README doc
-install -Dm644 %{_builddir}/README.md %{buildroot}/usr/share/doc/stacer/README.md
+install -Dm644 README.md %{buildroot}/usr/share/doc/stacer/README.md
 
 %files
 %license

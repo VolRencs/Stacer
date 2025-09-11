@@ -1,7 +1,14 @@
 .vscode/
+.idea/
+
 build/
 release/
+
+rpm/BUILD/
 rpm/BUILDROOT/
 rpm/*RPMS/
 rpm/SOURCES/
-lqt
+debug*.list
+elfbins.list
+
+*.AppImage

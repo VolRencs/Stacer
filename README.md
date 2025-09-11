@@ -90,15 +90,16 @@ Dependencies:
 - qt6-tools-dev
 - qt6-tools-dev-tools
 - qt6-l10n-tools
+- libqt6opengl6-dev (required only on Ubuntu 22.04)
 - libqt6charts6-dev
 - libqt6svg6-dev
 - qt6-wayland-dev (optional)
-- libgl1-mesa-dev
+- libglx-dev (for Qt6OpenGL)
+- libgl1-mesa-dev (for WrapOpenGL)
 
-1. `mkdir build && cd build`
-2. `cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=g++ ..`
-3. `make -j $(nproc)`
-4. `./output/stacer`
+1. `cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug`
+2. `cmake --build build -j $(nproc)`
+3. `./build/stacer/stacer`
 
 ## Screenshots
 

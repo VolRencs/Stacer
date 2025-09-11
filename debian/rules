@@ -4,5 +4,15 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
+# WARNING: LTO optimization breaks the binary for specific environments (i.e. WSL) (~15ko bigger only)
+export DEB_BUILD_MAINT_OPTIONS = optimize=-lto
+
 %:
 	dh $@ --parallel
+
+override_dh_shlibdeps:
+ifeq ($(shell whoami),runner)
+	@echo "Skipping dh_shlibdeps (detected GitHub Actions runner)"
+else
+	dh_shlibdeps
+endif

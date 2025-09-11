@@ -1,22 +1,21 @@
 #!/bin/bash
 VERSION=1.3.5
 DIR=stacer-$VERSION
+ARCH=$(uname -m)
+ARCH_DPKG=$(dpkg --print-architecture)
 export VERSION=$VERSION
 
 # cleanup
-rm -rf release build rpm/BUILDROOT rpm/*RPMS rpm/SOURCES
+rm -rf release build rpm/BUILD rpm/BUILDROOT rpm/*RPMS rpm/SOURCES debug*.list elfbins.list
 
 # build
-cmake -S . -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build -j $(nproc)
-strip -s build/output/stacer build/output/lib/libstacer-core.a
+strip -s build/stacer/stacer
 
 # assets
-mkdir -p release/$DIR/stacer
-cp -r icons applications debian release/$DIR
-cp -r build/output/* release/$DIR/stacer
-cp icons/hicolor/256x256/apps/stacer.png release/$DIR/stacer
-cat applications/stacer.desktop > release/$DIR/stacer/default.desktop
+mkdir -p release/$DIR
+cp -r stacer stacer-core translations CMakeLists.txt debian desktop icons release/$DIR
 
 # translations
 lupdate stacer/stacer.pro -no-obsolete
@@ -24,31 +23,43 @@ lrelease stacer/stacer.pro
 mkdir -p release/$DIR/stacer/translations
 mv translations/*.qm release/$DIR/stacer/translations
 
+# Change architecture
+sed -i "s/^Architecture:\s\+.*$/Architecture: $ARCH_DPKG/g" release/$DIR/debian/control
+
 # tarball
 tar -czf release/$DIR.tar.gz -C release $DIR
 
-# linuxdeployqt
-wget -qc https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage
-chmod +x linuxdeployqt-continuous-x86_64.AppImage
-
-unset QTDIR
-unset QT_PLUGIN_PATH
-unset LD_LIBRARY_PATH
+# appimagetool
+wget -qc https://github.com/$(wget -q https://github.com/probonopd/go-appimage/releases/expanded_assets/continuous -O - | grep "appimagetool-.*-$ARCH.AppImage" | head -n 1 | cut -d '"' -f 2) -O appimagetool-$ARCH.AppImage
+chmod +x appimagetool-$ARCH.AppImage
 
 # appimage
-./linuxdeployqt-continuous-x86_64.AppImage release/$DIR/stacer/stacer -bundle-non-qt-libs -no-translations -unsupported-allow-new-glibc -appimage
-mv Stacer-$VERSION-x86_64.AppImage release
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
+DESTDIR=../release/$DIR cmake --build build --target install
+./appimagetool-$ARCH.AppImage -s deploy release/$DIR/usr/share/applications/stacer.desktop
+./appimagetool-$ARCH.AppImage release/$DIR
+mv Stacer-$VERSION-$ARCH.AppImage release
 
-rm linuxdeployqt-continuous-x86_64.AppImage
+rm appimagetool-$ARCH.AppImage
 
-# deb binary
+# debian package
 cd release/$DIR
+# Export CMake prefix path for debuild using aqtinstall
+if [ -z "$QT_PLUGIN_PATH" ]; then
+    QT_ROOT=$(dirname "$QT_PLUGIN_PATH")
+    export CMAKE_PREFIX_PATH="$QT_ROOT/lib/cmake"
+fi
 dh_make --createorig --indep --yes
-debuild --no-lintian -us -uc
+debuild --preserve-envvar=CMAKE_PREFIX_PATH \
+    --preserve-envvar=QT_PLUGIN_PATH \
+    --preserve-envvar=LD_LIBRARY_PATH \
+    --no-lintian -us -uc
 cd ../..
 
-# rpm binary
-mkdir -p rpm/SOURCES/
-cp release/$DIR.tar.gz rpm/SOURCES/
+# rpm package
+mkdir -p rpm/SOURCES
+cp release/$DIR.tar.gz rpm/SOURCES
+# Change architecture
+sed -i "s/^BuildArch:\s\+.*$/BuildArch:      $ARCH/g" rpm/SPECS/stacer.spec
 rpmbuild -bb --build-in-place --define "_topdir $(pwd)/rpm" rpm/SPECS/stacer.spec
-mv rpm/RPMS/x86_64/stacer-$VERSION-1.x86_64.rpm release/stacer-$VERSION.x86_64.rpm
+mv rpm/RPMS/$ARCH/stacer-$VERSION-1.$ARCH.rpm release/stacer-$VERSION.$ARCH.rpm
