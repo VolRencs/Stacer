@@ -96,6 +96,7 @@ Dependencies:
 - qt6-wayland-dev (optional)
 - libglx-dev (for Qt6OpenGL)
 - libgl1-mesa-dev (for WrapOpenGL)
+- libxkbcommon-dev (for QtGui & QtWidgets with X11)
 
 1. `cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug`
 2. `cmake --build build -j $(nproc)`

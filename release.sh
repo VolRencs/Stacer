@@ -18,6 +18,9 @@ mkdir -p release/$DIR
 cp -r stacer stacer-core translations CMakeLists.txt debian desktop icons release/$DIR
 
 # translations
+export QT_SELECT=qt6
+# Expand PATH to find lupdate & lrelease
+export PATH="/usr/lib/$QT_SELECT/bin:$PATH"
 lupdate stacer/stacer.pro -no-obsolete
 lrelease stacer/stacer.pro
 mkdir -p release/$DIR/stacer/translations
@@ -36,6 +39,8 @@ chmod +x appimagetool-$ARCH.AppImage
 # appimage
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
 DESTDIR=../release/$DIR cmake --build build --target install
+# Need to duplicate metainfo into appdata for old appimagetool versions
+cp release/$DIR/usr/share/metainfo/fr.quentium.stacer.metainfo.xml release/$DIR/usr/share/metainfo/stacer.appdata.xml
 ./appimagetool-$ARCH.AppImage -s deploy release/$DIR/usr/share/applications/stacer.desktop
 ./appimagetool-$ARCH.AppImage release/$DIR
 mv Stacer-$VERSION-$ARCH.AppImage release
