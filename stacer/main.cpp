@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
 
     qApp->setApplicationName("stacer");
     qApp->setApplicationDisplayName("Stacer");
-    qApp->setApplicationVersion("1.3.6");
+    qApp->setApplicationVersion("1.4.0");
     qApp->setWindowIcon(QIcon(":/static/logo.png"));
 
     {

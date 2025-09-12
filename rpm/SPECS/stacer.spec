@@ -1,5 +1,5 @@
 Name:           stacer
-Version:        1.3.6
+Version:        1.4.0
 Release:        1%{?dist}
 Summary:        Linux system optimizer and monitoring
 
