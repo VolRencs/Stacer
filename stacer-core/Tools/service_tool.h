@@ -6,7 +6,7 @@
 
 class STACERCORESHARED_EXPORT Service
 {
-public:
+  public:
     Service(const QString &name, const QString description, const bool status, const bool active);
 
     QString name;
@@ -17,7 +17,7 @@ public:
 
 class STACERCORESHARED_EXPORT ServiceTool
 {
-public:
+  public:
     static QList<Service> getServicesWithSystemctl();
     static bool serviceIsActive(const QString &serviceName);
     static bool changeServiceStatus(const QString &sname, bool status);

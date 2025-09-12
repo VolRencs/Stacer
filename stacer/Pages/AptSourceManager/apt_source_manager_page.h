@@ -1,12 +1,12 @@
 #ifndef APTSourceManagerPage_PAGE_H
 #define APTSourceManagerPage_PAGE_H
 
-#include <QWidget>
 #include <QListWidgetItem>
+#include <QWidget>
 
 #include "Managers/info_manager.h"
-#include "apt_source_repository_item.h"
 #include "apt_source_edit.h"
+#include "apt_source_repository_item.h"
 
 namespace Ui {
     class APTSourceManagerPage;
@@ -16,14 +16,14 @@ class APTSourceManagerPage : public QWidget
 {
     Q_OBJECT
 
-public:
+  public:
     explicit APTSourceManagerPage(QWidget *parent = 0);
     ~APTSourceManagerPage();
 
-public:
+  public:
     static APTSourcePtr selectedAptSource;
 
-private slots:
+  private slots:
     void loadAptSources();
     void changeElementsVisible(const bool checked);
     void on_btnAddAPTSourceRepository_clicked(bool checked);
@@ -34,10 +34,10 @@ private slots:
     void on_btnEditAptSource_clicked();
     void on_btnCancel_clicked();
 
-private:
+  private:
     void init();
 
-private:
+  private:
     Ui::APTSourceManagerPage *ui;
 
     QSharedPointer<APTSourceEdit> mAptSourceEditDialog;

@@ -3,13 +3,21 @@
 #include <QDebug>
 #include <QRegularExpression>
 
-const PackageTool::PackageTools PackageTool::currentPackageTool =
-        CommandUtil::isExecutable("apt-get") ? PackageTool::APT :
-        CommandUtil::isExecutable("dnf")     ? PackageTool::DNF :
-        CommandUtil::isExecutable("yum")     ? PackageTool::YUM :
-        CommandUtil::isExecutable("pacman")  ? PackageTool::PACMAN :
-        CommandUtil::isExecutable("zypper")  ? PackageTool::ZYPPER :
-                                               PackageTool::UNKNOWN;
+const PackageTool::PackageTools PackageTool::currentPackageTool = []() {
+    if (CommandUtil::isExecutable("apt-get")) {
+        return PackageTool::APT;
+    } else if (CommandUtil::isExecutable("dnf")) {
+        return PackageTool::DNF;
+    } else if (CommandUtil::isExecutable("yum")) {
+        return PackageTool::YUM;
+    } else if (CommandUtil::isExecutable("pacman")) {
+        return PackageTool::PACMAN;
+    } else if (CommandUtil::isExecutable("zypper")) {
+        return PackageTool::ZYPPER;
+    } else {
+        return PackageTool::UNKNOWN;
+    }
+}();
 
 /***********
  * DPKG
@@ -26,15 +34,15 @@ QStringList PackageTool::getDpkgPackages()
     QStringList packageList = {};
 
     try {
-        packageList = CommandUtil::exec("bash", {"-c", "dpkg --get-selections 2> /dev/null"})
-                .trimmed()
-                .split('\n')
-                .filter(QRegularExpression("\\s+install$"));
+        packageList = CommandUtil::exec("bash", { "-c", "dpkg --get-selections 2> /dev/null" })
+                          .trimmed()
+                          .split('\n')
+                          .filter(QRegularExpression("\\s+install$"));
 
         for (int i = 0; i < packageList.count(); ++i)
             packageList[i] = packageList.at(i).split(QRegularExpression("\\s+")).first();
 
-    } catch(QString &ex) {
+    } catch (QString &ex) {
         qCritical() << ex;
     }
 
@@ -51,7 +59,7 @@ bool PackageTool::dpkgRemovePackages(QStringList packages)
 
         return true;
 
-    } catch(QString &ex) {
+    } catch (QString &ex) {
         qCritical() << ex;
     }
 
@@ -66,11 +74,11 @@ QStringList PackageTool::getRpmPackages()
     QStringList packageList = {};
 
     try {
-        packageList = CommandUtil::exec("bash", {"-c", "rpm -qa 2> /dev/null"})
-                .trimmed()
-                .split('\n');
+        packageList = CommandUtil::exec("bash", { "-c", "rpm -qa 2> /dev/null" })
+                          .trimmed()
+                          .split('\n');
 
-    } catch(QString &ex) {
+    } catch (QString &ex) {
         qCritical() << ex;
     }
 
@@ -87,7 +95,7 @@ bool PackageTool::dnfRemovePackages(QStringList packages)
 
         return true;
 
-    } catch(QString &ex) {
+    } catch (QString &ex) {
         qCritical() << ex;
     }
 
@@ -104,7 +112,7 @@ bool PackageTool::yumRemovePackages(QStringList packages)
 
         return true;
 
-    } catch(QString &ex) {
+    } catch (QString &ex) {
         qCritical() << ex;
     }
 
@@ -126,14 +134,14 @@ QStringList PackageTool::getPacmanPackages()
     QStringList packageList = {};
 
     try {
-        packageList = CommandUtil::exec("bash", {"-c", "pacman -Q 2> /dev/null"})
-                .trimmed()
-                .split('\n');
+        packageList = CommandUtil::exec("bash", { "-c", "pacman -Q 2> /dev/null" })
+                          .trimmed()
+                          .split('\n');
 
         for (int i = 0; i < packageList.count(); ++i)
             packageList[i] = packageList.at(i).split(QRegularExpression("\\s+")).first();
 
-    } catch(QString &ex) {
+    } catch (QString &ex) {
         qCritical() << ex;
     }
 
@@ -150,7 +158,7 @@ bool PackageTool::pacmanRemovePackages(QStringList packages)
 
         return true;
 
-    } catch(QString &ex) {
+    } catch (QString &ex) {
         qCritical() << ex;
     }
 
@@ -166,9 +174,9 @@ QStringList PackageTool::getSnapPackages()
 
     if (CommandUtil::isExecutable("snap")) {
         try {
-            packageList = CommandUtil::exec("snap", {"list"})
-                    .trimmed()
-                    .split('\n');
+            packageList = CommandUtil::exec("snap", { "list" })
+                              .trimmed()
+                              .split('\n');
 
             packageList.removeFirst(); // remove titles e.g name, version
 
@@ -192,7 +200,7 @@ bool PackageTool::snapRemovePackages(QStringList packages)
 
         return true;
 
-    } catch(QString &ex) {
+    } catch (QString &ex) {
         qCritical() << ex;
     }
 

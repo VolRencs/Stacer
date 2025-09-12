@@ -1,6 +1,6 @@
 #include "feedback.h"
-#include "ui_feedback.h"
 #include "Utils/command_util.h"
+#include "ui_feedback.h"
 
 #include <QDebug>
 #include <QJsonDocument>
@@ -29,7 +29,7 @@ void Feedback::init()
 {
     mMailRegex.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
 
-    connect(this, &Feedback::clearInputsS,     this, &Feedback::clearInputs);
+    connect(this, &Feedback::clearInputsS, this, &Feedback::clearInputs);
     connect(this, &Feedback::setErrorMessageS, this, &Feedback::setErrorMessage);
     connect(this, &Feedback::disableElementsS, this, &Feedback::disableElements);
 }
@@ -52,7 +52,7 @@ void Feedback::on_btnSend_clicked()
         return;
     }
 
-    if (! name.isEmpty() && ! email.isEmpty() && isEmailValid) {
+    if (!name.isEmpty() && !email.isEmpty() && isEmailValid) {
         QFuture<void> future = QtConcurrent::run([=] {
             emit disableElementsS(true);
 
@@ -66,7 +66,8 @@ void Feedback::on_btnSend_clicked()
 
             QJsonDocument json(postData);
 
-            args << "-d" << json.toJson() << "-H" << mHeader << "-X" << "POST" << mFeedbackUrl;
+            args << "-d" << json.toJson() << "-H" << mHeader << "-X"
+                 << "POST" << mFeedbackUrl;
 
             try {
                 QString result = CommandUtil::exec("curl", args);
@@ -79,7 +80,7 @@ void Feedback::on_btnSend_clicked()
                     emit setErrorMessageS(tr("Something went wrong, try again !"));
                 }
 
-            } catch(QString &ex) {
+            } catch (QString &ex) {
                 qCritical() << ex;
                 emit setErrorMessageS(tr("Something went wrong, try again !"));
             }

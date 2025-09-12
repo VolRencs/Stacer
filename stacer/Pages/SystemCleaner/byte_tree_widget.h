@@ -8,9 +8,11 @@
 
 class ByteTreeWidget : public QTreeWidgetItem
 {
-public:
-    ByteTreeWidget(QTreeWidget* parent) : QTreeWidgetItem(parent) {}
-    ByteTreeWidget(QTreeWidgetItem* parent) : QTreeWidgetItem(parent) {}
+  public:
+    ByteTreeWidget(QTreeWidget *parent) :
+        QTreeWidgetItem(parent) {}
+    ByteTreeWidget(QTreeWidgetItem *parent) :
+        QTreeWidgetItem(parent) {}
 
     void setValues(const QString &text, const quint64 &size, const QVariant &data);
 

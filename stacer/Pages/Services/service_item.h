@@ -13,18 +13,18 @@ class ServiceItem : public QWidget
 {
     Q_OBJECT
 
-public:
+  public:
     explicit ServiceItem(const QString &name, const QString description, const bool status, const bool active, QWidget *parent = 0);
     ~ServiceItem();
 
-private slots:
+  private slots:
     void on_checkServiceRunning_clicked(bool status);
     void on_checkServiceStartup_clicked(bool status);
 
-private:
+  private:
     Ui::ServiceItem *ui;
 
-private:
+  private:
     ToolManager *tm;
 };
 

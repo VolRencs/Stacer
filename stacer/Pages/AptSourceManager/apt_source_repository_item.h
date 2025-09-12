@@ -13,20 +13,20 @@ class APTSourceRepositoryItem : public QWidget
 {
     Q_OBJECT
 
-public:
+  public:
     explicit APTSourceRepositoryItem(APTSourcePtr aptSource, QWidget *parent = 0);
     ~APTSourceRepositoryItem();
 
-public:
+  public:
     APTSourcePtr aptSource() const;
 
-private slots:
+  private slots:
     void on_checkAptSource_clicked(bool checked);
 
-private:
+  private:
     void init();
 
-private:
+  private:
     Ui::APTSourceRepositoryItem *ui;
 
     APTSourcePtr mAptSource;

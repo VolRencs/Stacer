@@ -3,10 +3,10 @@
 
 #include <QWidget>
 
+#include "appearance_settings.h"
 #include "sliding_stacked_widget.h"
 #include "unity_settings.h"
 #include "window_manager_settings.h"
-#include "appearance_settings.h"
 
 namespace Ui {
     class GnomeSettingsPage;
@@ -16,19 +16,19 @@ class GnomeSettingsPage : public QWidget
 {
     Q_OBJECT
 
-public:
+  public:
     explicit GnomeSettingsPage(QWidget *parent = 0);
     ~GnomeSettingsPage();
 
-private slots:
+  private slots:
     void on_btnUnitySettings_clicked();
     void on_btnWindowManager_clicked();
     void on_btnAppearance_clicked();
 
-private:
+  private:
     void init();
 
-private:
+  private:
     Ui::GnomeSettingsPage *ui;
 
     SlidingStackedWidget *slidingStackedWidget;

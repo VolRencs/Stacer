@@ -91,4 +91,3 @@ void StartupApp::setFilePath(const QString &value)
 {
     mFilePath = value;
 }
-

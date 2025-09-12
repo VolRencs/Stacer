@@ -9,11 +9,11 @@
 #define PROC_CPUINFO "/proc/cpuinfo"
 #define LSCPU_COMMAND "LANG=nl_NL.UTF-8 lscpu"
 #define PROC_LOADAVG "/proc/loadavg"
-#define PROC_STAT    "/proc/stat"
+#define PROC_STAT "/proc/stat"
 
 class STACERCORESHARED_EXPORT CpuInfo
 {
-public:
+  public:
     int getCpuPhysicalCoreCount() const;
     int getCpuCoreCount() const;
     QList<int> getCpuPercents() const;
@@ -21,7 +21,7 @@ public:
     double getAvgClock() const;
     QList<double> getClocks() const;
 
-private:
+  private:
     int getCpuPercent(const QList<double> &cpuTimes, const int &processor = 0) const;
 };
 

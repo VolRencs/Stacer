@@ -2,29 +2,29 @@
 #define APP_MANAGER_H
 
 #include <QApplication>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QMap>
 #include <QSettings>
-#include <QJsonDocument>
-#include <QJsonArray>
-#include <QJsonObject>
-#include <QTranslator>
 #include <QSystemTrayIcon>
+#include <QTranslator>
 
-#include "Utils/file_util.h"
 #include "Managers/setting_manager.h"
+#include "Utils/file_util.h"
 #include "signal_mapper.h"
 
 class AppManager
 {
 
-public:
+  public:
     static AppManager *ins();
 
     QMap<QString, QString> getLanguageList() const;
     void loadLanguageList();
 
-//    QMap<QString, QString> getThemeList() const;
-//    void loadThemeList();
+    // QMap<QString, QString> getThemeList() const;
+    // void loadThemeList();
 
     void updateStylesheet();
     QString getStylesheetFileContent() const;
@@ -33,18 +33,18 @@ public:
 
     QSystemTrayIcon *getTrayIcon();
 
-private:
+  private:
     static AppManager *instance;
     AppManager();
 
-private:
+  private:
     QTranslator mTranslator;
     QSystemTrayIcon *mTrayIcon;
 
     QSettings *mStyleValues;
 
     QMap<QString, QString> mLanguageList;
-//    QMap<QString, QString> mThemeList;
+    // QMap<QString, QString> mThemeList;
     QString mStylesheetFileContent;
 
     SettingManager *mSettingManager;

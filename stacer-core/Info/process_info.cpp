@@ -10,13 +10,13 @@ void ProcessInfo::updateProcesses()
     try {
 
         QStringList columns = { "pid", "rss", "pmem", "vsize", "uname:50", "pcpu", "start_time",
-                                "state", "group", "nice", "cputime", "session", "cmd"};
+                                "state", "group", "nice", "cputime", "session", "cmd" };
 
-        QStringList lines = CommandUtil::exec("ps", {"ax", "-weo", columns.join(","), "--no-headings"})
-                .trimmed()
-                .split(QChar('\n'));
+        QStringList lines = CommandUtil::exec("ps", { "ax", "-weo", columns.join(","), "--no-headings" })
+                                .trimmed()
+                                .split(QChar('\n'));
 
-        if (! lines.isEmpty()) {
+        if (!lines.isEmpty()) {
             QRegularExpression sep("\\s+");
             for (const QString &line : lines) {
                 QStringList procLine = line.trimmed().split(sep);

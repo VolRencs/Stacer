@@ -1,8 +1,8 @@
 #ifndef STARTUP_APP_EDIT_H
 #define STARTUP_APP_EDIT_H
 
-#include <QRegularExpression>
 #include <QDialog>
+#include <QRegularExpression>
 
 #include "Managers/app_manager.h"
 
@@ -20,29 +20,29 @@ class StartupAppEdit : public QDialog
 {
     Q_OBJECT
 
-public:
+  public:
     explicit StartupAppEdit(QWidget *parent = 0);
     ~StartupAppEdit();
 
-public:
+  public:
     static QString selectedFilePath;
 
-signals:
+  signals:
     void startupAppAdded();
 
-public slots:
+  public slots:
     void show();
 
-private slots:
+  private slots:
     void init();
     bool isValid();
     void on_btnSave_clicked();
     void changeDesktopValue(QStringList &lines, const QRegularExpression &reg, const QString &text);
 
-private:
+  private:
     Ui::StartupAppEdit *ui;
 
-private:
+  private:
     QString mNewAppTemplate;
     QString mAutostartPath;
 };

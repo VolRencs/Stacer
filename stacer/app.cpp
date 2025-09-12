@@ -3,8 +3,8 @@
 #include "utilities.h"
 
 #include <QRegularExpression>
-#include <QStyle>
 #include <QScreen>
+#include <QStyle>
 
 App::~App()
 {
@@ -27,11 +27,10 @@ void App::init()
 {
     setGeometry(
         QStyle::alignedRect(Qt::LeftToRight, Qt::AlignCenter,
-            size(), qApp->primaryScreen()->availableGeometry())
-    );
+                            size(), qApp->primaryScreen()->availableGeometry()));
 
     // form settings
-    ui->horizontalLayout->setContentsMargins(0,0,0,0);
+    ui->horizontalLayout->setContentsMargins(0, 0, 0, 0);
     ui->horizontalLayout->setSpacing(0);
 
     dashboardPage = new DashboardPage(mSlidingStacked);
@@ -79,7 +78,7 @@ void App::init()
     }
 
     // add pages
-    for (QWidget *page: mListPages) {
+    for (QWidget *page : mListPages) {
         mSlidingStacked->addWidget(page);
     }
 
@@ -143,15 +142,15 @@ void App::closeEvent(QCloseEvent *event)
 
 void App::createTrayActions()
 {
-    for (QPushButton *button: mListSidebarButtons) {
+    for (QPushButton *button : mListSidebarButtons) {
         QString toolTip = button->toolTip();
         QAction *action = new QAction(toolTip, this);
         connect(action, &QAction::triggered, [=] {
             clickSidebarButton(toolTip, true);
         });
-        connect(mTrayIcon, &QSystemTrayIcon::activated, this, [=](QSystemTrayIcon::ActivationReason){
+        connect(mTrayIcon, &QSystemTrayIcon::activated, this, [=](QSystemTrayIcon::ActivationReason) {
             setVisible(true);
-            activateWindow();	
+            activateWindow();
         });
 
         mTrayMenu->addAction(action);
@@ -160,7 +159,7 @@ void App::createTrayActions()
     mTrayMenu->addSeparator();
 
     QAction *quitAction = new QAction(tr("Quit"), this);
-    connect(quitAction, &QAction::triggered, [=] {qApp->quit();});
+    connect(quitAction, &QAction::triggered, [=] { qApp->quit(); });
     mTrayMenu->addAction(quitAction);
 
     mTrayIcon->setContextMenu(mTrayMenu);
@@ -176,21 +175,22 @@ void App::clickSidebarButton(QString pageTitle, bool isShow)
         pageClick(mListPages.first());
     }
     setVisible(isShow);
-    if (isShow) activateWindow();
+    if (isShow)
+        activateWindow();
 }
 
 void App::checkSidebarButtonByTooltip(const QString &text)
 {
-    for (QPushButton *button: mListSidebarButtons) {
+    for (QPushButton *button : mListSidebarButtons) {
         if (button->toolTip() == text) {
             button->setChecked(true);
         }
     }
 }
 
-QWidget* App::getPageByTitle(const QString &title)
+QWidget *App::getPageByTitle(const QString &title)
 {
-    for (QWidget *page: mListPages) {
+    for (QWidget *page : mListPages) {
         if (page->windowTitle() == title) {
             return page;
         }

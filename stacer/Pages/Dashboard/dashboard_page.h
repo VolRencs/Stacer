@@ -1,12 +1,12 @@
 #ifndef DASHBOARDPAGE_H
 #define DASHBOARDPAGE_H
 
-#include <QWidget>
-#include <QTimer>
+#include <QDesktopServices>
+#include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <QJsonArray>
-#include <QDesktopServices>
+#include <QTimer>
+#include <QWidget>
 #include <QtConcurrent>
 
 #include "Managers/info_manager.h"
@@ -22,11 +22,11 @@ class DashboardPage : public QWidget
 {
     Q_OBJECT
 
-public:
+  public:
     explicit DashboardPage(QWidget *parent = 0);
     ~DashboardPage();
 
-private slots:
+  private slots:
     void init();
     void checkUpdate();
     void systemInformationInit();
@@ -38,16 +38,16 @@ private slots:
 
     void on_btnDownloadUpdate_clicked();
 
-signals:
+  signals:
     void sigShowUpdateBar();
 
-private:
+  private:
     Ui::DashboardPage *ui;
 
-private:
-    CircleBar* mCpuBar;
-    CircleBar* mMemBar;
-    CircleBar* mDiskBar;
+  private:
+    CircleBar *mCpuBar;
+    CircleBar *mMemBar;
+    CircleBar *mDiskBar;
 
     LineBar *mDownloadBar;
     LineBar *mUploadBar;

@@ -20,7 +20,7 @@ void AptSourceTool::removeAPTSource(const APTSourcePtr aptSource)
 
 void AptSourceTool::addRepository(const QString &repository, const bool isSource)
 {
-    if (! repository.isEmpty()) {
+    if (!repository.isEmpty()) {
         QStringList args = { "-y", repository };
         if (isSource) {
             args << "-s";
@@ -65,7 +65,7 @@ void AptSourceTool::changeStatus(const APTSourcePtr aptSource, const bool status
 
     newSource.replace("#", "");
 
-    if (! status) { // if is deactive
+    if (!status) { // if is deactive
         newSource = "# " + newSource.trimmed();
     }
 
@@ -76,7 +76,7 @@ QList<APTSourcePtr> AptSourceTool::getSourceList()
 {
     QList<APTSourcePtr> aptSourceList;
 
-    QFileInfoList infoList = QDir(APT_SOURCES_LIST_D_PATH).entryInfoList({"*.list"}, QDir::Files, QDir::Time);
+    QFileInfoList infoList = QDir(APT_SOURCES_LIST_D_PATH).entryInfoList({ "*.list" }, QDir::Files, QDir::Time);
     infoList.append(QFileInfo(APT_SOURCES_LIST_PATH)); // sources.list
 
     // example "deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main"
@@ -90,7 +90,7 @@ QList<APTSourcePtr> AptSourceTool::getSourceList()
             APTSourcePtr aptSource(new APTSource);
             aptSource->filePath = info.absoluteFilePath();
 
-            aptSource->isActive = ! cleanLine.startsWith(QChar('#'));
+            aptSource->isActive = !cleanLine.startsWith(QChar('#'));
 
             cleanLine.remove('#'); // remove comment
 
@@ -124,5 +124,3 @@ QList<APTSourcePtr> AptSourceTool::getSourceList()
 
     return aptSourceList;
 }
-
-

@@ -7,12 +7,12 @@
 #include "Info/disk_info.h"
 #include "Info/memory_info.h"
 #include "Info/network_info.h"
-#include "Info/system_info.h"
 #include "Info/process_info.h"
+#include "Info/system_info.h"
 
 class InfoManager
 {
-public:
+  public:
     static InfoManager *ins();
 
     int getCpuCoreCount() const;
@@ -45,10 +45,11 @@ public:
 
     QList<QString> getDevices();
     QList<QString> getFileSystemTypes();
-private:
+
+  private:
     static InfoManager *instance;
 
-private:
+  private:
     CpuInfo ci;
     DiskInfo di;
     MemoryInfo mi;

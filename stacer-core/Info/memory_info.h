@@ -9,7 +9,7 @@
 
 class STACERCORESHARED_EXPORT MemoryInfo
 {
-public:
+  public:
     MemoryInfo();
 
     void updateMemoryInfo();
@@ -22,7 +22,7 @@ public:
     quint64 getSwapFree() const;
     quint64 getSwapUsed() const;
 
-private:
+  private:
     // memory
     quint64 memTotal;
     quint64 memFree;

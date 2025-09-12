@@ -4,9 +4,10 @@
 #include "Utils/file_util.h"
 #include "stacer-core_global.h"
 
-class STACERCORESHARED_EXPORT Process {
+class STACERCORESHARED_EXPORT Process
+{
 
-public:
+  public:
     pid_t getPid() const;
     void setPid(const pid_t &value);
 
@@ -46,7 +47,7 @@ public:
     QString getCmd() const;
     void setCmd(const QString &value);
 
-private:
+  private:
     pid_t pid;
     quint64 rss;
     double pmem;
@@ -61,6 +62,5 @@ private:
     QString session;
     QString cmd;
 };
-
 
 #endif // PROCESS_H

@@ -8,9 +8,9 @@ SettingManager::SettingManager()
 
 SettingManager *SettingManager::instance = nullptr;
 
-SettingManager* SettingManager::ins()
+SettingManager *SettingManager::ins()
 {
-    if (! instance) {
+    if (!instance) {
         instance = new SettingManager;
     }
     return instance;
@@ -38,7 +38,7 @@ void SettingManager::setThemeName(const QString &value)
 
 QString SettingManager::getThemeName() const
 {
-    return "default"; //mSettings->value(SettingKeys::ThemeName, "default").toString();
+    return "default"; // mSettings->value(SettingKeys::ThemeName, "default").toString();
 }
 
 void SettingManager::setDiskName(const QString &value)

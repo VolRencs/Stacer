@@ -6,7 +6,7 @@ HistoryChart::~HistoryChart()
     delete ui;
 }
 
-HistoryChart::HistoryChart(const QString &title, const int &seriesCount, QCategoryAxis* categoryAxisY, QWidget *parent) :
+HistoryChart::HistoryChart(const QString &title, const int &seriesCount, QCategoryAxis *categoryAxisY, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::HistoryChart),
     mTitle(title),
@@ -43,7 +43,7 @@ void HistoryChart::init()
     mChartView->setRenderHint(QPainter::Antialiasing);
 
     for (int i = 0; i < mSeriesList.count(); ++i) {
-        dynamic_cast<QSplineSeries*>(mChart->series().at(i))->setColor(QColor::fromHsvF((qreal)i/mSeriesList.count(), 0.8, 0.8));
+        dynamic_cast<QSplineSeries *>(mChart->series().at(i))->setColor(QColor::fromHsvF((qreal)i / mSeriesList.count(), 0.8, 0.8));
     }
 
     // Chart Settings
@@ -86,17 +86,17 @@ QCategoryAxis *HistoryChart::getAxisY()
 void HistoryChart::setCategoryAxisYLabels()
 {
     if (mAxisY) {
-        for (const QString &label : mAxisY->categoriesLabels()){
+        for (const QString &label : mAxisY->categoriesLabels()) {
             mAxisY->remove(label);
         }
 
         for (int i = 1; i < 5; ++i) {
-            mAxisY->append(FormatUtil::formatBytes((mAxisY->max()/4)*i), (mAxisY->max()/4)*i);
+            mAxisY->append(FormatUtil::formatBytes((mAxisY->max() / 4) * i), (mAxisY->max() / 4) * i);
         }
     }
 }
 
-QVector<QSplineSeries*> HistoryChart::getSeriesList() const
+QVector<QSplineSeries *> HistoryChart::getSeriesList() const
 {
     return mSeriesList;
 }
@@ -112,10 +112,10 @@ void HistoryChart::setSeriesList(const QVector<QSplineSeries *> &seriesList)
 
 void HistoryChart::on_checkHistoryTitle_clicked(bool checked)
 {
-    QLayout *charts = topLevelWidget()->findChild<QWidget*>("charts")->layout();
+    QLayout *charts = topLevelWidget()->findChild<QWidget *>("charts")->layout();
 
     for (int i = 0; i < charts->count(); ++i) {
-        charts->itemAt(i)->widget()->setVisible(! checked);
+        charts->itemAt(i)->widget()->setVisible(!checked);
     }
 
     show();

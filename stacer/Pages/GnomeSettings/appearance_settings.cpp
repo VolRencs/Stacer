@@ -32,9 +32,9 @@ void AppearanceSettings::init()
 
     bool showVolumesIcon = gsettings.getValueB(GSchemas::Appearance::Desktop, GSchemaKeys::Appearance::ShowVolumesIcon);
 
-    QString desktopBackMode = gsettings.getValueS(GSchemas::Appearance::Background, GSchemaKeys::Appearance::PictureOptions).replace("'","");
+    QString desktopBackMode = gsettings.getValueS(GSchemas::Appearance::Background, GSchemaKeys::Appearance::PictureOptions).replace("'", "");
 
-    QString loginBackMode = gsettings.getValueS(GSchemas::Appearance::Screensaver, GSchemaKeys::Appearance::PictureOptions).replace("'","");
+    QString loginBackMode = gsettings.getValueS(GSchemas::Appearance::Screensaver, GSchemaKeys::Appearance::PictureOptions).replace("'", "");
 
     bool screenKeyboardEnabled = gsettings.getValueB(GSchemas::Appearance::Applications, GSchemaKeys::Appearance::ScreenKeyboard);
 
@@ -68,8 +68,7 @@ void AppearanceSettings::initConnects()
 void AppearanceSettings::loadDatas()
 {
     QList<QPair<QString, QString>> backgroundModes = {
-        {tr("None"), "none"}, {tr("Wallpaper"), "wallpaper"}, {tr("Centered"), "centered"},
-        {tr("Scaled"), "scaled"}, {tr("Stretched"), "stretched"}, {tr("Zoom"), "zoom"}, {tr("Spanned"), "spanned"}
+        { tr("None"), "none" }, { tr("Wallpaper"), "wallpaper" }, { tr("Centered"), "centered" }, { tr("Scaled"), "scaled" }, { tr("Stretched"), "stretched" }, { tr("Zoom"), "zoom" }, { tr("Spanned"), "spanned" }
     };
 
     for (const QPair<QString, QString> &mode : backgroundModes) {
@@ -80,7 +79,7 @@ void AppearanceSettings::loadDatas()
 
 void AppearanceSettings::on_checkShowDesktopIcons_clicked(bool checked)
 {
-    if (! checked) {
+    if (!checked) {
         ui->checkHomeIcon->setChecked(checked);
         ui->checkNetworkIcon->setChecked(checked);
         ui->checkMountedVulmesIcon->setChecked(checked);

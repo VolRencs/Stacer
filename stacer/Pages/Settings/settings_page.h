@@ -1,8 +1,8 @@
 #ifndef SETTINGS_PAGE_H
 #define SETTINGS_PAGE_H
 
-#include <QWidget>
 #include <QMapIterator>
+#include <QWidget>
 
 #include "Managers/app_manager.h"
 #include "Managers/setting_manager.h"
@@ -16,11 +16,11 @@ class SettingsPage : public QWidget
 {
     Q_OBJECT
 
-public:
+  public:
     explicit SettingsPage(QWidget *parent = 0);
     ~SettingsPage();
 
-private slots:
+  private slots:
     void init();
 
     void cmbLanguagesChanged(const int &index);
@@ -34,10 +34,10 @@ private slots:
     void on_spinDiskPercent_valueChanged(int value);
     void on_checkAppQuitDontAsk_clicked(bool checked);
 
-private:
+  private:
     Ui::SettingsPage *ui;
 
-private:
+  private:
     AppManager *apm;
 
     QString mStartupAppPath;

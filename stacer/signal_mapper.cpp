@@ -2,9 +2,9 @@
 
 SignalMapper *SignalMapper::instance = nullptr;
 
-SignalMapper* SignalMapper::ins()
+SignalMapper *SignalMapper::ins()
 {
-    if (! instance) {
+    if (!instance) {
         instance = new SignalMapper;
     }
     return instance;

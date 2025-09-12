@@ -6,11 +6,11 @@ QString FileUtil::readStringFromFile(const QString &path, const QIODevice::OpenM
 
     QString data;
 
-    if(file->open(mode)) {
+    if (file->open(mode)) {
 
-      data = file->readAll();
+        data = file->readAll();
 
-      file->close();
+        file->close();
     }
 
     return data;
@@ -27,8 +27,7 @@ bool FileUtil::writeFile(const QString &path, const QString &content, const QIOD
 {
     QFile file(path);
 
-    if(file.open(mode))
-    {
+    if (file.open(mode)) {
         QTextStream stream(&file);
         stream << content.toUtf8() << Qt::endl;
 
@@ -58,12 +57,10 @@ quint64 FileUtil::getFileSize(const QString &path)
 
     QFileInfo info(path);
 
-    if (info.exists())
-    {
+    if (info.exists()) {
         if (info.isFile()) {
             totalSize += info.size();
-        }
-        else if (info.isDir()) {
+        } else if (info.isDir()) {
 
             QDir dir(path);
 
@@ -75,5 +72,3 @@ quint64 FileUtil::getFileSize(const QString &path)
 
     return totalSize;
 }
-
-

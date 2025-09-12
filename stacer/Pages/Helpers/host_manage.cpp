@@ -2,13 +2,14 @@
 #include "ui_host_manage.h"
 
 #include <QDebug>
+#include <QRegularExpression>
 
 HostManage::~HostManage()
 {
     delete ui;
 }
 
-HostManage::HostManage(QWidget *parent):
+HostManage::HostManage(QWidget *parent) :
     QWidget(parent),
     mItemModel(new QStandardItemModel(this)),
     mSortFilterModel(new QSortFilterProxyModel(this)),
@@ -24,16 +25,15 @@ void HostManage::init()
 {
     ui->lblHostTitle->setText(tr("Hosts (%1)").arg(1));
 
-    Utilities::addDropShadow({
-        ui->btnCancel, ui->btnNewHost, ui->btnSave, ui->txtAliases, ui->txtFullyQualified,
-        ui->txtIP, ui->tableViewHosts
-    }, 40);
+    Utilities::addDropShadow({ ui->btnCancel, ui->btnNewHost, ui->btnSave, ui->txtAliases, ui->txtFullyQualified,
+                               ui->txtIP, ui->tableViewHosts },
+                             40);
 
     ui->widgetAddEditHost->hide();
     ui->lblErrorMsg->hide();
 
     mHeaderList = {
-       tr("IP Address"), tr("Full Qualified"), tr("Aliases")
+        tr("IP Address"), tr("Full Qualified"), tr("Aliases")
     };
 
     mItemModel->setHorizontalHeaderLabels(mHeaderList);
@@ -64,10 +64,8 @@ void HostManage::loadHostItems()
     mHostItemList.clear();
 
     int i = 0;
-    for (const QString &line: mHostFileContent)
-    {
-        if (! line.trimmed().startsWith("#") && ! line.trimmed().isEmpty())
-        {
+    for (const QString &line : mHostFileContent) {
+        if (!line.trimmed().startsWith("#") && !line.trimmed().isEmpty()) {
             QStringList lineItems = line.trimmed().split(QRegularExpression("\\s+"));
 
             if (lineItems.count() > 1) {
@@ -89,7 +87,7 @@ void HostManage::loadTableData()
 
     mItemModel->removeRows(0, mItemModel->rowCount());
 
-    QMapIterator<int,HostItem> itemIterator(mHostItemList);
+    QMapIterator<int, HostItem> itemIterator(mHostItemList);
 
     while (itemIterator.hasNext()) {
         itemIterator.next();
@@ -99,7 +97,7 @@ void HostManage::loadTableData()
     ui->lblHostTitle->setText(tr("Hosts (%1)").arg(mHostItemList.count()));
 }
 
-QList<QStandardItem*> HostManage::createRow(const QPair<int, HostItem> &item)
+QList<QStandardItem *> HostManage::createRow(const QPair<int, HostItem> &item)
 {
     QStandardItem *i_ip = new QStandardItem(item.second.ip);
     i_ip->setData(item.first, 9);
@@ -133,11 +131,11 @@ void HostManage::on_btnNewHost_clicked()
 
 void HostManage::loadTableRowMenu()
 {
-    QAction *actionOpenFolder = new QAction(QIcon(":/static/themes/common/img/folder.png"), tr("Edit"),&mTableRowMenu);
+    QAction *actionOpenFolder = new QAction(QIcon(":/static/themes/common/img/folder.png"), tr("Edit"), &mTableRowMenu);
     actionOpenFolder->setData("edit");
     mTableRowMenu.addAction(actionOpenFolder);
 
-    QAction *actionDelete = new QAction(QIcon(":/static/themes/common/img/delete.png"), tr("Delete"),&mTableRowMenu);
+    QAction *actionDelete = new QAction(QIcon(":/static/themes/common/img/delete.png"), tr("Delete"), &mTableRowMenu);
     actionDelete->setData("delete");
     mTableRowMenu.addAction(actionDelete);
 }
@@ -147,12 +145,11 @@ void HostManage::on_btnSave_clicked()
     if (ui->txtIP->text().isEmpty() || ui->txtFullyQualified->text().isEmpty()) {
         ui->lblErrorMsg->setText(tr("The IP and Fully Qualified fields are required."));
         ui->lblErrorMsg->show();
-    }
-    else {
+    } else {
         QString item = QString("%1 %2 %3")
-                .arg(ui->txtIP->text().trimmed())
-                .arg(ui->txtFullyQualified->text().trimmed())
-                .arg(ui->txtAliases->text());
+                           .arg(ui->txtIP->text().trimmed())
+                           .arg(ui->txtFullyQualified->text().trimmed())
+                           .arg(ui->txtAliases->text());
 
         if (updatedLine == -1) {
             mHostFileContent.append(item);
@@ -180,7 +177,7 @@ void HostManage::on_btnSaveChanges_clicked()
 {
     FileUtil::writeFile("/tmp/stacer_etc_host_new_content", mHostFileContent.join("\n"));
     try {
-        CommandUtil::sudoExec("mv", {"/tmp/stacer_etc_host_new_content", "/etc/hosts"});
+        CommandUtil::sudoExec("mv", { "/tmp/stacer_etc_host_new_content", "/etc/hosts" });
         loadTableData();
     } catch (QString ex) {
         qDebug() << ex;
@@ -196,7 +193,7 @@ void HostManage::on_tableViewHosts_customContextMenuRequested(const QPoint &pos)
         QModelIndexList selecteds = ui->tableViewHosts->selectionModel()->selectedRows();
         QItemSelectionModel *selectionModel = ui->tableViewHosts->selectionModel();
 
-        if (action && ! selecteds.isEmpty()) {
+        if (action && !selecteds.isEmpty()) {
             if (action->data().toString() == "edit") {
                 QModelIndex index = selectionModel->selectedRows().first();
 
@@ -209,9 +206,8 @@ void HostManage::on_tableViewHosts_customContextMenuRequested(const QPoint &pos)
                 ui->widgetAddEditHost->show();
 
                 selectionModel->clearSelection();
-            }
-            else if (action->data().toString() == "delete") {
-                while (! selectionModel->selectedRows().isEmpty()) {
+            } else if (action->data().toString() == "delete") {
+                while (!selectionModel->selectedRows().isEmpty()) {
                     QModelIndex index = selectionModel->selectedRows().first();
 
                     int lineNumber = mSortFilterModel->index(index.row(), 0).data(9).toInt();

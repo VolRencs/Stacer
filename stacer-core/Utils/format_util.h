@@ -5,10 +5,10 @@
 
 class STACERCORESHARED_EXPORT FormatUtil
 {
-public:
+  public:
     static QString formatBytes(const quint64 &bytes);
 
-public:
+  public:
     static const quint64 KIBI = 1024;
     static const quint64 MEBI = 1048576;
     static const quint64 GIBI = 1073741824;

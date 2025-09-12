@@ -1,7 +1,9 @@
 #include "apt_source_repository_item.h"
+#include "Utils/command_util.h"
 #include "ui_apt_source_repository_item.h"
 #include "utilities.h"
-#include "Utils/command_util.h"
+
+#include <QRegularExpression>
 
 APTSourceRepositoryItem::~APTSourceRepositoryItem()
 {

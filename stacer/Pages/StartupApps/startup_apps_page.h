@@ -1,10 +1,10 @@
 #ifndef STARTUPAPPSPAGE_H
 #define STARTUPAPPSPAGE_H
 
-#include <QWidget>
-#include <QSharedPointer>
 #include <QAbstractItemModel>
 #include <QFileSystemWatcher>
+#include <QSharedPointer>
+#include <QWidget>
 
 #include "Utils/file_util.h"
 #include "startup_app.h"
@@ -18,22 +18,22 @@ class StartupAppsPage : public QWidget
 {
     Q_OBJECT
 
-public:
+  public:
     explicit StartupAppsPage(QWidget *parent = 0);
     ~StartupAppsPage();
 
-public slots:
+  public slots:
     void loadApps();
 
-private slots:
+  private slots:
     void init();
     void openStartupAppEdit(const QString filePath = QString());
     void setAppCount();
 
-private:
+  private:
     Ui::StartupAppsPage *ui;
 
-private:
+  private:
     QSharedPointer<StartupAppEdit> mStartupAppEdit;
 
     QFileSystemWatcher mFileSystemWatcher;

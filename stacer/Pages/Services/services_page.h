@@ -13,14 +13,14 @@ class ServicesPage : public QWidget
 {
     Q_OBJECT
 
-public:
+  public:
     explicit ServicesPage(QWidget *parent = 0);
     ~ServicesPage();
 
-signals:
+  signals:
     void loadServicesS();
 
-private slots:
+  private slots:
     void init();
     void getServices();
     void loadServices();
@@ -28,10 +28,10 @@ private slots:
     void on_cmbRunningStatus_currentIndexChanged(int index);
     void on_cmbStartupStatus_currentIndexChanged(int index);
 
-public slots:
+  public slots:
     void setServiceCount();
 
-private:
+  private:
     Ui::ServicesPage *ui;
 
     QList<Service> mServices;

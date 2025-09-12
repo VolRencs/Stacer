@@ -1,16 +1,16 @@
 #ifndef SEARCH_PAGE_H
 #define SEARCH_PAGE_H
 
-#include <QWidget>
-#include <QFileDialog>
-#include <QStandardItemModel>
-#include <QSortFilterProxyModel>
-#include <QMenu>
 #include <QAction>
 #include <QDateTime>
-#include <QMovie>
-#include <QtConcurrent>
 #include <QDesktopServices>
+#include <QFileDialog>
+#include <QMenu>
+#include <QMovie>
+#include <QSortFilterProxyModel>
+#include <QStandardItemModel>
+#include <QWidget>
+#include <QtConcurrent>
 
 #include "Managers/info_manager.h"
 #include "Managers/setting_manager.h"
@@ -25,11 +25,11 @@ class SearchPage : public QWidget
 {
     Q_OBJECT
 
-public:
+  public:
     explicit SearchPage(QWidget *parent = 0);
     ~SearchPage();
 
-private slots:
+  private slots:
     void init();
 
     void on_btnBrowseSearchDir_clicked();
@@ -46,7 +46,7 @@ private slots:
 
     void on_tableFoundResults_doubleClicked(const QModelIndex &index);
 
-private:
+  private:
     Ui::SearchPage *ui;
 
     QString mSelectedDirectory;

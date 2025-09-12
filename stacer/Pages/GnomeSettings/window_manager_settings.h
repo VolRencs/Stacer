@@ -13,11 +13,11 @@ class WindowManagerSettings : public QWidget
 {
     Q_OBJECT
 
-public:
+  public:
     explicit WindowManagerSettings(QWidget *parent = 0);
     ~WindowManagerSettings();
 
-private slots:
+  private slots:
     void cmbTextQuality_currentIndexChanged(int index);
     void checkWorkspaceSwitcher_clicked(bool checked);
     void spinHorizonWorkspace_valueChanged(int value);
@@ -28,12 +28,12 @@ private slots:
     void cmbTitleBarMiddleClick_currentIndexChanged(int index);
     void cmbTitleBarRightClick_currentIndexChanged(int index);
 
-private:
+  private:
     void init();
     void loadDatas();
     void initConnects();
 
-private:
+  private:
     Ui::WindowManagerSettings *ui;
 
     GnomeSettingsTool gsettings;

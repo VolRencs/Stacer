@@ -7,17 +7,16 @@ class SignalMapper : public QObject
 {
     Q_OBJECT
 
-public:
+  public:
     static SignalMapper *ins();
 
-signals:
+  signals:
     void sigChangedAppTheme();
     void sigUninstallStarted();
     void sigUninstallFinished();
 
-private:
+  private:
     static SignalMapper *instance;
-
 };
 
 #endif // SIGNAL_MAPPER_H

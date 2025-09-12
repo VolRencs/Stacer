@@ -1,9 +1,10 @@
 #include "settings_page.h"
+#include "Managers/info_manager.h"
 #include "ui_settings_page.h"
 #include "utilities.h"
-#include "Managers/info_manager.h"
 
 #include <QDesktopServices>
+#include <QRegularExpression>
 #include <QUrl>
 
 SettingsPage::~SettingsPage()
@@ -36,32 +37,32 @@ void SettingsPage::init()
     ui->cmbLanguages->setCurrentText(apm->getLanguageList().value(lc));
 
     // load themes
-//    QMapIterator<QString, QString> theme(apm->getThemeList());
+    // QMapIterator<QString, QString> theme(apm->getThemeList());
 
-//    while (theme.hasNext()) {
-//        theme.next();
-//        ui->cmbThemes->addItem(theme.value(), theme.key());
-//    }
+    // while (theme.hasNext()) {
+    //     theme.next();
+    //     ui->cmbThemes->addItem(theme.value(), theme.key());
+    // }
 
-//    QString tn = mSettingManager->getThemeName();
-//    ui->cmbThemes->setCurrentText(apm->getThemeList().value(tn));
+    // QString tn = mSettingManager->getThemeName();
+    // ui->cmbThemes->setCurrentText(apm->getThemeList().value(tn));
 
     // load disks
     InfoManager::ins()->updateDiskInfo();
-    QList<Disk*> disks = InfoManager::ins()->getDisks();
+    QList<Disk *> disks = InfoManager::ins()->getDisks();
 
     for (const Disk *disk : disks) {
         ui->cmbDisks->addItem(QString("%1  (%2)").arg(disk->device).arg(disk->name), disk->name);
     }
 
     QString dk = mSettingManager->getDiskName().isEmpty() ? QStorageInfo::root().displayName() : mSettingManager->getDiskName();
-    if (! dk.isEmpty()) {
+    if (!dk.isEmpty()) {
         ui->cmbDisks->setCurrentIndex(ui->cmbDisks->findData(dk));
     }
 
     // start on boot
     mStartupAppPath = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation).append("/autostart");
-    if (! QDir(mStartupAppPath).exists()) {
+    if (!QDir(mStartupAppPath).exists()) {
         QDir().mkdir(mStartupAppPath);
     }
     mStartupAppPath.append("/stacer.desktop");
@@ -79,10 +80,8 @@ void SettingsPage::init()
     ui->checkAppQuitDontAsk->setChecked(mSettingManager->getAppQuitDialogDontAsk());
 
     // load pages
-    ui->cmbStartPage->addItems({
-        tr("Dashboard"), tr("Startup Apps"), tr("System Cleaner"), tr("Search"),
-        tr("Services"), tr("Processes"), tr("Helpers"), tr("Uninstaller"), tr("Resources")
-    });
+    ui->cmbStartPage->addItems({ tr("Dashboard"), tr("Startup Apps"), tr("System Cleaner"), tr("Search"),
+                                 tr("Services"), tr("Processes"), tr("Helpers"), tr("Uninstaller"), tr("Resources") });
 
     ui->cmbStartPage->setCurrentText(mSettingManager->getStartPage());
 
@@ -92,7 +91,7 @@ void SettingsPage::init()
     ui->spinDiskPercent->setValue(mSettingManager->getDiskAlertPercent());
 
     // effects
-    QList<QWidget*> widgets = {
+    QList<QWidget *> widgets = {
         ui->cmbLanguages, /*ui->cmbThemes,*/ ui->cmbDisks, ui->cmbStartPage, ui->btnDonate,
         ui->spinCpuPercent, ui->spinMemoryPercent, ui->spinDiskPercent
     };
@@ -113,13 +112,13 @@ void SettingsPage::cmbLanguagesChanged(const int &index)
     mSettingManager->setLanguage(langCode);
 }
 
-//void SettingsPage::cmbThemesChanged(const int &index)
-//{
-//    QString themeName = ui->cmbThemes->itemData(index).toString();
+// void SettingsPage::cmbThemesChanged(const int &index)
+// {
+//     QString themeName = ui->cmbThemes->itemData(index).toString();
 
-//    mSettingManager->setThemeName(themeName);
-//    apm->updateStylesheet();
-//}
+//     mSettingManager->setThemeName(themeName);
+//     apm->updateStylesheet();
+// }
 
 void SettingsPage::cmbDiskChanged(const int &index)
 {

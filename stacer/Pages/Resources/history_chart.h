@@ -1,9 +1,9 @@
 #ifndef HISTORYCHART_H
 #define HISTORYCHART_H
 
+#include <QTimer>
 #include <QWidget>
 #include <QtCharts>
-#include <QTimer>
 
 #include "Managers/app_manager.h"
 #include "Utils/format_util.h"
@@ -16,8 +16,8 @@ class HistoryChart : public QWidget
 {
     Q_OBJECT
 
-public:
-    explicit HistoryChart(const QString &title, const int &seriesCount, QCategoryAxis* categoriAxisY = nullptr, QWidget *parent = 0);
+  public:
+    explicit HistoryChart(const QString &title, const int &seriesCount, QCategoryAxis *categoriAxisY = nullptr, QWidget *parent = 0);
     ~HistoryChart();
 
     QVector<QSplineSeries *> getSeriesList() const;
@@ -26,13 +26,13 @@ public:
     void setSeriesList(const QVector<QSplineSeries *> &seriesList);
     void setCategoryAxisYLabels();
 
-private slots:
+  private slots:
     void on_checkHistoryTitle_clicked(bool checked);
 
-private:
+  private:
     void init();
 
-private:
+  private:
     Ui::HistoryChart *ui;
 
     QString mTitle;

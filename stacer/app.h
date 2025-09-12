@@ -7,20 +7,20 @@
 #include "Managers/setting_manager.h"
 
 // Pages
+#include "Pages/AptSourceManager/apt_source_manager_page.h"
 #include "Pages/Dashboard/dashboard_page.h"
+#include "Pages/GnomeSettings/gnome_settings_page.h"
+#include "Pages/Helpers/helpers_page.h"
+#include "Pages/Processes/processes_page.h"
+#include "Pages/Resources/resources_page.h"
+#include "Pages/Search/search_page.h"
+#include "Pages/Services/services_page.h"
+#include "Pages/Settings/settings_page.h"
 #include "Pages/StartupApps/startup_apps_page.h"
 #include "Pages/SystemCleaner/system_cleaner_page.h"
-#include "Pages/Services/services_page.h"
-#include "Pages/Processes/processes_page.h"
 #include "Pages/Uninstaller/uninstaller_page.h"
-#include "Pages/Resources/resources_page.h"
-#include "Pages/Settings/settings_page.h"
-#include "Pages/AptSourceManager/apt_source_manager_page.h"
-#include "Pages/GnomeSettings/gnome_settings_page.h"
-#include "Pages/Search/search_page.h"
-#include "Pages/Helpers/helpers_page.h"
-#include "sliding_stacked_widget.h"
 #include "feedback.h"
+#include "sliding_stacked_widget.h"
 
 namespace Ui {
     class App;
@@ -30,14 +30,14 @@ class App : public QMainWindow
 {
     Q_OBJECT
 
-public:
+  public:
     explicit App(QWidget *parent = 0);
     ~App();
 
-protected:
+  protected:
     void closeEvent(QCloseEvent *event) override;
 
-private slots:
+  private slots:
     void init();
     void pageClick(QWidget *widget, bool slide = true);
     void clickSidebarButton(QString pageTitle, bool isShow = false);
@@ -57,18 +57,18 @@ private slots:
 
     void on_btnFeedback_clicked();
 
-private:
+  private:
     QWidget *getPageByTitle(const QString &title);
     void checkSidebarButtonByTooltip(const QString &text);
     void createTrayActions();
     void createQuitMessageBox();
 
-private:
+  private:
     Ui::App *ui;
 
     // Pages
-    QList<QWidget*> mListPages;
-    QList<QPushButton*> mListSidebarButtons;
+    QList<QWidget *> mListPages;
+    QList<QPushButton *> mListSidebarButtons;
 
     SlidingStackedWidget *mSlidingStacked;
 

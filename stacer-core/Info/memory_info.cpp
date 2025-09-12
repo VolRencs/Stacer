@@ -2,11 +2,12 @@
 
 #include <QRegularExpression>
 
-MemoryInfo::MemoryInfo():
+MemoryInfo::MemoryInfo() :
     memTotal(0),
     memFree(0),
     memUsed(0)
-{ }
+{
+}
 
 /* https://access.redhat.com/solutions/406773
  *
@@ -16,11 +17,11 @@ MemoryInfo::MemoryInfo():
  *   Buffers (blue) = Buffers
  *   Cached memory (yellow) = Cached + SReclaimable - Shmem
  *   Swap = SwapTotal - SwapFree
-*/
+ */
 void MemoryInfo::updateMemoryInfo()
 {
     QStringList lines = FileUtil::readListFromFile(PROC_MEMINFO)
-            .filter(QRegularExpression("^MemTotal|^MemFree|^Buffers|^Cached|^SwapTotal|^SwapFree|^Shmem|^SReclaimable"));
+                            .filter(QRegularExpression("^MemTotal|^MemFree|^Buffers|^Cached|^SwapTotal|^SwapFree|^Shmem|^SReclaimable"));
     QRegularExpression sep("\\s+");
 
 #define getValue(l) lines.at(l).split(sep).at(1).toLong() << 10;

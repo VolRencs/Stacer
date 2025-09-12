@@ -8,8 +8,9 @@
 
 class STACERCORESHARED_EXPORT GnomeSettingsTool
 {
-public:
-    static GnomeSettingsTool& ins() {
+  public:
+    static GnomeSettingsTool &ins()
+    {
         static GnomeSettingsTool instance;
         return instance;
     }

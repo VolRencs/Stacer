@@ -1,13 +1,13 @@
 #ifndef HOST_MANAGE_H
 #define HOST_MANAGE_H
 
-#include <QWidget>
-#include <QStandardItemModel>
-#include <QSortFilterProxyModel>
 #include <QMenu>
+#include <QSortFilterProxyModel>
+#include <QStandardItemModel>
+#include <QWidget>
 
-#include "Utils/file_util.h"
 #include "Utils/command_util.h"
+#include "Utils/file_util.h"
 #include "utilities.h"
 
 namespace Ui {
@@ -16,7 +16,7 @@ namespace Ui {
 
 class HostItem
 {
-public:
+  public:
     QString ip;
     QString fullQualified;
     QString aliases;
@@ -26,11 +26,11 @@ class HostManage : public QWidget
 {
     Q_OBJECT
 
-public:
+  public:
     explicit HostManage(QWidget *parent = 0);
     ~HostManage();
 
-private slots:
+  private slots:
     void init();
 
     void on_btnNewHost_clicked();
@@ -44,7 +44,7 @@ private slots:
 
     void on_tableViewHosts_customContextMenuRequested(const QPoint &pos);
 
-private:
+  private:
     Ui::HostManage *ui;
 
     bool isAddHost;

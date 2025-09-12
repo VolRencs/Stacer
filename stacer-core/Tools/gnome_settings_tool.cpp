@@ -2,6 +2,7 @@
 #include "Utils/command_util.h"
 
 #include <QDebug>
+#include <QRegularExpression>
 
 bool GnomeSettingsTool::checkGSettings()
 {
@@ -20,13 +21,13 @@ bool GnomeSettingsTool::checkUnityAvailable()
             GSchemas::Unity::Shell, GSchemas::Unity::Launcher, GSchemas::Unity::Lens, GSchemas::Unity::AppLens,
             GSchemas::Unity::FileLens, GSchemas::Unity::DateTime, GSchemas::Unity::Sound, GSchemas::Unity::Session
         };
-        for (const QString &schema: schemas) {
-            if (! keys.contains(schema.trimmed())) {
+        for (const QString &schema : schemas) {
+            if (!keys.contains(schema.trimmed())) {
                 return false;
             }
         }
 
-    } catch(const QString &ex) {
+    } catch (const QString &ex) {
         qWarning() << ex;
     }
 

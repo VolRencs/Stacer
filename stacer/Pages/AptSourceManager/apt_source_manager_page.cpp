@@ -1,7 +1,7 @@
 #include "apt_source_manager_page.h"
+#include "Managers/tool_manager.h"
 #include "ui_apt_source_manager_page.h"
 #include "utilities.h"
-#include "Managers/tool_manager.h"
 
 APTSourceManagerPage::~APTSourceManagerPage()
 {
@@ -27,7 +27,7 @@ void APTSourceManagerPage::init()
 
     on_btnCancel_clicked();
 
-    QList<QWidget*> widgets = {
+    QList<QWidget *> widgets = {
         ui->btnAddAPTSourceRepository, ui->btnCancel, ui->btnDeleteAptSource, ui->btnEditAptSource,
         ui->txtSearchAptSource, ui->txtSearchAptSource
     };
@@ -40,7 +40,7 @@ void APTSourceManagerPage::loadAptSources()
 
     QList<APTSourcePtr> aptSourceList = ToolManager::ins()->getSourceList();
 
-    for (APTSourcePtr &aptSource: aptSourceList) {
+    for (APTSourcePtr &aptSource : aptSourceList) {
 
         QListWidgetItem *listItem = new QListWidgetItem(ui->listWidgetAptSources);
         listItem->setData(5, aptSource->source); // for search
@@ -55,7 +55,7 @@ void APTSourceManagerPage::loadAptSources()
     ui->notFoundWidget->setVisible(aptSourceList.isEmpty());
 
     ui->lblAptSourceTitle->setText(tr("APT Repositories (%1)")
-                                   .arg(aptSourceList.count()));
+                                       .arg(aptSourceList.count()));
 }
 
 void APTSourceManagerPage::on_btnAddAPTSourceRepository_clicked(bool checked)
@@ -66,7 +66,7 @@ void APTSourceManagerPage::on_btnAddAPTSourceRepository_clicked(bool checked)
     } else {
         QString aptSourceRepository = ui->txtAptSource->text().trimmed();
 
-        if (! aptSourceRepository.isEmpty()) {
+        if (!aptSourceRepository.isEmpty()) {
             ToolManager::ins()->addAPTRepository(aptSourceRepository, ui->checkEnableSource->isChecked());
 
             ui->txtAptSource->clear();
@@ -98,7 +98,7 @@ void APTSourceManagerPage::on_listWidgetAptSources_itemClicked(QListWidgetItem *
 {
     QWidget *widget = ui->listWidgetAptSources->itemWidget(item);
     if (widget) {
-        APTSourceRepositoryItem *aptSourceItem = dynamic_cast<APTSourceRepositoryItem*>(widget);
+        APTSourceRepositoryItem *aptSourceItem = dynamic_cast<APTSourceRepositoryItem *>(widget);
         if (aptSourceItem) {
             selectedAptSource = aptSourceItem->aptSource();
         }
@@ -115,7 +115,7 @@ void APTSourceManagerPage::on_listWidgetAptSources_itemDoubleClicked(QListWidget
 
 void APTSourceManagerPage::on_btnDeleteAptSource_clicked()
 {
-    if (! selectedAptSource.isNull()) {
+    if (!selectedAptSource.isNull()) {
         ToolManager::ins()->removeAPTSource(selectedAptSource);
         loadAptSources();
     }
@@ -127,14 +127,14 @@ void APTSourceManagerPage::on_txtSearchAptSource_textChanged(const QString &val)
         QListWidgetItem *item = ui->listWidgetAptSources->item(i);
         if (item) {
             bool isContain = item->data(5).toString().contains(val, Qt::CaseInsensitive);
-            item->setHidden(! isContain);
+            item->setHidden(!isContain);
         }
     }
 }
 
 void APTSourceManagerPage::on_btnEditAptSource_clicked()
 {
-    if (! selectedAptSource.isNull()) {
+    if (!selectedAptSource.isNull()) {
         if (mAptSourceEditDialog.isNull()) {
             mAptSourceEditDialog = QSharedPointer<APTSourceEdit>(new APTSourceEdit(this));
             connect(mAptSourceEditDialog.data(), &APTSourceEdit::saved, this, &APTSourceManagerPage::loadAptSources);

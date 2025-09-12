@@ -8,10 +8,11 @@ Service::Service(const QString &name, const QString description, const bool stat
     description(description),
     status(status),
     active(active)
-{ }
+{
+}
 
 QList<Service> ServiceTool::getServicesWithSystemctl()
-{    
+{
     QList<Service> services = {};
 
     try {
@@ -19,25 +20,24 @@ QList<Service> ServiceTool::getServicesWithSystemctl()
         QStringList args = { "list-unit-files", "-t", "service", "-a", "--state=enabled,disabled" };
 
         QStringList lines = CommandUtil::exec("systemctl", args)
-                .split(QChar('\n'))
-                .filter(QRegularExpression("[^@].service"));
+                                .split(QChar('\n'))
+                                .filter(QRegularExpression("[^@].service"));
 
         QRegularExpression sep("\\s+");
         services.reserve(lines.size());
-        for (const QString &line : lines)
-        {
+        for (const QString &line : lines) {
             // e.g apache2.service          [enabled|disabled]
             QStringList s = line.trimmed().split(sep);
 
             QString name = s.first().trimmed().replace(".service", "");
             QString description = getServiceDescription(s.first().trimmed());
-            bool status = ! s.last().trimmed().compare("enabled");
+            bool status = !s.last().trimmed().compare("enabled");
             bool active = serviceIsActive(s.first().trimmed());
 
-            services.push_back({name, description, status, active});
+            services.push_back({ name, description, status, active });
         }
 
-    } catch(QString &ex) {
+    } catch (QString &ex) {
         qCritical() << ex;
     }
 
@@ -52,8 +52,8 @@ QString ServiceTool::getServiceDescription(const QString &serviceName)
 
     try {
         QStringList content = CommandUtil::exec("systemctl", args)
-                .split(QChar('\n'))
-                .filter(QRegularExpression("^Description"));
+                                  .split(QChar('\n'))
+                                  .filter(QRegularExpression("^Description"));
 
         if (content.length() > 0) {
             QStringList desc = content.first().split(QChar('='));
@@ -67,7 +67,6 @@ QString ServiceTool::getServiceDescription(const QString &serviceName)
     return result;
 }
 
-
 bool ServiceTool::serviceIsActive(const QString &serviceName)
 {
     QStringList args = { "is-active", serviceName };
@@ -76,11 +75,11 @@ bool ServiceTool::serviceIsActive(const QString &serviceName)
 
     try {
         result = CommandUtil::exec("systemctl", args);
-    } catch(QString &ex) {
+    } catch (QString &ex) {
         qCritical() << ex;
     }
 
-    return ! result.trimmed().compare("active");
+    return !result.trimmed().compare("active");
 }
 
 bool ServiceTool::serviceIsEnabled(const QString &serviceName)
@@ -91,24 +90,24 @@ bool ServiceTool::serviceIsEnabled(const QString &serviceName)
 
     try {
         result = CommandUtil::exec("systemctl", args);
-    } catch(QString &ex) {
+    } catch (QString &ex) {
         qCritical() << ex;
     }
 
-    return ! result.trimmed().compare("enabled");
+    return !result.trimmed().compare("enabled");
 }
 
 bool ServiceTool::changeServiceStatus(const QString &sname, bool status)
 {
     try {
 
-        QStringList args = { (status ? "enable" : "disable") , sname };
+        QStringList args = { (status ? "enable" : "disable"), sname };
 
         CommandUtil::sudoExec("systemctl", args);
 
         return true;
 
-    } catch(QString &ex) {
+    } catch (QString &ex) {
         qCritical() << ex;
     }
 
@@ -119,13 +118,13 @@ bool ServiceTool::changeServiceActive(const QString &sname, bool status)
 {
     try {
 
-        QStringList args = { (status ? "start" : "stop") , sname };
+        QStringList args = { (status ? "start" : "stop"), sname };
 
         CommandUtil::sudoExec("systemctl", args);
 
         return true;
 
-    } catch(QString &ex) {
+    } catch (QString &ex) {
         qCritical() << ex;
     }
 

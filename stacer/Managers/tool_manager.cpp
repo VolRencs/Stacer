@@ -4,7 +4,7 @@ ToolManager *ToolManager::instance = NULL;
 
 ToolManager *ToolManager::ins()
 {
-    if(! instance) {
+    if (!instance) {
         instance = new ToolManager;
     }
 
@@ -45,19 +45,19 @@ bool ToolManager::serviceIsEnabled(const QString &sname) const
 QStringList ToolManager::getPackages() const
 {
     switch (PackageTool::currentPackageTool) {
-    case PackageTool::PackageTools::APT:
-        return PackageTool::getDpkgPackages();
-        break;
-    case PackageTool::PackageTools::YUM:
-    case PackageTool::PackageTools::DNF:
-        return PackageTool::getRpmPackages();
-        break;
-    case PackageTool::PackageTools::PACMAN:
-        return PackageTool::getPacmanPackages();
-        break;
-    default:
-        return QStringList();
-        break;
+        case PackageTool::PackageTools::APT:
+            return PackageTool::getDpkgPackages();
+            break;
+        case PackageTool::PackageTools::YUM:
+        case PackageTool::PackageTools::DNF:
+            return PackageTool::getRpmPackages();
+            break;
+        case PackageTool::PackageTools::PACMAN:
+            return PackageTool::getPacmanPackages();
+            break;
+        default:
+            return QStringList();
+            break;
     }
 }
 
@@ -74,39 +74,39 @@ bool ToolManager::uninstallSnapPackages(const QStringList packages)
 QFileInfoList ToolManager::getPackageCaches() const
 {
     switch (PackageTool::currentPackageTool) {
-    case PackageTool::PackageTools::APT:
-        return PackageTool::getDpkgPackageCaches();
-        break;
-    case PackageTool::PackageTools::YUM:
-    case PackageTool::PackageTools::DNF:
-        return PackageTool::getPacmanPackageCaches();
-        break;
-    case PackageTool::PackageTools::PACMAN:
-        return PackageTool::getPacmanPackageCaches();
-        break;
-    default:
-        return QFileInfoList();
-        break;
+        case PackageTool::PackageTools::APT:
+            return PackageTool::getDpkgPackageCaches();
+            break;
+        case PackageTool::PackageTools::YUM:
+        case PackageTool::PackageTools::DNF:
+            return PackageTool::getPacmanPackageCaches();
+            break;
+        case PackageTool::PackageTools::PACMAN:
+            return PackageTool::getPacmanPackageCaches();
+            break;
+        default:
+            return QFileInfoList();
+            break;
     }
 }
 
 void ToolManager::uninstallPackages(const QStringList &packages)
 {
     switch (PackageTool::currentPackageTool) {
-    case PackageTool::PackageTools::APT:
-        PackageTool::dpkgRemovePackages(packages);
-        break;
-    case PackageTool::PackageTools::YUM:
-        PackageTool::yumRemovePackages(packages);
-        break;
-    case PackageTool::PackageTools::DNF:
-        PackageTool::dnfRemovePackages(packages);
-        break;
-    case PackageTool::PackageTools::PACMAN:
-        PackageTool::pacmanRemovePackages(packages);
-        break;
-    default:
-        break;
+        case PackageTool::PackageTools::APT:
+            PackageTool::dpkgRemovePackages(packages);
+            break;
+        case PackageTool::PackageTools::YUM:
+            PackageTool::yumRemovePackages(packages);
+            break;
+        case PackageTool::PackageTools::DNF:
+            PackageTool::dnfRemovePackages(packages);
+            break;
+        case PackageTool::PackageTools::PACMAN:
+            PackageTool::pacmanRemovePackages(packages);
+            break;
+        default:
+            break;
     }
 }
 
@@ -142,4 +142,3 @@ void ToolManager::addAPTRepository(const QString &repository, const bool isSourc
 {
     AptSourceTool::addRepository(repository, isSource);
 }
-

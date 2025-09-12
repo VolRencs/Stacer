@@ -1,13 +1,13 @@
 #ifndef PROCESSESPAGE_H
 #define PROCESSESPAGE_H
 
-#include <QWidget>
-#include <QStandardItemModel>
-#include <QSortFilterProxyModel>
-#include <QScrollBar>
-#include <QTimer>
-#include <QMenu>
 #include <QAction>
+#include <QMenu>
+#include <QScrollBar>
+#include <QSortFilterProxyModel>
+#include <QStandardItemModel>
+#include <QTimer>
+#include <QWidget>
 
 #include "Managers/info_manager.h"
 
@@ -19,11 +19,11 @@ class ProcessesPage : public QWidget
 {
     Q_OBJECT
 
-public:
+  public:
     explicit ProcessesPage(QWidget *parent = 0);
     ~ProcessesPage();
 
-private slots:
+  private slots:
     void init();
     void loadProcesses();
     void loadHeaderMenu();
@@ -33,7 +33,7 @@ private slots:
     void on_btnEndProcess_clicked();
     void on_tableProcess_customContextMenuRequested(const QPoint &pos);
 
-private:
+  private:
     Ui::ProcessesPage *ui;
 
     QStandardItemModel *mItemModel;

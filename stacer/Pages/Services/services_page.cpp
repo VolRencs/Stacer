@@ -1,6 +1,6 @@
 #include "services_page.h"
-#include "ui_services_page.h"
 #include "service_item.h"
+#include "ui_services_page.h"
 #include "utilities.h"
 
 #include <QtConcurrent>
@@ -16,7 +16,7 @@ ServicesPage::ServicesPage(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    init();    
+    init();
 }
 
 void ServicesPage::init()
@@ -71,14 +71,14 @@ void ServicesPage::loadServices()
 
     bool isListEmpty = ui->listWidgetServices->count() == 0;
 
-    ui->listWidgetServices->setVisible(! isListEmpty);
+    ui->listWidgetServices->setVisible(!isListEmpty);
     ui->notFoundWidget->setVisible(isListEmpty);
 }
 
 void ServicesPage::setServiceCount()
 {
     ui->lblServicesTitle->setText(tr("System Services (%1)")
-                               .arg(ui->listWidgetServices->count()));
+                                      .arg(ui->listWidgetServices->count()));
 }
 
 void ServicesPage::on_cmbRunningStatus_currentIndexChanged(int index)

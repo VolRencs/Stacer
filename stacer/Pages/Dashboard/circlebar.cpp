@@ -68,4 +68,3 @@ void CircleBar::setValue(const int &value, const QString &valueText)
 
     ui->lblCircleChartValue->setText(valueText);
 }
-

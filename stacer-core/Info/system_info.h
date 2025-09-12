@@ -1,10 +1,10 @@
 #ifndef SYSTEMINFO_H
 #define SYSTEMINFO_H
 
+#include "Info/cpu_info.h"
+#include "Utils/command_util.h"
 #include "Utils/file_util.h"
 #include "Utils/format_util.h"
-#include "Utils/command_util.h"
-#include "Info/cpu_info.h"
 
 #include "stacer-core_global.h"
 
@@ -12,7 +12,7 @@
 
 class STACERCORESHARED_EXPORT SystemInfo
 {
-public:
+  public:
     SystemInfo();
 
     QString getHostname() const;
@@ -31,8 +31,8 @@ public:
     QStringList getUserList() const;
     QStringList getGroupList() const;
 
-private slots:
-private:
+  private slots:
+  private:
     QString cpuCore;
     QString cpuModel;
     QString cpuSpeed;

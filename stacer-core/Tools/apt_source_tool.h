@@ -9,11 +9,12 @@
 #define APT_SOURCES_LIST_D_PATH "/etc/apt/sources.list.d"
 #define APT_SOURCES_LIST_PATH "/etc/apt/sources.list"
 
-//          isSource options uri distribution componentes
+// isSource options uri distribution componentes
 // example "deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main"
 
-class APTSource {
-public:
+class APTSource
+{
+  public:
     QString filePath;
     bool isSource;
     QString options;
@@ -29,7 +30,7 @@ typedef QSharedPointer<APTSource> APTSourcePtr;
 
 class AptSourceTool
 {
-public:
+  public:
     static bool checkSourceRepository();
     static QList<APTSourcePtr> getSourceList();
     static void removeAPTSource(const APTSourcePtr aptSource);

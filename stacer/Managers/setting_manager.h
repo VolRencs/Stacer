@@ -18,7 +18,7 @@ namespace SettingKeys {
 
 class SettingManager
 {
-public:
+  public:
     static SettingManager *ins();
 
     QString getConfigPath() const;
@@ -50,7 +50,7 @@ public:
     void setAppQuitDialogChoice(const QString &value);
     QString getAppQuitDialogChoice() const;
 
-private:
+  private:
     static SettingManager *instance;
     SettingManager();
 

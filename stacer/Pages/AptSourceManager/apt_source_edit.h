@@ -13,26 +13,26 @@ class APTSourceEdit : public QDialog
 {
     Q_OBJECT
 
-public:
+  public:
     explicit APTSourceEdit(QWidget *parent = 0);
     ~APTSourceEdit();
 
-public:
+  public:
     static APTSourcePtr selectedAptSource;
     void show();
 
-signals:
+  signals:
     void saved();
 
-private slots:
+  private slots:
     void clearElements();
     void on_btnSave_clicked();
     void on_btnCancel_clicked();
 
-private:
+  private:
     void init();
 
-private:
+  private:
     Ui::APTSourceEdit *ui;
 };
 

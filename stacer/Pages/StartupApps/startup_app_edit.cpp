@@ -3,8 +3,8 @@
 #include "utilities.h"
 
 #include <QRegularExpression>
-#include <QStyle>
 #include <QScreen>
+#include <QStyle>
 
 StartupAppEdit::~StartupAppEdit()
 {
@@ -17,12 +17,12 @@ StartupAppEdit::StartupAppEdit(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::StartupAppEdit),
     mNewAppTemplate("[Desktop Entry]\n"
-                   "Name=%1\n"
-                   "Comment=%2\n"
-                   "Exec=%3\n"
-                   "Type=Application\n"
-                   "Terminal=false\n"
-                   "Hidden=false\n")
+                    "Name=%1\n"
+                    "Comment=%2\n"
+                    "Exec=%3\n"
+                    "Type=Application\n"
+                    "Terminal=false\n"
+                    "Hidden=false\n")
 {
     ui->setupUi(this);
 
@@ -33,8 +33,7 @@ void StartupAppEdit::init()
 {
     setGeometry(
         QStyle::alignedRect(Qt::LeftToRight, Qt::AlignCenter,
-            size(), qApp->primaryScreen()->availableGeometry())
-    );
+                            size(), qApp->primaryScreen()->availableGeometry()));
 
     mAutostartPath = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + "/autostart";
 
@@ -51,12 +50,10 @@ void StartupAppEdit::show()
     ui->txtStartupAppCommand->clear();
     ui->lblErrorMsg->hide();
 
-    if(! selectedFilePath.isEmpty())
-    {
+    if (!selectedFilePath.isEmpty()) {
         QStringList lines = FileUtil::readListFromFile(selectedFilePath);
 
-        if(! lines.isEmpty())
-        {
+        if (!lines.isEmpty()) {
             ui->txtStartupAppName->setText(Utilities::getDesktopValue(NAME_REG, lines));
             ui->txtStartupAppComment->setText(Utilities::getDesktopValue(COMMENT_REG, lines));
             ui->txtStartupAppCommand->setText(Utilities::getDesktopValue(EXEC_REG, lines));
@@ -79,8 +76,8 @@ void StartupAppEdit::changeDesktopValue(QStringList &lines, const QRegularExpres
 
 void StartupAppEdit::on_btnSave_clicked()
 {
-    if(isValid()) {
-        if(! selectedFilePath.isEmpty()) {
+    if (isValid()) {
+        if (!selectedFilePath.isEmpty()) {
             QStringList lines = FileUtil::readListFromFile(selectedFilePath);
 
             changeDesktopValue(lines, NAME_REG, QString("Name=%1").arg(ui->txtStartupAppName->text()));
@@ -88,19 +85,18 @@ void StartupAppEdit::on_btnSave_clicked()
             changeDesktopValue(lines, EXEC_REG, QString("Exec=%1").arg(ui->txtStartupAppCommand->text()));
 
             FileUtil::writeFile(selectedFilePath, lines.join("\n"), QIODevice::ReadWrite | QIODevice::Truncate);
-        }
-        else {
+        } else {
             // new file content
             QString appContent = mNewAppTemplate
-                    .arg(ui->txtStartupAppName->text())
-                    .arg(ui->txtStartupAppComment->text())
-                    .arg(ui->txtStartupAppCommand->text());
+                                     .arg(ui->txtStartupAppName->text())
+                                     .arg(ui->txtStartupAppComment->text())
+                                     .arg(ui->txtStartupAppCommand->text());
 
             // file name
             QString appFileName = ui->txtStartupAppName->text()
-                    .simplified()
-                    .replace(' ', '-')
-                    .toLower();
+                                      .simplified()
+                                      .replace(' ', '-')
+                                      .toLower();
 
             QString path = QString("%1/%2.desktop").arg(mAutostartPath).arg(appFileName);
 
@@ -109,8 +105,7 @@ void StartupAppEdit::on_btnSave_clicked()
 
         emit startupAppAdded(); // signal
         close();
-    }
-    else {
+    } else {
         ui->lblErrorMsg->show();
     }
 
@@ -119,7 +114,7 @@ void StartupAppEdit::on_btnSave_clicked()
 
 bool StartupAppEdit::isValid()
 {
-    return ! ui->txtStartupAppName->text().isEmpty() &&
-           ! ui->txtStartupAppComment->text().isEmpty() &&
-           ! ui->txtStartupAppCommand->text().isEmpty();
+    return !ui->txtStartupAppName->text().isEmpty() &&
+           !ui->txtStartupAppComment->text().isEmpty() &&
+           !ui->txtStartupAppCommand->text().isEmpty();
 }

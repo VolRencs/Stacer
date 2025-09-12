@@ -11,12 +11,12 @@ ProcessesPage::~ProcessesPage()
 }
 
 ProcessesPage::ProcessesPage(QWidget *parent) :
-  QWidget(parent),
-  ui(new Ui::ProcessesPage),
-  mItemModel(new QStandardItemModel(this)),
-  mSortFilterModel(new QSortFilterProxyModel(this)),
-  im(InfoManager::ins()),
-  mTimer(new QTimer(this))
+    QWidget(parent),
+    ui(new Ui::ProcessesPage),
+    mItemModel(new QStandardItemModel(this)),
+    mSortFilterModel(new QSortFilterProxyModel(this)),
+    im(InfoManager::ins()),
+    mTimer(new QTimer(this))
 {
     ui->setupUi(this);
 
@@ -60,8 +60,8 @@ void ProcessesPage::init()
 
     ui->tableProcess->horizontalHeader()->setContextMenuPolicy(Qt::CustomContextMenu);
 
-    connect(ui->tableProcess->horizontalHeader(), SIGNAL(customContextMenuRequested(const QPoint&)),
-        this, SLOT(on_tableProcess_customContextMenuRequested(const QPoint&)));
+    connect(ui->tableProcess->horizontalHeader(), SIGNAL(customContextMenuRequested(const QPoint &)),
+            this, SLOT(on_tableProcess_customContextMenuRequested(const QPoint &)));
 
     loadHeaderMenu();
 
@@ -72,21 +72,20 @@ void ProcessesPage::init()
 void ProcessesPage::loadHeaderMenu()
 {
     int i = 0;
-    QList<QAction*> actionList;
+    QList<QAction *> actionList;
     actionList.reserve(mHeaders.size());
     for (const QString &header : mHeaders) {
-        QAction *action = new QAction(header,&mHeaderMenu);
+        QAction *action = new QAction(header, &mHeaderMenu);
         action->setCheckable(true);
         action->setChecked(true);
         action->setData(i++);
         actionList.push_back(action);
-
     }
     mHeaderMenu.addActions(actionList);
     // exclude headers
     QList<int> hiddenHeaders = { 3, 6, 7, 8, 9, 10, 11 };
 
-    QList<QAction*> actions = mHeaderMenu.actions();
+    QList<QAction *> actions = mHeaderMenu.actions();
     for (const int i : hiddenHeaders) {
         if (i < mHeaders.count()) {
             ui->tableProcess->horizontalHeader()->setSectionHidden(i, true);
@@ -110,7 +109,7 @@ void ProcessesPage::loadProcesses()
         for (const Process &proc : processes) {
             mItemModel->appendRow(createRow(proc));
         }
-    } else  {
+    } else {
         for (const Process &proc : processes) {
             if (username == proc.getUname()) {
                 mItemModel->appendRow(createRow(proc));
@@ -121,7 +120,7 @@ void ProcessesPage::loadProcesses()
     ui->lblProcessTitle->setText(tr("Processes (%1)").arg(mItemModel->rowCount()));
 
     // selected item
-    if (! selecteds.isEmpty()) {
+    if (!selecteds.isEmpty()) {
         mSeletedRowModel = selecteds.first();
 
         for (int i = 0; i < mSortFilterModel->rowCount(); ++i) {
@@ -134,9 +133,9 @@ void ProcessesPage::loadProcesses()
     }
 }
 
-QList<QStandardItem*> ProcessesPage::createRow(const Process &proc)
+QList<QStandardItem *> ProcessesPage::createRow(const Process &proc)
 {
-    QList<QStandardItem*> row;
+    QList<QStandardItem *> row;
 
     int data = 1;
 
@@ -243,6 +242,6 @@ void ProcessesPage::on_tableProcess_customContextMenuRequested(const QPoint &pos
     QAction *action = mHeaderMenu.exec(globalPos);
 
     if (action) {
-        ui->tableProcess->horizontalHeader()->setSectionHidden(action->data().toInt(), ! action->isChecked());
+        ui->tableProcess->horizontalHeader()->setSectionHidden(action->data().toInt(), !action->isChecked());
     }
 }

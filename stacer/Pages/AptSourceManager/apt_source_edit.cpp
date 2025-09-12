@@ -29,7 +29,7 @@ void APTSourceEdit::show()
     // example 'deb [arch=amd64 lang=en] http://packages.microsoft.com/repos/vscode stable main'
 
     // set values to elements
-    ui->radioBinary->setChecked(! selectedAptSource->isSource);
+    ui->radioBinary->setChecked(!selectedAptSource->isSource);
     ui->radioSource->setChecked(selectedAptSource->isSource);
     ui->txtOptions->setText(selectedAptSource->options);
     ui->txtUri->setText(selectedAptSource->uri);
@@ -50,16 +50,15 @@ void APTSourceEdit::clearElements()
 
 void APTSourceEdit::on_btnSave_clicked()
 {
-    if (! ui->txtUri->text().isEmpty() &&
-        ! ui->txtDistribution->text().isEmpty())
-    {
+    if (!ui->txtUri->text().isEmpty() &&
+        !ui->txtDistribution->text().isEmpty()) {
         QString sourceType = ui->radioBinary->isChecked() ? "deb" : "deb-src";
         QString updatedAptSource = QString("%1 %2 %3 %4 %5")
-                .arg(sourceType)
-                .arg(ui->txtOptions->text())
-                .arg(ui->txtUri->text())
-                .arg(ui->txtDistribution->text())
-                .arg(ui->txtComponents->text());
+                                       .arg(sourceType)
+                                       .arg(ui->txtOptions->text())
+                                       .arg(ui->txtUri->text())
+                                       .arg(ui->txtDistribution->text())
+                                       .arg(ui->txtComponents->text());
 
         ToolManager::ins()->changeAPTSource(selectedAptSource, updatedAptSource);
 

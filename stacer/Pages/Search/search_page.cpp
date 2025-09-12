@@ -22,8 +22,15 @@ SearchPage::~SearchPage()
 void SearchPage::init()
 {
     mTableHeaders = QStringList {
-        tr("Name"), tr("Path"), tr("Size"), tr("User"), tr("Group"),
-        tr("Creation Time"), tr("Last Access"), tr("Last Modification"), tr("Last Change"),
+        tr("Name"),
+        tr("Path"),
+        tr("Size"),
+        tr("User"),
+        tr("Group"),
+        tr("Creation Time"),
+        tr("Last Access"),
+        tr("Last Modification"),
+        tr("Last Change"),
     };
 
     // Table settings
@@ -46,7 +53,7 @@ void SearchPage::init()
     ui->tableFoundResults->setContextMenuPolicy(Qt::CustomContextMenu);
 
     connect(ui->tableFoundResults->horizontalHeader(), &QHeaderView::customContextMenuRequested,
-        this, &SearchPage::tableFoundResults_header_customContextMenuRequested);
+            this, &SearchPage::tableFoundResults_header_customContextMenuRequested);
 
     loadHeaderMenu();
     loadTableRowMenu();
@@ -67,7 +74,7 @@ void SearchPage::init()
 
     initComboboxValues();
 
-    QList<QWidget*> widgets = {
+    QList<QWidget *> widgets = {
         ui->btnBrowseSearchDir, ui->btnSearchAdvance, ui->txtSearchInput, ui->cmbGroups,
         ui->cmbSizeCriteria, ui->cmbSizeUnits, ui->cmbTimeCriteria, ui->cmbTimeType,
         ui->cmbSearchTypes, ui->tableFoundResults, ui->cmbUsers
@@ -94,11 +101,11 @@ void SearchPage::loadTableRowMenu()
 void SearchPage::loadHeaderMenu()
 {
     int i = 0;
-    QList<QAction*> actionList;
+    QList<QAction *> actionList;
     actionList.reserve(mTableHeaders.size());
 
     for (const QString &header : mTableHeaders) {
-        QAction *action = new QAction(header,&mHeaderMenu);
+        QAction *action = new QAction(header, &mHeaderMenu);
         action->setCheckable(true);
         action->setChecked(true);
         action->setData(i++);
@@ -108,7 +115,7 @@ void SearchPage::loadHeaderMenu()
     // exclude headers
     QList<int> hiddenHeaders = { 4, 6, 7, 8 };
 
-    QList<QAction*> actions = mHeaderMenu.actions();
+    QList<QAction *> actions = mHeaderMenu.actions();
     for (const int i : hiddenHeaders) {
         if (i < mTableHeaders.count()) {
             ui->tableFoundResults->horizontalHeader()->setSectionHidden(i, true);
@@ -153,11 +160,11 @@ void SearchPage::initComboboxValues()
 void SearchPage::on_btnBrowseSearchDir_clicked()
 {
     QString selectedDirPath = QFileDialog::getExistingDirectory(this, tr("Select Directory"), "/",
-                                      QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+                                                                QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 
     QDir selectedDir(selectedDirPath);
 
-    if (! selectedDirPath.isEmpty() && selectedDir.exists()) {
+    if (!selectedDirPath.isEmpty() && selectedDir.exists()) {
         ui->lblSearchDir->setText(tr("Directory: %1").arg(selectedDirPath));
         mSelectedDirectory = selectedDirPath;
     }
@@ -165,7 +172,7 @@ void SearchPage::on_btnBrowseSearchDir_clicked()
 
 void SearchPage::on_btnAdvancePaneToggle_clicked()
 {
-    ui->advanceSearchPane->setHidden(! ui->advanceSearchPane->isHidden());
+    ui->advanceSearchPane->setHidden(!ui->advanceSearchPane->isHidden());
     QString icon = ui->advanceSearchPane->isHidden() ? "▼" : "▲";
     ui->btnAdvancePaneToggle->setText(tr("Advanced Search %1").arg(icon));
 }
@@ -194,7 +201,7 @@ void SearchPage::searching()
 
         QStringList findQuery(mSelectedDirectory);
 
-        if (! ui->txtSearchInput->text().isEmpty()) {
+        if (!ui->txtSearchInput->text().isEmpty()) {
             if (ui->checkCaseInsensitive->isChecked()) {
                 if (ui->checkRegEx->isChecked()) {
                     findQuery.append("-iregex");
@@ -247,9 +254,9 @@ void SearchPage::searching()
         // SIZE
         if (ui->cmbSizeCriteria->currentData().toString() != "-1") {
             QString size = QString("%1%2%3")
-                    .arg(ui->cmbSizeCriteria->currentData().toString())
-                    .arg(ui->spinSize->value())
-                    .arg(ui->cmbSizeUnits->currentData().toString());
+                               .arg(ui->cmbSizeCriteria->currentData().toString())
+                               .arg(ui->spinSize->value())
+                               .arg(ui->cmbSizeUnits->currentData().toString());
 
             findQuery.append("-size");
             findQuery.append(size);
@@ -300,11 +307,11 @@ void SearchPage::loadDataToTable(const QList<QString> &foundFiles)
     }
 
     ui->lblFoundFilesInfo->setText(tr("%1 files found. Showing %2 of them.")
-                                   .arg(foundFiles.count()-1)
-                                   .arg(mItemModel->rowCount()));
+                                       .arg(foundFiles.count() - 1)
+                                       .arg(mItemModel->rowCount()));
 }
 
-QList<QStandardItem*> SearchPage::createRow(const QString &filepath)
+QList<QStandardItem *> SearchPage::createRow(const QString &filepath)
 {
     QFileInfo *fileInfo = new QFileInfo(filepath);
 
@@ -358,7 +365,7 @@ void SearchPage::tableFoundResults_header_customContextMenuRequested(const QPoin
     QAction *action = mHeaderMenu.exec(globalPos);
 
     if (action) {
-        ui->tableFoundResults->horizontalHeader()->setSectionHidden(action->data().toInt(), ! action->isChecked());
+        ui->tableFoundResults->horizontalHeader()->setSectionHidden(action->data().toInt(), !action->isChecked());
     }
 }
 
@@ -371,17 +378,16 @@ void SearchPage::on_tableFoundResults_customContextMenuRequested(const QPoint &p
         QModelIndexList selected = ui->tableFoundResults->selectionModel()->selectedRows();
         QItemSelectionModel *selectionModel = ui->tableFoundResults->selectionModel();
 
-        if (action && ! selected.isEmpty()) {
+        if (action && !selected.isEmpty()) {
             if (action->data().toString() == "open-folder") {
                 for (QModelIndex &index : selected) {
                     QUrl folderPath = mSortFilterModel->index(index.row(), 1).data(rowRole).toUrl();
                     QDesktopServices::openUrl(folderPath);
                 }
-            }
-            else if (action->data().toString() == "move-trash") {
+            } else if (action->data().toString() == "move-trash") {
                 QString trashPath(QDir::homePath() + "/.local/share/Trash");
 
-                while (! selectionModel->selectedRows().isEmpty()) {
+                while (!selectionModel->selectedRows().isEmpty()) {
                     QModelIndex index = selectionModel->selectedRows().first();
 
                     QString fileName = mSortFilterModel->index(index.row(), 0).data(rowRole).toString();
@@ -391,19 +397,19 @@ void SearchPage::on_tableFoundResults_customContextMenuRequested(const QPoint &p
 
                     bool isAnotherUser = QFileInfo(filePath).owner() != InfoManager::ins()->getUserName();
                     if (isAnotherUser) {
-                        CommandUtil::sudoExec("mv", {filePath, trashPath + "/files"});
+                        CommandUtil::sudoExec("mv", { filePath, trashPath + "/files" });
                     } else {
-                        CommandUtil::exec("mv", {filePath, trashPath + "/files"});
+                        CommandUtil::exec("mv", { filePath, trashPath + "/files" });
                     }
 
                     if (QFile(filePath).exists()) {
                         selectionModel->select(index, QItemSelectionModel::Deselect);
                     } else {
                         QString infoContent = QString("[Trash Info]\n"
-                                            "Path=%1\n"
-                                            "DeletionDate=%2")
-                                .arg(filePath)
-                                .arg(QDateTime::currentDateTime().toString("yyyy-MM-ddThh:mm:ss"));
+                                                      "Path=%1\n"
+                                                      "DeletionDate=%2")
+                                                  .arg(filePath)
+                                                  .arg(QDateTime::currentDateTime().toString("yyyy-MM-ddThh:mm:ss"));
 
                         FileUtil::writeFile(trashPath + "/info/" + fileName + ".trashinfo", infoContent);
 
@@ -412,9 +418,8 @@ void SearchPage::on_tableFoundResults_customContextMenuRequested(const QPoint &p
                 }
 
                 selectionModel->clearSelection();
-            }
-            else if (action->data().toString() == "delete") {
-                while (! selectionModel->selectedRows().isEmpty()) {
+            } else if (action->data().toString() == "delete") {
+                while (!selectionModel->selectedRows().isEmpty()) {
                     QModelIndex index = selectionModel->selectedRows().first();
 
                     QString fileName = mSortFilterModel->index(index.row(), 0).data(rowRole).toString();
@@ -424,9 +429,9 @@ void SearchPage::on_tableFoundResults_customContextMenuRequested(const QPoint &p
 
                     bool isAnotherUser = QFileInfo(filePath).owner() != InfoManager::ins()->getUserName();
                     if (isAnotherUser) {
-                        CommandUtil::sudoExec("rm", {"-rf", filePath });
+                        CommandUtil::sudoExec("rm", { "-rf", filePath });
                     } else {
-                        CommandUtil::exec("rm", {"-rf", filePath });
+                        CommandUtil::exec("rm", { "-rf", filePath });
                     }
 
                     if (QFile(filePath).exists()) {

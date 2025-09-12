@@ -44,17 +44,16 @@ void StartupAppsPage::init()
      */
     if (asfi.isDir()) {
         mAutostartPath.append("/");
-    }
-    else {
-    /* altered behavior for if a file is at this location instead
-     * * check for disabled string
-     * * * if found, don't add watcher
-     */
+    } else {
+        /* altered behavior for if a file is at this location instead
+         * * check for disabled string
+         * * * if found, don't add watcher
+         */
         startups_disabled = checkIfDisabled(mAutostartPath);
     }
 
     if (!startups_disabled) {
-        if (! QDir(mAutostartPath).exists()) {
+        if (!QDir(mAutostartPath).exists()) {
             QDir().mkdir(mAutostartPath);
         }
 
@@ -63,8 +62,7 @@ void StartupAppsPage::init()
         loadApps();
 
         connect(&mFileSystemWatcher, &QFileSystemWatcher::directoryChanged, this, &StartupAppsPage::loadApps);
-    }
-    else {
+    } else {
         ui->lblNotFound->setText(tr("Startup Apps are disabled."));
         ui->btnAddStartupApp->setEnabled(false);
     }
@@ -82,13 +80,12 @@ void StartupAppsPage::loadApps()
     QDir autostartFiles(mAutostartPath, "*.desktop");
 
     QLatin1String enabledStr("true");
-    for (const QFileInfo &info : autostartFiles.entryInfoList())
-    {
+    for (const QFileInfo &info : autostartFiles.entryInfoList()) {
         QStringList lines = FileUtil::readListFromFile(info.absoluteFilePath());
 
         QString appName = Utilities::getDesktopValue(NAME_REG, lines); // get name
 
-        if(! appName.isEmpty()) // has a name
+        if (!appName.isEmpty()) // has a name
         {
             bool enabled = false;
 
@@ -98,7 +95,7 @@ void StartupAppsPage::loadApps()
             // X-GNOME-Autostart-enabled=[true|false]
             QString gnomeEnabled = Utilities::getDesktopValue(GNOME_ENABLED_REG, lines).toLower();
 
-            if (! hidden.isEmpty()) {
+            if (!hidden.isEmpty()) {
                 enabled = (hidden != enabledStr);
             } else {
                 enabled = (gnomeEnabled == enabledStr);
@@ -127,9 +124,9 @@ void StartupAppsPage::setAppCount()
 
     ui->lblStartupAppsTitle->setText(
         tr("Startup Applications (%1)")
-        .arg(QString::number(count)));
+            .arg(QString::number(count)));
 
-    ui->notFoundWidget->setVisible(! count);
+    ui->notFoundWidget->setVisible(!count);
     ui->listWidgetStartup->setVisible(count);
 }
 

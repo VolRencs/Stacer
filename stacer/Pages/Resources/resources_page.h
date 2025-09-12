@@ -17,11 +17,11 @@ class ResourcesPage : public QWidget
 {
     Q_OBJECT
 
-public:
+  public:
     explicit ResourcesPage(QWidget *parent = 0);
     ~ResourcesPage();
 
-private slots:
+  private slots:
     void updateCpuChart();
     void updateCpuLoadAvg();
     void updateDiskReadWrite();
@@ -30,10 +30,10 @@ private slots:
     void initDiskPieChart();
     void diskPieSeriesCustomize();
 
-private:
+  private:
     void init();
 
-private:
+  private:
     Ui::ResourcesPage *ui;
 
     InfoManager *im;

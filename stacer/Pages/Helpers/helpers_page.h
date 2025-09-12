@@ -14,15 +14,15 @@ class HelpersPage : public QWidget
 {
     Q_OBJECT
 
-public:
+  public:
     explicit HelpersPage(QWidget *parent = 0);
     ~HelpersPage();
 
-private slots:
+  private slots:
     void on_btnHostManage_clicked();
     void init();
 
-private:
+  private:
     Ui::HelpersPage *ui;
 
     HostManage *widgetHostManage;

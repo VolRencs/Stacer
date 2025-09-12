@@ -1,14 +1,14 @@
 #include "sliding_stacked_widget.h"
 
-SlidingStackedWidget::SlidingStackedWidget(QWidget *parent)
-    : QStackedWidget(parent)
+SlidingStackedWidget::SlidingStackedWidget(QWidget *parent) :
+    QStackedWidget(parent)
 {
     vertical = false;
     speed = 150;
     animationtype = QEasingCurve::Type::Linear;
     now = 0;
     next = 0;
-    pnow = QPoint(0,0);
+    pnow = QPoint(0, 0);
     active = false;
 }
 
@@ -47,8 +47,7 @@ void SlidingStackedWidget::slideInIdx(int idx, t_direction direction)
     if (idx > count() - 1) {
         direction = vertical ? TOP2BOTTOM : RIGHT2LEFT;
         idx = (idx) % count();
-    }
-    else if (idx < 0) {
+    } else if (idx < 0) {
         direction = vertical ? BOTTOM2TOP : LEFT2RIGHT;
         idx = (idx + count()) % count();
     }
@@ -56,7 +55,7 @@ void SlidingStackedWidget::slideInIdx(int idx, t_direction direction)
     slideInWgt(widget(idx), direction);
 }
 
-void SlidingStackedWidget::slideInWgt(QWidget * newwidget, t_direction direction)
+void SlidingStackedWidget::slideInWgt(QWidget *newwidget, t_direction direction)
 {
     // do not allow re-entrance before an animation is completed.
     if (active)
@@ -70,11 +69,9 @@ void SlidingStackedWidget::slideInWgt(QWidget * newwidget, t_direction direction
     if (now == next) {
         active = false;
         return;
-    }
-    else if (now < next) {
+    } else if (now < next) {
         directionhint = vertical ? TOP2BOTTOM : RIGHT2LEFT;
-    }
-    else {
+    } else {
         directionhint = vertical ? BOTTOM2TOP : LEFT2RIGHT;
     }
     if (direction == AUTOMATIC) {
@@ -91,15 +88,12 @@ void SlidingStackedWidget::slideInWgt(QWidget * newwidget, t_direction direction
     if (direction == BOTTOM2TOP) {
         offsetx = 0;
         offsety = -offsety;
-    }
-    else if (direction == TOP2BOTTOM) {
+    } else if (direction == TOP2BOTTOM) {
         offsetx = 0;
-    }
-    else if (direction == RIGHT2LEFT) {
+    } else if (direction == RIGHT2LEFT) {
         offsetx = -offsetx;
         offsety = 0;
-    }
-    else if (direction == LEFT2RIGHT) {
+    } else if (direction == LEFT2RIGHT) {
         offsety = 0;
     }
 

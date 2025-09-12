@@ -2,22 +2,21 @@
 
 NetworkInfo::NetworkInfo()
 {
-    for (const QNetworkInterface &net: QNetworkInterface::allInterfaces()) {
+    for (const QNetworkInterface &net : QNetworkInterface::allInterfaces()) {
 
-        if ((net.flags()  & QNetworkInterface::IsUp) &&
-            (net.flags()  & QNetworkInterface::IsRunning) &&
-            !(net.flags() & QNetworkInterface::IsLoopBack))
-        {
+        if ((net.flags() & QNetworkInterface::IsUp) &&
+            (net.flags() & QNetworkInterface::IsRunning) &&
+            !(net.flags() & QNetworkInterface::IsLoopBack)) {
             defaultNetworkInterface = net.name();
             break;
         }
     }
 
     rxPath = QString("/sys/class/net/%1/statistics/rx_bytes")
-            .arg(defaultNetworkInterface);
+                 .arg(defaultNetworkInterface);
 
     txPath = QString("/sys/class/net/%1/statistics/tx_bytes")
-            .arg(defaultNetworkInterface);
+                 .arg(defaultNetworkInterface);
 }
 
 QList<QNetworkInterface> NetworkInfo::getAllInterfaces()
@@ -33,8 +32,8 @@ QString NetworkInfo::getDefaultNetworkInterface() const
 quint64 NetworkInfo::getRXbytes() const
 {
     quint64 rx = FileUtil::readStringFromFile(rxPath)
-            .trimmed()
-            .toLong();
+                     .trimmed()
+                     .toLong();
 
     return rx;
 }
@@ -42,8 +41,8 @@ quint64 NetworkInfo::getRXbytes() const
 quint64 NetworkInfo::getTXbytes() const
 {
     quint64 tx = FileUtil::readStringFromFile(txPath)
-            .trimmed()
-            .toLong();
+                     .trimmed()
+                     .toLong();
 
     return tx;
 }

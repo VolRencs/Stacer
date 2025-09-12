@@ -12,16 +12,16 @@ class Feedback : public QDialog
 {
     Q_OBJECT
 
-public:
+  public:
     explicit Feedback(QWidget *parent = 0);
     ~Feedback();
 
-signals:
+  signals:
     void setErrorMessageS(const QString &msg);
     void clearInputsS();
     void disableElementsS(const bool status);
 
-private slots:
+  private slots:
     void setErrorMessage(const QString &msg);
     void on_btnSend_clicked();
     void clearInputs();
@@ -29,10 +29,10 @@ private slots:
 
     void on_btnClose_clicked();
 
-private:
+  private:
     void init();
 
-private:
+  private:
     Ui::Feedback *ui;
 
     QString mHeader;

@@ -9,17 +9,17 @@
 
 class STACERCORESHARED_EXPORT PackageTool
 {
-public:
+  public:
     enum PackageTools {
-        APT,        // debian
-        DNF,        // fedora
-        YUM,        // fedora
-        PACMAN,     // arch
-        ZYPPER,     // opensuse
+        APT, // debian
+        DNF, // fedora
+        YUM, // fedora
+        PACMAN, // arch
+        ZYPPER, // opensuse
         UNKNOWN
     };
 
-public:
+  public:
     // APT
     static QFileInfoList getDpkgPackageCaches();
     static QStringList getDpkgPackages();

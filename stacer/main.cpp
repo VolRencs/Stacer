@@ -1,8 +1,8 @@
 #include "app.h"
 
 #include <QApplication>
-#include <QSplashScreen>
 #include <QFontDatabase>
+#include <QSplashScreen>
 
 void messageHandler(QtMsgType type, const QMessageLogContext &context, const QString &message)
 {
@@ -11,26 +11,32 @@ void messageHandler(QtMsgType type, const QMessageLogContext &context, const QSt
     QString level;
 
     switch (type) {
-    case QtDebugMsg:
-        level = "DEBUG"; break;
-    case QtInfoMsg:
-        level = "INFO"; break;
-    case QtWarningMsg:
-        level = "WARNING"; break;
-    case QtCriticalMsg:
-        level = "CRITICAL"; break;
-    case QtFatalMsg:
-        level = "FATAL"; break;
-    default:
-        level = "UNDEFINED"; break;
+        case QtDebugMsg:
+            level = "DEBUG";
+            break;
+        case QtInfoMsg:
+            level = "INFO";
+            break;
+        case QtWarningMsg:
+            level = "WARNING";
+            break;
+        case QtCriticalMsg:
+            level = "CRITICAL";
+            break;
+        case QtFatalMsg:
+            level = "FATAL";
+            break;
+        default:
+            level = "UNDEFINED";
+            break;
     }
 
     if (type != QtWarningMsg) {
 
         QString text = QString("[%1] [%2] %3")
-                                .arg(QDateTime::currentDateTime().toString("dd-MM-yyyy hh:mm:ss"))
-                                .arg(level)
-                                .arg(message);
+                           .arg(QDateTime::currentDateTime().toString("dd-MM-yyyy hh:mm:ss"))
+                           .arg(level)
+                           .arg(message);
 
         static QString logPath = QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation);
 
@@ -59,7 +65,7 @@ int main(int argc, char *argv[])
 
     {
         QCommandLineOption hideOption("hide", "Hide Stacer while launching.");
-        QCommandLineOption noSplashOption("nosplash", "Hide splash screen while launching.");    
+        QCommandLineOption noSplashOption("nosplash", "Hide splash screen while launching.");
         QCommandLineParser parser;
         parser.addVersionOption();
         parser.addHelpOption();
@@ -70,10 +76,10 @@ int main(int argc, char *argv[])
 
     bool isHide = false;
     bool isNoSplash = false;
-    
+
     QLatin1String hideOption("--hide");
     QLatin1String noSplashOption("--nosplash");
-    
+
     for (size_t i = 1; i < argc; ++i) {
         if (QString(argv[i]) == hideOption) {
             isHide = true;

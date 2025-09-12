@@ -1,8 +1,8 @@
 #ifndef STARTUP_APP_H
 #define STARTUP_APP_H
 
-#include <QWidget>
 #include <QSharedPointer>
+#include <QWidget>
 
 #include "Utils/file_util.h"
 #include "startup_app_edit.h"
@@ -15,7 +15,7 @@ class StartupApp : public QWidget
 {
     Q_OBJECT
 
-public:
+  public:
     explicit StartupApp(const QString &startupAppName, bool enabled, const QString &filePath, QWidget *parent = 0);
     ~StartupApp();
 
@@ -28,19 +28,19 @@ public:
     QString getFilePath() const;
     void setFilePath(const QString &value);
 
-private slots:
+  private slots:
     void on_checkStartup_clicked(bool);
     void on_btnDeleteStartupApp_clicked();
     void on_btnEditStartupApp_clicked();
 
-signals:
+  signals:
     void deleteAppS();
     void editStartupAppS(const QString filePath);
 
-private:
+  private:
     Ui::StartupApp *ui;
 
-private:
+  private:
     QString mStartupAppName;
     QString mAppComment;
     bool mEnabled;

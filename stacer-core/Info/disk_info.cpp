@@ -2,7 +2,7 @@
 
 #include <QRegularExpression>
 
-QList<Disk*> DiskInfo::getDisks() const
+QList<Disk *> DiskInfo::getDisks() const
 {
     return disks;
 }
@@ -14,7 +14,7 @@ void DiskInfo::updateDiskInfo()
 
     QList<QStorageInfo> storageInfoList = QStorageInfo::mountedVolumes();
 
-    for(const QStorageInfo &info: storageInfoList) {
+    for (const QStorageInfo &info : storageInfoList) {
         if (info.isValid()) {
             Disk *disk = new Disk();
             disk->name = info.displayName();
@@ -32,8 +32,9 @@ void DiskInfo::updateDiskInfo()
 QList<QString> DiskInfo::devices()
 {
     QSet<QString> set;
-    for(const QStorageInfo &info: QStorageInfo::mountedVolumes()) {
-        if (info.isValid()) set.insert(info.device());
+    for (const QStorageInfo &info : QStorageInfo::mountedVolumes()) {
+        if (info.isValid())
+            set.insert(info.device());
     }
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
@@ -51,8 +52,9 @@ DiskInfo::~DiskInfo()
 QList<QString> DiskInfo::fileSystemTypes()
 {
     QSet<QString> set;
-    for(const QStorageInfo &info: QStorageInfo::mountedVolumes()) {
-        if (info.isValid()) set.insert(info.fileSystemType());
+    for (const QStorageInfo &info : QStorageInfo::mountedVolumes()) {
+        if (info.isValid())
+            set.insert(info.fileSystemType());
     }
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
@@ -72,13 +74,13 @@ QList<quint64> DiskInfo::getDiskIO() const
 
     for (const QString &diskName : diskNames) {
         QStringList diskStat = FileUtil::readStringFromFile(QString("/sys/block/%1/stat").arg(diskName))
-                .trimmed()
-                .split(QRegularExpression("\\s+"));
+                                   .trimmed()
+                                   .split(QRegularExpression("\\s+"));
 
-      if (diskStat.count() > 7) {
-          totalRead = totalRead + (diskStat.at(2).toLongLong() * 512);
-          totalWrite = totalWrite + (diskStat.at(6).toLongLong() * 512);
-      }
+        if (diskStat.count() > 7) {
+            totalRead = totalRead + (diskStat.at(2).toLongLong() * 512);
+            totalWrite = totalWrite + (diskStat.at(6).toLongLong() * 512);
+        }
     }
     diskReadWrite.append(totalRead);
     diskReadWrite.append(totalWrite);

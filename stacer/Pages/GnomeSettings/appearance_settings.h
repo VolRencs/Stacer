@@ -13,11 +13,11 @@ class AppearanceSettings : public QWidget
 {
     Q_OBJECT
 
-public:
+  public:
     explicit AppearanceSettings(QWidget *parent = 0);
     ~AppearanceSettings();
 
-private slots:
+  private slots:
     void on_checkShowDesktopIcons_clicked(bool checked);
     void on_checkHomeIcon_clicked(bool checked);
     void on_checkTrashIcon_clicked(bool checked);
@@ -28,12 +28,12 @@ private slots:
     void on_checkScreenKeyboard_clicked(bool checked);
     void on_checkScreenReader_clicked(bool checked);
 
-private:
+  private:
     void init();
     void initConnects();
     void loadDatas();
 
-private:
+  private:
     Ui::AppearanceSettings *ui;
 
     GnomeSettingsTool gsettings;

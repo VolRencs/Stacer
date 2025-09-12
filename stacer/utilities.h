@@ -7,17 +7,17 @@
 
 class Utilities
 {
-public:
+  public:
     static void
     addDropShadow(QWidget *widget, const int alpha, const int blur = 15)
     {
-        addDropShadow(QList<QWidget*>() << widget, alpha, blur);
+        addDropShadow(QList<QWidget *>() << widget, alpha, blur);
     }
 
     static void
     addDropShadow(QList<QWidget *> widgets, const int alpha, const int blur = 15)
     {
-        for (QWidget *widget: widgets) {
+        for (QWidget *widget : widgets) {
             QGraphicsDropShadowEffect *effect = new QGraphicsDropShadowEffect(widget);
             effect->setBlurRadius(blur);
             effect->setColor(QColor(0, 0, 0, alpha));

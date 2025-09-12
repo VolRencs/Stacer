@@ -29,7 +29,7 @@ void UninstallerPage::init()
 
     ui->stackedWidget->setCurrentIndex(0);
 
-    QList<QWidget*> widgets = { ui->txtPackageSearch, ui->btnUninstall, ui->btnSystemPackages, ui->btnSnapPackages };
+    QList<QWidget *> widgets = { ui->txtPackageSearch, ui->btnUninstall, ui->btnSystemPackages, ui->btnSnapPackages };
     Utilities::addDropShadow(widgets, 40);
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
@@ -97,12 +97,12 @@ void UninstallerPage::setAppCount()
 {
     int count = ui->listWidgetPackages->count();
     ui->btnSystemPackages->setText(tr("Packages (%1)").arg(count));
-    ui->notFoundWidget->setVisible(! count);
+    ui->notFoundWidget->setVisible(!count);
     ui->listWidgetPackages->setVisible(count);
 
     int snapCount = ui->listWidgetSnapPackages->count();
     ui->btnSnapPackages->setText(tr("Snap Packages (%1)").arg(snapCount));
-    ui->notFoundWidget_2->setVisible(! snapCount);
+    ui->notFoundWidget_2->setVisible(!snapCount);
     ui->listWidgetSnapPackages->setVisible(snapCount);
 
     ui->btnSnapPackages->setVisible(CommandUtil::isExecutable("snap"));
@@ -114,11 +114,10 @@ QStringList UninstallerPage::getSelectedPackages()
 {
     QStringList selectedPackages = {};
 
-    for (int i = 0; i < ui->listWidgetPackages->count(); ++i)
-    {
+    for (int i = 0; i < ui->listWidgetPackages->count(); ++i) {
         QListWidgetItem *item = ui->listWidgetPackages->item(i);
 
-        if(item->checkState() == Qt::Checked)
+        if (item->checkState() == Qt::Checked)
             selectedPackages << item->text().trimmed();
     }
 
@@ -129,11 +128,10 @@ QStringList UninstallerPage::getSelectedSnapPackages()
 {
     QStringList selectedPackages = {};
 
-    for (int i = 0; i < ui->listWidgetSnapPackages->count(); ++i)
-    {
+    for (int i = 0; i < ui->listWidgetSnapPackages->count(); ++i) {
         QListWidgetItem *item = ui->listWidgetSnapPackages->item(i);
 
-        if(item->checkState() == Qt::Checked)
+        if (item->checkState() == Qt::Checked)
             selectedPackages << item->text().trimmed();
     }
 
@@ -147,12 +145,12 @@ void UninstallerPage::on_btnUninstall_clicked()
 
     if (!selectedPackages.isEmpty() || !selectedSnapPackages.isEmpty()) {
         QFuture<void> future = QtConcurrent::run([=] {
-            emit SignalMapper::ins()->sigUninstallStarted();
+            emit SignalMapper::ins() -> sigUninstallStarted();
 
             ToolManager::ins()->uninstallPackages(selectedPackages);
             ToolManager::ins()->uninstallSnapPackages(selectedSnapPackages);
 
-            emit SignalMapper::ins()->sigUninstallFinished();
+            emit SignalMapper::ins() -> sigUninstallFinished();
         });
     }
 }
@@ -171,19 +169,23 @@ void UninstallerPage::on_txtPackageSearch_textChanged(const QString &val)
     QListWidget *listWidgetPackages = nullptr;
 
     switch (ui->stackedWidget->currentIndex()) {
-        case 0: listWidgetPackages = ui->listWidgetPackages; break;
-        case 1: listWidgetPackages = ui->listWidgetSnapPackages; break;
+        case 0:
+            listWidgetPackages = ui->listWidgetPackages;
+            break;
+        case 1:
+            listWidgetPackages = ui->listWidgetSnapPackages;
+            break;
     }
 
     // Get matches items
-    QList<QListWidgetItem*> matches = listWidgetPackages->findItems(val, Qt::MatchFlag::MatchContains);
+    QList<QListWidgetItem *> matches = listWidgetPackages->findItems(val, Qt::MatchFlag::MatchContains);
 
     // All items hide
     for (int i = 0; i < listWidgetPackages->count(); ++i)
         listWidgetPackages->item(i)->setHidden(true);
 
     // Matches items show
-    for (QListWidgetItem* item : matches)
+    for (QListWidgetItem *item : matches)
         item->setHidden(false);
 }
 
@@ -199,14 +201,14 @@ void UninstallerPage::on_btnSnapPackages_clicked()
 
 void UninstallerPage::on_listWidgetSnapPackages_itemClicked(QListWidgetItem *item)
 {
-    //item->setCheckState(item->checkState() == Qt::Checked ? Qt::Unchecked : Qt::Checked);
+    // item->setCheckState(item->checkState() == Qt::Checked ? Qt::Unchecked : Qt::Checked);
     ui->btnUninstall->setText(tr("Uninstall Selected (%1)")
-                              .arg(getSelectedSnapPackages().count() + getSelectedPackages().count()));
+                                  .arg(getSelectedSnapPackages().count() + getSelectedPackages().count()));
 }
 
 void UninstallerPage::on_listWidgetPackages_itemClicked(QListWidgetItem *item)
 {
-    //item->setCheckState(item->checkState() == Qt::Checked ? Qt::Unchecked : Qt::Checked);
+    // item->setCheckState(item->checkState() == Qt::Checked ? Qt::Unchecked : Qt::Checked);
     ui->btnUninstall->setText(tr("Uninstall Selected (%1)")
-                              .arg(getSelectedSnapPackages().count() + getSelectedPackages().count()));
+                                  .arg(getSelectedSnapPackages().count() + getSelectedPackages().count()));
 }

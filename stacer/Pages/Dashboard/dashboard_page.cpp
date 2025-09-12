@@ -15,9 +15,9 @@ DashboardPage::~DashboardPage()
 DashboardPage::DashboardPage(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::DashboardPage),
-    mCpuBar(new CircleBar(tr("CPU"), {"#A8E063", "#56AB2F"}, this)),
-    mMemBar(new CircleBar(tr("MEMORY"), {"#FFB75E", "#ED8F03"}, this)),
-    mDiskBar(new CircleBar(tr("DISK"), {"#DC2430", "#7B4397"}, this)),
+    mCpuBar(new CircleBar(tr("CPU"), { "#A8E063", "#56AB2F" }, this)),
+    mMemBar(new CircleBar(tr("MEMORY"), { "#FFB75E", "#ED8F03" }, this)),
+    mDiskBar(new CircleBar(tr("DISK"), { "#DC2430", "#7B4397" }, this)),
     mDownloadBar(new LineBar(tr("DOWNLOAD"), this)),
     mUploadBar(new LineBar(tr("UPLOAD"), this)),
     mTimer(new QTimer(this)),
@@ -65,7 +65,7 @@ void DashboardPage::init()
     checkUpdate();
     connect(this, &DashboardPage::sigShowUpdateBar, ui->widgetUpdateBar, &QWidget::show);
 
-    QList<QWidget*> widgets = {
+    QList<QWidget *> widgets = {
         mCpuBar, mMemBar, mDiskBar, mDownloadBar, mUploadBar
     };
 
@@ -74,12 +74,11 @@ void DashboardPage::init()
 
 void DashboardPage::checkUpdate()
 {
-    QNetworkAccessManager * nam = new QNetworkAccessManager(this);
+    QNetworkAccessManager *nam = new QNetworkAccessManager(this);
     const QNetworkRequest updateCheckRequest(QUrl("https://api.github.com/repos/QuentiumYT/Stacer/releases/latest"));
-    connect(nam,&QNetworkAccessManager::finished,this,[this](QNetworkReply * reply){
-        if(reply->error()==QNetworkReply::NoError)
-        {
-            const QString requestResult= reply->readAll();
+    connect(nam, &QNetworkAccessManager::finished, this, [this](QNetworkReply *reply) {
+        if (reply->error() == QNetworkReply::NoError) {
+            const QString requestResult = reply->readAll();
             const QJsonDocument result = QJsonDocument::fromJson(requestResult.toUtf8());
             const QRegularExpression ex("([0-9].[0-9].[0-9])");
             QRegularExpressionMatch match;
@@ -117,7 +116,7 @@ void DashboardPage::systemInformationInit()
         << tr("CPU Core: %1").arg(sysInfo.getCpuCore())
         << tr("CPU Speed: %1").arg(sysInfo.getCpuSpeed());
 
-    QStringListModel *systemInfoModel = new QStringListModel(infos,ui->listViewSystemInfo);
+    QStringListModel *systemInfoModel = new QStringListModel(infos, ui->listViewSystemInfo);
     const auto oldModel = ui->listViewSystemInfo->selectionModel();
     delete oldModel;
     ui->listViewSystemInfo->setModel(systemInfoModel);
@@ -126,7 +125,7 @@ void DashboardPage::systemInformationInit()
 void DashboardPage::updateCpuBar()
 {
     int cpuUsedPercent = im->getCpuPercents().at(0);
-    double cpuCurrentClockGHz = im->getCpuClock()/1000.0;
+    double cpuCurrentClockGHz = im->getCpuClock() / 1000.0;
 
     // alert message
     int cpuAlertPercent = mSettingManager->getCpuAlertPercent();
@@ -154,7 +153,7 @@ void DashboardPage::updateMemoryBar()
         memUsedPercent = ((double)im->getMemUsed() / (double)im->getMemTotal()) * 100.0;
     }
 
-    QString f_memUsed  = FormatUtil::formatBytes(im->getMemUsed());
+    QString f_memUsed = FormatUtil::formatBytes(im->getMemUsed());
     QString f_memTotal = FormatUtil::formatBytes(im->getMemTotal());
 
     // alert message
@@ -172,33 +171,33 @@ void DashboardPage::updateMemoryBar()
     }
 
     mMemBar->setValue(memUsedPercent, QString("%1 / %2")
-                     .arg(f_memUsed)
-                     .arg(f_memTotal));
+                                          .arg(f_memUsed)
+                                          .arg(f_memTotal));
 }
 
 void DashboardPage::updateDiskBar()
 {
     im->updateDiskInfo();
 
-    if(! im->getDisks().isEmpty()) {
+    if (!im->getDisks().isEmpty()) {
         Disk *disk = nullptr;
         QString selectedDiskName = mSettingManager->getDiskName();
-        for (Disk *d: im->getDisks()) {
+        for (Disk *d : im->getDisks()) {
             if (d->name.trimmed() == selectedDiskName.trimmed())
                 disk = d;
         }
 
-        if (! disk) {
-            for (Disk *d: im->getDisks())
+        if (!disk) {
+            for (Disk *d : im->getDisks())
                 if (d->name.trimmed() == QStorageInfo::root().displayName().trimmed())
                     disk = d;
-            if (! disk)
+            if (!disk)
                 disk = im->getDisks().at(0);
         }
 
         int diskPercent = 0;
         if (disk->size > 0) {
-            diskPercent = ((double) disk->used / (double) disk->size) * 100.0;
+            diskPercent = ((double)disk->used / (double)disk->size) * 100.0;
         }
 
         // alert message
@@ -219,8 +218,8 @@ void DashboardPage::updateDiskBar()
         QString usedText = FormatUtil::formatBytes(disk->used);
 
         mDiskBar->setValue(diskPercent, QString("%1 / %2")
-                          .arg(usedText)
-                          .arg(sizeText));
+                                            .arg(usedText)
+                                            .arg(sizeText));
     }
 }
 
@@ -238,18 +237,18 @@ void DashboardPage::updateNetworkBar()
     quint64 d_TXbytes = (TXbytes - l_TXbytes);
 
     QString downText = FormatUtil::formatBytes(d_RXbytes);
-    QString upText   = FormatUtil::formatBytes(d_TXbytes);
+    QString upText = FormatUtil::formatBytes(d_TXbytes);
 
-    int downPercent = ((double) d_RXbytes / (double) max_RXbytes) * 100.0;
-    int upPercent   = ((double) d_TXbytes / (double) max_TXbytes) * 100.0;
+    int downPercent = ((double)d_RXbytes / (double)max_RXbytes) * 100.0;
+    int upPercent = ((double)d_TXbytes / (double)max_TXbytes) * 100.0;
 
     mDownloadBar->setValue(downPercent,
-                          QString("%1/s").arg(downText),
-                          tr("Total: %1").arg(FormatUtil::formatBytes(RXbytes)));
+                           QString("%1/s").arg(downText),
+                           tr("Total: %1").arg(FormatUtil::formatBytes(RXbytes)));
 
     mUploadBar->setValue(upPercent,
-                        QString("%1/s").arg(upText),
-                        tr("Total: %1").arg(FormatUtil::formatBytes(TXbytes)));
+                         QString("%1/s").arg(upText),
+                         tr("Total: %1").arg(FormatUtil::formatBytes(TXbytes)));
 
     max_RXbytes = qMax(max_RXbytes, d_RXbytes);
     max_TXbytes = qMax(max_TXbytes, d_TXbytes);
@@ -257,4 +256,3 @@ void DashboardPage::updateNetworkBar()
     l_RXbytes = RXbytes;
     l_TXbytes = TXbytes;
 }
-

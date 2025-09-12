@@ -1,13 +1,13 @@
 #ifndef TOOL_MANAGER_H
 #define TOOL_MANAGER_H
 
-#include "Tools/service_tool.h"
-#include "Tools/package_tool.h"
 #include "Tools/apt_source_tool.h"
+#include "Tools/package_tool.h"
+#include "Tools/service_tool.h"
 
 class ToolManager
 {
-public:
+  public:
     static ToolManager *ins();
 
     QList<Service> getServices() const;
@@ -20,7 +20,7 @@ public:
     bool serviceIsActive(const QString &sname) const;
     bool serviceIsEnabled(const QString &sname) const;
 
-    void uninstallPackages(const QStringList &packages);    
+    void uninstallPackages(const QStringList &packages);
     bool uninstallSnapPackages(const QStringList packages);
 
     bool checkSourceRepository() const;
@@ -30,7 +30,7 @@ public:
     void changeAPTSource(const APTSourcePtr aptSource, const QString newSource);
     void addAPTRepository(const QString &repository, const bool isSource);
 
-private:
+  private:
     static ToolManager *instance;
 };
 

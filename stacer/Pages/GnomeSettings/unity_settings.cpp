@@ -24,7 +24,7 @@ void UnitySettings::init()
 {
     bool launcherAutoHide = gsettings.getValueB(GSchemas::Unity::Shell, GSchemaKeys::Unity::LauncherHideMode, GSchemaPaths::Unity);
 
-    GValues::RevealLocation revealLocation = (GValues::RevealLocation) gsettings.getValueI(GSchemas::Unity::Shell, GSchemaKeys::Unity::RevealTrigger, GSchemaPaths::Unity);
+    GValues::RevealLocation revealLocation = (GValues::RevealLocation)gsettings.getValueI(GSchemas::Unity::Shell, GSchemaKeys::Unity::RevealTrigger, GSchemaPaths::Unity);
 
     float revealSensitivy = gsettings.getValueF(GSchemas::Unity::Shell, GSchemaKeys::Unity::EdgeResponsiveness, GSchemaPaths::Unity);
 
@@ -65,7 +65,6 @@ void UnitySettings::init()
     bool showVolume = gsettings.getValueB(GSchemas::Unity::Sound, GSchemaKeys::Unity::ShowVolume);
 
     bool showShowMyName = gsettings.getValueB(GSchemas::Unity::Session, GSchemaKeys::Unity::ShowMyName);
-
 
     ui->checkLauncherAutoHide->setChecked(launcherAutoHide);
 

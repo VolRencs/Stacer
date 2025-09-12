@@ -15,20 +15,20 @@ class CircleBar : public QWidget
 {
     Q_OBJECT
 
-public:
+  public:
     explicit CircleBar(const QString &title, const QStringList &colors, QWidget *parent = 0);
     ~CircleBar();
 
-public slots:
+  public slots:
     void setValue(const int &value, const QString &valueText);
 
-private slots:
+  private slots:
     void init();
 
-private:
+  private:
     Ui::CircleBar *ui;
 
-private:
+  private:
     QStringList mColors;
 
     QChart *mChart;

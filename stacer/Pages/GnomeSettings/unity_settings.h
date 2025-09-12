@@ -13,15 +13,15 @@ class UnitySettings : public QWidget
 {
     Q_OBJECT
 
-public:
+  public:
     explicit UnitySettings(QWidget *parent = 0);
     ~UnitySettings();
 
-public:
+  public:
     void init();
     void initConnects();
 
-private slots:
+  private slots:
     void on_checkLauncherAutoHide_clicked(bool checked);
 
     void on_radioRevealLeft_clicked();
@@ -53,7 +53,7 @@ private slots:
     void on_checkVolume_clicked(bool checked);
     void on_checkShowMyName_clicked(bool checked);
 
-private:
+  private:
     Ui::UnitySettings *ui;
 
     GnomeSettingsTool gsettings;

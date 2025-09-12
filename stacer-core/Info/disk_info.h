@@ -1,8 +1,8 @@
 #ifndef DISKINFO_H
 #define DISKINFO_H
 
-#include <QStorageInfo>
 #include <QSet>
+#include <QStorageInfo>
 
 #include "Utils/command_util.h"
 #include "Utils/file_util.h"
@@ -14,8 +14,8 @@ class Disk;
 
 class STACERCORESHARED_EXPORT DiskInfo
 {
-public:
-    QList<Disk*> getDisks() const;
+  public:
+    QList<Disk *> getDisks() const;
     void updateDiskInfo();
     QList<quint64> getDiskIO() const;
     QStringList getDiskNames() const;
@@ -23,8 +23,8 @@ public:
     QList<QString> devices();
     ~DiskInfo();
 
-private:
-    QList<Disk*> disks;
+  private:
+    QList<Disk *> disks;
 };
 
 struct Disk {
@@ -35,6 +35,5 @@ struct Disk {
     quint64 free;
     quint64 used;
 };
-
 
 #endif // DISKINFO_H

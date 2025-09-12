@@ -1,12 +1,12 @@
 #ifndef UNINSTALLERPAGE_H
 #define UNINSTALLERPAGE_H
 
-#include <QWidget>
 #include <QListWidgetItem>
+#include <QWidget>
 #include <QtConcurrent>
 
-#include "Managers/tool_manager.h"
 #include "Managers/app_manager.h"
+#include "Managers/tool_manager.h"
 #include "signal_mapper.h"
 
 namespace Ui {
@@ -17,17 +17,17 @@ class UninstallerPage : public QWidget
 {
     Q_OBJECT
 
-public:
+  public:
     explicit UninstallerPage(QWidget *parent = 0);
     ~UninstallerPage();
 
-public slots:
+  public slots:
     void uninstallStarted();
 
-private:
+  private:
     void init();
 
-private slots:
+  private slots:
     void setAppCount();
     void on_txtPackageSearch_textChanged(const QString &val);
     void on_btnUninstall_clicked();
@@ -41,7 +41,7 @@ private slots:
     void on_listWidgetSnapPackages_itemClicked(QListWidgetItem *item);
     void on_listWidgetPackages_itemClicked(QListWidgetItem *item);
 
-private:
+  private:
     Ui::UninstallerPage *ui;
 
     ToolManager *tm;

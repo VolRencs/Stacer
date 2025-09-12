@@ -1,16 +1,16 @@
 #ifndef SLIDINGSTACKEDWIDGET_H
 #define SLIDINGSTACKEDWIDGET_H
 
-#include <QStackedWidget>
-#include <QtGui>
-#include <QWidget>
 #include <QEasingCurve>
+#include <QStackedWidget>
+#include <QWidget>
+#include <QtGui>
 
 class SlidingStackedWidget : public QStackedWidget
 {
     Q_OBJECT
 
-public:
+  public:
     // This enumeration is used to define the animation direction
     enum t_direction {
         LEFT2RIGHT,
@@ -22,7 +22,7 @@ public:
 
     SlidingStackedWidget(QWidget *parent);
 
-public slots:
+  public slots:
     void setSpeed(int speed); // animation duration in milliseconds
     void setAnimation(const QEasingCurve::Type animationtype); // check out the QEasingCurve documentation for different styles
     void setVerticalMode(bool vertical = true);
@@ -31,13 +31,13 @@ public slots:
     void slideInPrev();
     void slideInIdx(int idx, t_direction direction = AUTOMATIC);
 
-signals:
+  signals:
     void animationFinished();
 
-private slots:
+  private slots:
     void animationDoneSlot();
 
-private:
+  private:
     void slideInWgt(QWidget *widget, t_direction direction = AUTOMATIC);
 
     enum QEasingCurve::Type animationtype;

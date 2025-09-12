@@ -40,7 +40,6 @@ void WindowManagerSettings::init()
 
     QString actionRightClick = gsettings.getValueS(GSchemas::Window::Preferences, GSchemaKeys::Window::ActionRightClick).replace("'", "");
 
-
     ui->cmbTextQuality->setCurrentIndex(textureFilter);
 
     ui->checkWorkspaceSwitcher->setChecked(workspaceSwitcher);
@@ -64,7 +63,7 @@ void WindowManagerSettings::loadDatas()
 {
     QStringList textQualities = { tr("Fast"), tr("Good"), tr("Best") };
     QList<QPair<QString, QString>> textFocusModes = {
-        {tr("Click"), "click"},  {tr("Sloppy") , "sloppy"}, {tr("Mouse"), "mouse"}
+        { tr("Click"), "click" }, { tr("Sloppy"), "sloppy" }, { tr("Mouse"), "mouse" }
     };
 
     for (const QString &qual : textQualities) {
@@ -76,15 +75,13 @@ void WindowManagerSettings::loadDatas()
     }
 
     QList<QPair<QString, QString>> titleBarClickActions = {
-        {tr("Toggle Shade"), "toggle-shade"}, {tr("Maximize"), "toggle-maximize"}, {tr("Maximize Horizontally"), "toggle-maximize-horizontally"},
-        {tr("Maximize Vertically"), "toggle-maximize-vertically"}, {tr("Minimize"), "minimize"},
-        {tr("None"), "none"}, {tr("Lower"), "lower"}, {tr("Menu"), "menu"}
+        { tr("Toggle Shade"), "toggle-shade" }, { tr("Maximize"), "toggle-maximize" }, { tr("Maximize Horizontally"), "toggle-maximize-horizontally" }, { tr("Maximize Vertically"), "toggle-maximize-vertically" }, { tr("Minimize"), "minimize" }, { tr("None"), "none" }, { tr("Lower"), "lower" }, { tr("Menu"), "menu" }
     };
 
     for (const QPair<QString, QString> &action : titleBarClickActions) {
         ui->cmbTitleBarDoubleClick->addItem(action.first, action.second);
         ui->cmbTitleBarMiddleClick->addItem(action.first, action.second);
-        ui->cmbTitleBarRightClick-> addItem(action.first, action.second);
+        ui->cmbTitleBarRightClick->addItem(action.first, action.second);
     }
 }
 
@@ -133,7 +130,7 @@ void WindowManagerSettings::checkRaiseOnClick_clicked(bool checked)
 }
 
 void WindowManagerSettings::cmbFocusMode_currentIndexChanged(int index)
-{    
+{
     QString data = ui->cmbFocusMode->itemData(index).toString();
     gsettings.setValueS(GSchemas::Window::Preferences, GSchemaKeys::Window::FocusMode, data);
 }

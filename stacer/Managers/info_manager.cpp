@@ -4,7 +4,7 @@ InfoManager *InfoManager::instance = nullptr;
 
 InfoManager *InfoManager::ins()
 {
-    if(! instance){
+    if (!instance) {
         instance = new InfoManager;
     }
 
@@ -80,7 +80,7 @@ quint64 InfoManager::getMemTotal() const
 /*
  * Disk Provider
  */
-QList<Disk*> InfoManager::getDisks() const
+QList<Disk *> InfoManager::getDisks() const
 {
     return di.getDisks();
 }
@@ -148,5 +148,3 @@ QList<Process> InfoManager::getProcesses() const
 {
     return pi.getProcessList();
 }
-
-
