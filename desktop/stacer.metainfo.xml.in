@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<component type="console-application">
+<!-- Copyright 2025 Quentin Lienhardt -->
+<component type="desktop-application">
     <id>fr.quentium.stacer</id>
 
     <name>Stacer</name>
@@ -7,7 +8,15 @@
 
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>GPL-3.0-or-later</project_license>
-    <developer_name>Quentin Lienhardt</developer_name>
+    <content_rating type="oars-1.1">
+        <content_attribute id="money-purchasing">mild</content_attribute>
+    </content_rating>
+    <developer id="fr.quentium">
+        <name>Quentin Lienhardt</name>
+    </developer>
+    <update_contact>pro@quentium.fr</update_contact>
+
+    <translation type="gettext">stacer</translation>
 
     <description>
         <p>Stacer is an open source system optimizer and application monitor that helps users to manage entire system with different aspects, its an all in one system utility.</p>
@@ -20,10 +29,12 @@
     <categories>
         <category>Utility</category>
         <category>System</category>
-        <category>Monitor</category>
     </categories>
 
-    <url type="homepage">https://github.com/QuentiumYT/Stacer</url>
+    <url type="homepage">https://stacer.quentium.fr</url>
+    <url type="repository">https://github.com/QuentiumYT/Stacer</url>
+    <url type="bugtracker">https://github.com/QuentiumYT/Stacer/issues</url>
+    <url type="donation">https://www.paypal.me/QuentiumYT</url>
 
     <screenshots>
         <screenshot type="default">
@@ -73,6 +84,10 @@
     </provides>
 
     <releases>
-        <release version="@Stacer_VERSION_MAJOR@.@Stacer_VERSION_MINOR@.@Stacer_VERSION_PATCH@" date="@TODAY_ISO_8601@"></release>
+        <release version="@Stacer_VERSION_MAJOR@.@Stacer_VERSION_MINOR@.@Stacer_VERSION_PATCH@" date="@TODAY_ISO_8601@" timestamp="@TODAY_UNIX_TIMESTAMP@">
+            <description>
+                <p>Latest stable release of Stacer with performance improvements and bug fixes.</p>
+            </description>
+        </release>
     </releases>
 </component>
