@@ -126,7 +126,7 @@
 <context>
     <name>APTSourceRepositoryItem</name>
     <message>
-        <location filename="../stacer/Pages/AptSourceManager/apt_source_repository_item.cpp" line="33"/>
+        <location filename="../stacer/Pages/AptSourceManager/apt_source_repository_item.cpp" line="35"/>
         <source>%1 (Source Code)</source>
         <translation>%1 (源代码)</translation>
     </message>
@@ -199,19 +199,19 @@
         <translation>反馈</translation>
     </message>
     <message>
-        <location filename="../stacer/app.cpp" line="102"/>
-        <location filename="../stacer/app.cpp" line="109"/>
-        <location filename="../stacer/app.cpp" line="162"/>
+        <location filename="../stacer/app.cpp" line="101"/>
+        <location filename="../stacer/app.cpp" line="108"/>
+        <location filename="../stacer/app.cpp" line="161"/>
         <source>Quit</source>
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="../stacer/app.cpp" line="104"/>
+        <location filename="../stacer/app.cpp" line="103"/>
         <source>Continue</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/app.cpp" line="110"/>
+        <location filename="../stacer/app.cpp" line="109"/>
         <source>Will the program continue to work in the system tray?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -294,22 +294,22 @@
         <translation>居中</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/GnomeSettings/appearance_settings.cpp" line="72"/>
+        <location filename="../stacer/Pages/GnomeSettings/appearance_settings.cpp" line="71"/>
         <source>Scaled</source>
         <translation>按比例缩放</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/GnomeSettings/appearance_settings.cpp" line="72"/>
+        <location filename="../stacer/Pages/GnomeSettings/appearance_settings.cpp" line="71"/>
         <source>Stretched</source>
         <translation>拉伸</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/GnomeSettings/appearance_settings.cpp" line="72"/>
+        <location filename="../stacer/Pages/GnomeSettings/appearance_settings.cpp" line="71"/>
         <source>Zoom</source>
         <translation>缩放</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/GnomeSettings/appearance_settings.cpp" line="72"/>
+        <location filename="../stacer/Pages/GnomeSettings/appearance_settings.cpp" line="71"/>
         <source>Spanned</source>
         <translation>贯穿</translation>
     </message>
@@ -362,73 +362,73 @@
         <translation>上传</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="112"/>
+        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="111"/>
         <source>Hostname: %1</source>
         <translation>主机名: %1</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="113"/>
+        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="112"/>
         <source>Platform: %1</source>
         <translation>平台: %1</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="114"/>
+        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="113"/>
         <source>Distribution: %1</source>
         <translation>发行版: %1</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="115"/>
+        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="114"/>
         <source>Kernel Release: %1</source>
         <translation>内核版本: %1</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="116"/>
+        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="115"/>
         <source>CPU Model: %1</source>
         <translation>CPU型号: %1</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="118"/>
+        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="117"/>
         <source>CPU Speed: %1</source>
         <translation>CPU频率: %1</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="117"/>
+        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="116"/>
         <source>CPU Core: %1</source>
         <translation>CPU内核数: %1</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="136"/>
+        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="135"/>
         <source>High CPU Usage</source>
         <translation>CPU负载高</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="137"/>
+        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="136"/>
         <source>The amount of CPU used is over %1%.</source>
         <translation>CPU使用量已过%1%。</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="165"/>
+        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="164"/>
         <source>High Memory Usage</source>
         <translation>内存负载高</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="166"/>
+        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="165"/>
         <source>The amount of memory used is over %1%.</source>
         <translation>内存使用量已过%1%。</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="209"/>
+        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="208"/>
         <source>High Disk Usage</source>
         <translation>磁盘负载高</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="210"/>
+        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="209"/>
         <source>The amount of disk used is over %1%.</source>
         <translation>磁盘使用量已过%1%。</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="248"/>
-        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="252"/>
+        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="247"/>
+        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="251"/>
         <source>Total: %1</source>
         <translation>总计: %1</translation>
     </message>
@@ -491,23 +491,23 @@
         <translation>正在发送…</translation>
     </message>
     <message>
-        <location filename="../stacer/feedback.cpp" line="77"/>
+        <location filename="../stacer/feedback.cpp" line="78"/>
         <source>&lt;font color=&apos;#2ecc71&apos;&gt;Your feedback has been successfully sent. Thanks!&lt;/font&gt;</source>
         <translation>&lt;font color=&apos;#2ecc71&apos;&gt;反馈发送成功。&lt;/font&gt;</translation>
     </message>
     <message>
-        <location filename="../stacer/feedback.cpp" line="79"/>
-        <location filename="../stacer/feedback.cpp" line="84"/>
+        <location filename="../stacer/feedback.cpp" line="80"/>
+        <location filename="../stacer/feedback.cpp" line="85"/>
         <source>Something went wrong, try again !</source>
         <translation>出错，请重试！</translation>
     </message>
     <message>
-        <location filename="../stacer/feedback.cpp" line="87"/>
+        <location filename="../stacer/feedback.cpp" line="88"/>
         <source>Save</source>
         <translation>保存</translation>
     </message>
     <message>
-        <location filename="../stacer/feedback.cpp" line="92"/>
+        <location filename="../stacer/feedback.cpp" line="93"/>
         <source>Fields cannot be left blank !</source>
         <translation>此处不能留空！</translation>
     </message>
@@ -603,8 +603,8 @@
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="25"/>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="99"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="26"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="97"/>
         <source>Hosts (%1)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -619,17 +619,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="136"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="134"/>
         <source>Edit</source>
         <translation>编辑</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="140"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="138"/>
         <source>Delete</source>
         <translation>删除</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="148"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="146"/>
         <source>The IP and Fully Qualified fields are required.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -713,12 +713,12 @@
         <translation>进程</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Processes/processes_page.cpp" line="121"/>
+        <location filename="../stacer/Pages/Processes/processes_page.cpp" line="120"/>
         <source>Processes (%1)</source>
         <translation>进程 (%1)</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Processes/processes_page.cpp" line="216"/>
+        <location filename="../stacer/Pages/Processes/processes_page.cpp" line="215"/>
         <source>Refresh (%1)</source>
         <translation>刷新 (%1)</translation>
     </message>
@@ -774,7 +774,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="214"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="215"/>
         <source>Read: %1/s Total: %2</source>
         <translation>读取: %1/s 总计: %2</translation>
     </message>
@@ -789,22 +789,22 @@
         <translation>%1 分钟平均值: %2</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="303"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="305"/>
         <source>Download: %1/s Total: %2</source>
         <translation>下载: %1/s 总计: %2</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="308"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="310"/>
         <source>Upload: %1/s  Total: %2</source>
         <translation>上传: %1/s 总计: %2</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="352"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="354"/>
         <source>Swap: %1 (%2%) %3</source>
         <translation>交换分区: %1 (%2%) %3</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="361"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="363"/>
         <source>Memory: %1 (%2%) %3</source>
         <translation>内存: %1 (%2%) %3</translation>
     </message>
@@ -880,7 +880,7 @@
     </message>
     <message>
         <location filename="../stacer/Pages/Search/search_page.ui" line="490"/>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="25"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="27"/>
         <source>Size</source>
         <translation>大小</translation>
     </message>
@@ -935,143 +935,143 @@
         <translation>姓名</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="25"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="26"/>
         <source>Path</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="25"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="28"/>
         <source>User</source>
         <translation>用户</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="25"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="29"/>
         <source>Group</source>
         <translation>群组</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="26"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="30"/>
         <source>Creation Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="26"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="31"/>
         <source>Last Access</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="26"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="32"/>
         <source>Last Modification</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="26"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="33"/>
         <source>Last Change</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="81"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="88"/>
         <source>Open Folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="85"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="92"/>
         <source>Move Trash</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="89"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="96"/>
         <source>Delete</source>
         <translation>删除</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="122"/>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="125"/>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="133"/>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="142"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="129"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="132"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="140"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="149"/>
         <source>Choose</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="128"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="135"/>
         <source>All</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="129"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="136"/>
         <source>File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="130"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="137"/>
         <source>Directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="131"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="138"/>
         <source>Symbolic Link</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="134"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="141"/>
         <source>Access</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="135"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="142"/>
         <source>Modify</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="136"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="143"/>
         <source>Change</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="138"/>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="143"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="145"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="150"/>
         <source>Smaller (&lt;)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="139"/>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="144"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="146"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="151"/>
         <source>Equal (=)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="140"/>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="145"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="147"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="152"/>
         <source>Greater (&gt;)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="155"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="162"/>
         <source>Select Directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="161"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="168"/>
         <source>Directory: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="170"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="177"/>
         <source>Advanced Search %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="188"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="195"/>
         <source>Select the search directory.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="286"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="293"/>
         <source>Somethings went wrong, try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="302"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="309"/>
         <source>%1 files found. Showing %2 of them.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1306,12 +1306,12 @@
         <translation>添加开机启动程序</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/StartupApps/startup_apps_page.cpp" line="68"/>
+        <location filename="../stacer/Pages/StartupApps/startup_apps_page.cpp" line="66"/>
         <source>Startup Apps are disabled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/StartupApps/startup_apps_page.cpp" line="129"/>
+        <location filename="../stacer/Pages/StartupApps/startup_apps_page.cpp" line="126"/>
         <source>Startup Applications (%1)</source>
         <translation>开机启动程序(%1)</translation>
     </message>
@@ -1382,7 +1382,7 @@
         <translation>文件名</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/SystemCleaner/system_cleaner_page.cpp" line="181"/>
+        <location filename="../stacer/Pages/SystemCleaner/system_cleaner_page.cpp" line="180"/>
         <source>Total size: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1394,7 +1394,7 @@
         <translation>大小</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/SystemCleaner/system_cleaner_page.cpp" line="294"/>
+        <location filename="../stacer/Pages/SystemCleaner/system_cleaner_page.cpp" line="293"/>
         <source>%1 size files cleaned.</source>
         <translation>已经清理文件%1。</translation>
     </message>
@@ -1449,8 +1449,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="203"/>
-        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="210"/>
+        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="205"/>
+        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="212"/>
         <source>Uninstall Selected (%1)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1718,72 +1718,72 @@
         <translation>文本质量</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="65"/>
+        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="64"/>
         <source>Fast</source>
         <translation>快速</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="65"/>
+        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="64"/>
         <source>Good</source>
         <translation>好</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="65"/>
+        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="64"/>
         <source>Best</source>
         <translation>最好</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="67"/>
+        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="66"/>
         <source>Click</source>
         <translation>点击</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="67"/>
+        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="66"/>
         <source>Sloppy</source>
         <translation>滑过</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="67"/>
+        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="66"/>
         <source>Mouse</source>
         <translation>鼠标</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="79"/>
+        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="78"/>
         <source>Toggle Shade</source>
         <translation>切换形状</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="79"/>
+        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="78"/>
         <source>Maximize</source>
         <translation>最大化</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="79"/>
+        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="78"/>
         <source>Maximize Horizontally</source>
         <translation>水平最大化</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="80"/>
+        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="78"/>
         <source>Maximize Vertically</source>
         <translation>垂直最大化</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="80"/>
+        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="78"/>
         <source>Minimize</source>
         <translation>最小化</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="81"/>
+        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="78"/>
         <source>None</source>
         <translation>无</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="81"/>
+        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="78"/>
         <source>Lower</source>
         <translation>更低</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="81"/>
+        <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="78"/>
         <source>Menu</source>
         <translation>菜单</translation>
     </message>
