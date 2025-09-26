@@ -143,7 +143,41 @@ QFileInfoList SystemInfo::getAppCaches() const
 {
     QString homePath = QStandardPaths::writableLocation(QStandardPaths::HomeLocation);
 
-    QDir caches(homePath + "/.cache");
+    // Main cache location (only files and folders)
+    QFileInfoList mainCache = QDir(homePath + "/.cache").entryInfoList(QDir::Files | QDir::Dirs | QDir::NoDotAndDotDot);
 
-    return caches.entryInfoList(QDir::Files | QDir::Dirs | QDir::NoDotAndDotDot);
+    // Common cache locations
+    QList cacheLocations = {
+        homePath + "/.npm/_cacache",
+        homePath + "/.bun/install/cache",
+        homePath + "/.gradle/caches",
+        homePath + "/.expo/versions-cache",
+        homePath + "/.expo/native-modules-cache",
+    };
+
+    // Find .config/<folder>/Cache and .config/<folder>/GPUCache
+    QDir configDir(homePath + "/.config");
+    if (configDir.exists()) {
+        QStringList configFolders = configDir.entryList(QDir::Dirs | QDir::NoDotAndDotDot);
+        for (const QString &folder : configFolders) {
+            QString cachePath = configDir.filePath(folder + "/Cache");
+            QString gpuCachePath = configDir.filePath(folder + "/GPUCache");
+            if (QDir(cachePath).exists()) {
+                cacheLocations.append(cachePath);
+            }
+            if (QDir(gpuCachePath).exists()) {
+                cacheLocations.append(gpuCachePath);
+            }
+        }
+    }
+
+    QFileInfoList allCaches = mainCache;
+    for (const QString &location : cacheLocations) {
+        if (QDir(location).exists()) {
+            // allCaches.append(QDir(location).entryInfoList(QDir::Files | QDir::Dirs | QDir::NoDotAndDotDot));
+            allCaches.append(QFileInfo(location));
+        }
+    }
+
+    return allCaches;
 }
