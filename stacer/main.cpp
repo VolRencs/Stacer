@@ -1,7 +1,10 @@
 #include "app.h"
 
 #include <QApplication>
+#include <QDebug>
 #include <QFontDatabase>
+#include <QLocalServer>
+#include <QLocalSocket>
 #include <QSplashScreen>
 
 void messageHandler(QtMsgType type, const QMessageLogContext &context, const QString &message)
@@ -53,10 +56,34 @@ void messageHandler(QtMsgType type, const QMessageLogContext &context, const QSt
     }
 }
 
+const QString serverName = "StacerSingleInstanceServer";
+
+void focusExistingInstance()
+{
+    QLocalSocket socket;
+    socket.connectToServer(serverName);
+    if (socket.waitForConnected(100)) {
+        socket.write("focus");
+        socket.flush();
+        socket.waitForBytesWritten(100);
+        socket.disconnectFromServer();
+        exit(0);
+    }
+}
+
 int main(int argc, char *argv[])
 {
     qputenv("QT_ENABLE_HIGHDPI_SCALING", QByteArray("1"));
     QApplication app(argc, argv);
+
+    focusExistingInstance();
+
+    QLocalServer server;
+    server.removeServer(serverName);
+    if (!server.listen(serverName)) {
+        qCritical("Unable to start single instance server.");
+        return 1;
+    }
 
     qApp->setApplicationName("stacer");
     qApp->setApplicationDisplayName("Stacer");
@@ -101,6 +128,19 @@ int main(int argc, char *argv[])
     app.processEvents();
 
     App w;
+
+    QObject::connect(&server, &QLocalServer::newConnection, [&]() {
+        QLocalSocket *socket = server.nextPendingConnection();
+        if (socket && socket->waitForReadyRead(100)) {
+            QByteArray msg = socket->readAll();
+            if (msg == "focus") {
+                w.focusWindow();
+            }
+        }
+        socket->disconnectFromServer();
+        socket->close();
+        socket->deleteLater();
+    });
 
     if (argc < 2 || !isHide) {
         w.show();

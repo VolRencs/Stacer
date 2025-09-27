@@ -23,11 +23,18 @@ App::App(QWidget *parent) :
     init();
 }
 
+void App::focusWindow()
+{
+    setVisible(true);
+    showNormal();
+    raise();
+    activateWindow();
+}
+
 void App::init()
 {
-    setGeometry(
-        QStyle::alignedRect(Qt::LeftToRight, Qt::AlignCenter,
-                            size(), qApp->primaryScreen()->availableGeometry()));
+    setGeometry(QStyle::alignedRect(Qt::LeftToRight, Qt::AlignCenter, size(),
+                                    qApp->primaryScreen()->availableGeometry()));
 
     // form settings
     ui->horizontalLayout->setContentsMargins(0, 0, 0, 0);

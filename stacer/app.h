@@ -34,6 +34,9 @@ class App : public QMainWindow
     explicit App(QWidget *parent = 0);
     ~App();
 
+  public slots:
+    void focusWindow();
+
   protected:
     void closeEvent(QCloseEvent *event) override;
 
