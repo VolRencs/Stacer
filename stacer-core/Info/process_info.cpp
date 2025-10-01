@@ -43,7 +43,7 @@ void ProcessInfo::updateProcesses()
             }
         }
 
-    } catch (QString &ex) {
+    } catch (const QString &ex) {
         qCritical() << ex;
     }
 }

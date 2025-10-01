@@ -15,7 +15,7 @@ QString CommandUtil::sudoExec(const QString &cmd, QStringList args, QByteArray d
 
     try {
         result = CommandUtil::exec("pkexec", args, data);
-    } catch (QString &ex) {
+    } catch (const QString &ex) {
         qCritical() << ex;
     }
 

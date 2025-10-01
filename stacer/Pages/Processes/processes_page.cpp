@@ -229,7 +229,7 @@ void ProcessesPage::on_btnEndProcess_clicked()
             } else {
                 CommandUtil::sudoExec("kill", { QString::number(pid) });
             }
-        } catch (QString &ex) {
+        } catch (const QString &ex) {
             qCritical() << ex;
         }
     }

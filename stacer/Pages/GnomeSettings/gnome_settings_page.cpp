@@ -35,7 +35,10 @@ void GnomeSettingsPage::init()
     slidingStackedWidget->addWidget(windowManagerSettings);
     slidingStackedWidget->addWidget(appearanceSettings);
 
-    QList<QWidget *> widgets = { ui->btnAppearance, ui->btnUnitySettings, ui->btnWindowManager };
+    QList<QWidget *> widgets = {
+        ui->btnAppearance, ui->btnUnitySettings, ui->btnWindowManager
+    };
+
     Utilities::addDropShadow(widgets, 40);
 }
 

@@ -92,8 +92,8 @@ void SettingsPage::init()
 
     // effects
     QList<QWidget *> widgets = {
-        ui->cmbLanguages, /*ui->cmbThemes,*/ ui->cmbDisks, ui->cmbStartPage, ui->btnDonate,
-        ui->spinCpuPercent, ui->spinMemoryPercent, ui->spinDiskPercent
+        ui->cmbLanguages, /*ui->cmbThemes,*/ ui->cmbDisks, ui->cmbStartPage,
+        ui->btnDonate, ui->spinCpuPercent, ui->spinMemoryPercent, ui->spinDiskPercent
     };
 
     Utilities::addDropShadow(widgets, 50);

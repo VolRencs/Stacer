@@ -37,7 +37,7 @@ QList<Service> ServiceTool::getServicesWithSystemctl()
             services.push_back({ name, description, status, active });
         }
 
-    } catch (QString &ex) {
+    } catch (const QString &ex) {
         qCritical() << ex;
     }
 
@@ -60,7 +60,7 @@ QString ServiceTool::getServiceDescription(const QString &serviceName)
             if (desc.length() > 0)
                 result = desc.last();
         }
-    } catch (QString &ex) {
+    } catch (const QString &ex) {
         qCritical() << ex;
     }
 
@@ -75,7 +75,7 @@ bool ServiceTool::serviceIsActive(const QString &serviceName)
 
     try {
         result = CommandUtil::exec("systemctl", args);
-    } catch (QString &ex) {
+    } catch (const QString &ex) {
         qCritical() << ex;
     }
 
@@ -90,7 +90,7 @@ bool ServiceTool::serviceIsEnabled(const QString &serviceName)
 
     try {
         result = CommandUtil::exec("systemctl", args);
-    } catch (QString &ex) {
+    } catch (const QString &ex) {
         qCritical() << ex;
     }
 
@@ -107,7 +107,7 @@ bool ServiceTool::changeServiceStatus(const QString &sname, bool status)
 
         return true;
 
-    } catch (QString &ex) {
+    } catch (const QString &ex) {
         qCritical() << ex;
     }
 
@@ -124,7 +124,7 @@ bool ServiceTool::changeServiceActive(const QString &sname, bool status)
 
         return true;
 
-    } catch (QString &ex) {
+    } catch (const QString &ex) {
         qCritical() << ex;
     }
 

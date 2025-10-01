@@ -80,7 +80,7 @@ void Feedback::on_btnSend_clicked()
                     emit setErrorMessageS(tr("Something went wrong, try again !"));
                 }
 
-            } catch (QString &ex) {
+            } catch (const QString &ex) {
                 qCritical() << ex;
                 emit setErrorMessageS(tr("Something went wrong, try again !"));
             }

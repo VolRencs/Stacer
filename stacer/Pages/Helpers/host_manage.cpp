@@ -25,9 +25,12 @@ void HostManage::init()
 {
     ui->lblHostTitle->setText(tr("Hosts (%1)").arg(1));
 
-    Utilities::addDropShadow({ ui->btnCancel, ui->btnNewHost, ui->btnSave, ui->txtAliases, ui->txtFullyQualified,
-                               ui->txtIP, ui->tableViewHosts },
-                             40);
+    QList<QWidget *> widgets = {
+        ui->btnCancel, ui->btnNewHost, ui->btnSave, ui->txtAliases,
+        ui->txtFullyQualified, ui->txtIP, ui->tableViewHosts
+    };
+
+    Utilities::addDropShadow(widgets, 40);
 
     ui->widgetAddEditHost->hide();
     ui->lblErrorMsg->hide();
@@ -179,7 +182,7 @@ void HostManage::on_btnSaveChanges_clicked()
     try {
         CommandUtil::sudoExec("mv", { "/tmp/stacer_etc_host_new_content", "/etc/hosts" });
         loadTableData();
-    } catch (QString ex) {
+    } catch (const QString &ex) {
         qDebug() << ex;
     }
 }

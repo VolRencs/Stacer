@@ -29,7 +29,10 @@ void UninstallerPage::init()
 
     ui->stackedWidget->setCurrentIndex(0);
 
-    QList<QWidget *> widgets = { ui->txtPackageSearch, ui->btnUninstall, ui->btnSystemPackages, ui->btnSnapPackages };
+    QList<QWidget *> widgets = {
+        ui->txtPackageSearch, ui->btnUninstall, ui->btnSystemPackages, ui->btnSnapPackages
+    };
+
     Utilities::addDropShadow(widgets, 40);
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)

@@ -42,7 +42,7 @@ QStringList PackageTool::getDpkgPackages()
         for (int i = 0; i < packageList.count(); ++i)
             packageList[i] = packageList.at(i).split(QRegularExpression("\\s+")).first();
 
-    } catch (QString &ex) {
+    } catch (const QString &ex) {
         qCritical() << ex;
     }
 
@@ -59,7 +59,7 @@ bool PackageTool::dpkgRemovePackages(QStringList packages)
 
         return true;
 
-    } catch (QString &ex) {
+    } catch (const QString &ex) {
         qCritical() << ex;
     }
 
@@ -78,7 +78,7 @@ QStringList PackageTool::getRpmPackages()
                           .trimmed()
                           .split('\n');
 
-    } catch (QString &ex) {
+    } catch (const QString &ex) {
         qCritical() << ex;
     }
 
@@ -95,7 +95,7 @@ bool PackageTool::dnfRemovePackages(QStringList packages)
 
         return true;
 
-    } catch (QString &ex) {
+    } catch (const QString &ex) {
         qCritical() << ex;
     }
 
@@ -112,7 +112,7 @@ bool PackageTool::yumRemovePackages(QStringList packages)
 
         return true;
 
-    } catch (QString &ex) {
+    } catch (const QString &ex) {
         qCritical() << ex;
     }
 
@@ -141,7 +141,7 @@ QStringList PackageTool::getPacmanPackages()
         for (int i = 0; i < packageList.count(); ++i)
             packageList[i] = packageList.at(i).split(QRegularExpression("\\s+")).first();
 
-    } catch (QString &ex) {
+    } catch (const QString &ex) {
         qCritical() << ex;
     }
 
@@ -158,7 +158,7 @@ bool PackageTool::pacmanRemovePackages(QStringList packages)
 
         return true;
 
-    } catch (QString &ex) {
+    } catch (const QString &ex) {
         qCritical() << ex;
     }
 
@@ -183,7 +183,7 @@ QStringList PackageTool::getSnapPackages()
             for (int i = 0; i < packageList.count(); ++i)
                 packageList[i] = packageList.at(i).split(QRegularExpression("\\s+")).first();
 
-        } catch (QString &ex) {
+        } catch (const QString &ex) {
             qCritical() << ex;
         }
     }
@@ -200,7 +200,7 @@ bool PackageTool::snapRemovePackages(QStringList packages)
 
         return true;
 
-    } catch (QString &ex) {
+    } catch (const QString &ex) {
         qCritical() << ex;
     }
 

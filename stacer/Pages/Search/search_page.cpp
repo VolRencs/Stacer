@@ -288,7 +288,7 @@ void SearchPage::searching()
             } else {
                 loadDataToTable(result.split("\n"));
             }
-        } catch (QString ex) {
+        } catch (const QString &ex) {
             ui->lblErrorMsg->show();
             ui->lblErrorMsg->setText(tr("Somethings went wrong, try again."));
         }

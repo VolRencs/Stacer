@@ -36,7 +36,9 @@ void ResourcesPage::init()
     mChartCpu->setYMax(100);
     mChartMemory->setYMax(100);
 
-    QList<QWidget *> widgets = { mChartCpu, mChartCpuLoadAvg, mChartDiskReadWrite, mChartMemory, mChartNetwork };
+    QList<QWidget *> widgets = {
+        mChartCpu, mChartCpuLoadAvg, mChartDiskReadWrite, mChartMemory, mChartNetwork
+    };
 
     for (QWidget *widget : widgets) {
         ui->chartsLayout->addWidget(widget);

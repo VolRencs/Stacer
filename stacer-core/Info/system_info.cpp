@@ -39,7 +39,7 @@ SystemInfo::SystemInfo()
 
         this->cpuModel = model.trimmed().replace(regexp, space);
         this->cpuSpeed = speed.trimmed().replace(regexp, space);
-    } catch (QString &ex) {
+    } catch (const QString &ex) {
         this->cpuModel = unknown;
         this->cpuSpeed = unknown;
     }

@@ -21,7 +21,7 @@ void HelpersPage::init()
     ui->stackedWidget->addWidget(widgetHostManage);
     // ui->stackedWidget->addWidget();
 
-    Utilities::addDropShadow({ ui->btnHostManage }, 40);
+    Utilities::addDropShadow(ui->btnHostManage, 40);
 }
 
 void HelpersPage::on_btnHostManage_clicked()
