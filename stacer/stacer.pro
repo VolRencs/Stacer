@@ -1,5 +1,5 @@
 
-QT       += core gui charts svg concurrent network
+QT += core gui charts svg concurrent network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -19,10 +19,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also make your code fail to compile if you use deprecated APIs.
 # In order to do so, uncomment the following line.
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
-#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000 # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        main.cpp \
+    main.cpp \
     app.cpp \
     Pages/Dashboard/circlebar.cpp \
     Pages/Dashboard/linebar.cpp \
@@ -135,7 +135,7 @@ TRANSLATIONS += \
     ../translations/stacer_hu.ts \
     ../translations/stacer_it.ts \
     ../translations/stacer_kn.ts \
-    ../translations/stacer_ko.ts \    
+    ../translations/stacer_ko.ts \
     ../translations/stacer_ml.ts \
     ../translations/stacer_nl.ts \
     ../translations/stacer_oc.ts \

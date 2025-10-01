@@ -93,7 +93,7 @@
     </message>
     <message>
         <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.ui" line="338"/>
-        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.cpp" line="84"/>
+        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.cpp" line="85"/>
         <source>Add Repository</source>
         <translation>Ajouter un dépôt</translation>
     </message>
@@ -113,12 +113,12 @@
         <translation>exemple %1</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.cpp" line="57"/>
+        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.cpp" line="58"/>
         <source>APT Repositories (%1)</source>
         <translation>Dépôt APT (%1)</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.cpp" line="64"/>
+        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.cpp" line="65"/>
         <source>Save</source>
         <translation>Sauvegarder</translation>
     </message>
@@ -199,19 +199,19 @@
         <translation>Commentaires</translation>
     </message>
     <message>
-        <location filename="../stacer/app.cpp" line="101"/>
         <location filename="../stacer/app.cpp" line="108"/>
-        <location filename="../stacer/app.cpp" line="161"/>
+        <location filename="../stacer/app.cpp" line="115"/>
+        <location filename="../stacer/app.cpp" line="168"/>
         <source>Quit</source>
         <translation>Quitter</translation>
     </message>
     <message>
-        <location filename="../stacer/app.cpp" line="103"/>
+        <location filename="../stacer/app.cpp" line="110"/>
         <source>Continue</source>
         <translation>Continuer</translation>
     </message>
     <message>
-        <location filename="../stacer/app.cpp" line="109"/>
+        <location filename="../stacer/app.cpp" line="116"/>
         <source>Will the program continue to work in the system tray?</source>
         <translation>Le programme continuera à fonctionner dans la barre d’état système ?</translation>
     </message>
@@ -583,7 +583,7 @@
     </message>
     <message>
         <location filename="../stacer/Pages/Helpers/host_manage.ui" line="160"/>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="36"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="39"/>
         <source>Aliases</source>
         <translation>Alias</translation>
     </message>
@@ -604,32 +604,32 @@
     </message>
     <message>
         <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="26"/>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="97"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="100"/>
         <source>Hosts (%1)</source>
         <translation>Hôtes (%1)</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="36"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="39"/>
         <source>IP Address</source>
         <translation>Adresse IP</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="36"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="39"/>
         <source>Full Qualified</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="134"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="137"/>
         <source>Edit</source>
         <translation>Modifier</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="138"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="141"/>
         <source>Delete</source>
         <translation>Supprimer</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="146"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="149"/>
         <source>The IP and Fully Qualified fields are required.</source>
         <translation>Les champs IP et Nom complet sont obligatoires.</translation>
     </message>
@@ -759,52 +759,52 @@
         <translation>Historique du Réseau</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="104"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="106"/>
         <source>File System</source>
         <translation>Système de fichiers</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="120"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="122"/>
         <source>File System Type</source>
         <translation>Type de système de fichiers</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="140"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="142"/>
         <source>Device</source>
         <translation>Appareil</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="215"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="217"/>
         <source>Read: %1/s Total: %2</source>
         <translation>Lecture : %1/s Total : %2</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="220"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="222"/>
         <source>Write: %1/s Total: %2</source>
         <translation>Écriture : %1/s Total : %2</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="257"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="259"/>
         <source>%1 Minute Average: %2</source>
         <translation>%1 moyenne par minute : %2</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="305"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="307"/>
         <source>Download: %1/s Total: %2</source>
         <translation>Téléchargement : %1/s Total : %2</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="310"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="312"/>
         <source>Upload: %1/s  Total: %2</source>
         <translation>Téléversement : %1/s  Total : %2</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="354"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="356"/>
         <source>Swap: %1 (%2%) %3</source>
         <translation>Swap : %1 (%2%) %3</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="363"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="365"/>
         <source>Memory: %1 (%2%) %3</source>
         <translation>Mémoire : %1 (%2%) %3</translation>
     </message>
@@ -1258,7 +1258,7 @@
         <translation>Application de démarrage</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="74"/>
+        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="95"/>
         <source>Save</source>
         <translation>Sauvegarder</translation>
     </message>
@@ -1268,7 +1268,7 @@
         <translation>Les champs ne peuvent pas être laissés vides.</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="58"/>
+        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="65"/>
         <source>App Comment</source>
         <translation>Commentaire de l’application</translation>
     </message>
@@ -1278,12 +1278,22 @@
         <translation>Nom de l’application</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="97"/>
+        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="58"/>
+        <source>Generic Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="72"/>
+        <source>App Icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="79"/>
         <source>Command</source>
         <translation>Commande</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="87"/>
+        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="108"/>
         <source>Application</source>
         <translation>Application</translation>
     </message>
@@ -1439,18 +1449,18 @@
         <translation>Désinstallation sélectionnée</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="99"/>
+        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="102"/>
         <source>Packages (%1)</source>
         <translation>Paquets (%1)</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="104"/>
+        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="107"/>
         <source>Snap Packages (%1)</source>
         <translation>Paquets Snap (%1)</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="205"/>
-        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="212"/>
+        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="208"/>
+        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="215"/>
         <source>Uninstall Selected (%1)</source>
         <translation>Désinstaller la sélection (%1)</translation>
     </message>

@@ -93,7 +93,7 @@
     </message>
     <message>
         <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.ui" line="338"/>
-        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.cpp" line="84"/>
+        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.cpp" line="85"/>
         <source>Add Repository</source>
         <translation>저장소 추가</translation>
     </message>
@@ -113,12 +113,12 @@
         <translation>예 %1</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.cpp" line="57"/>
+        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.cpp" line="58"/>
         <source>APT Repositories (%1)</source>
         <translation>APT 저장소 (%1)</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.cpp" line="64"/>
+        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.cpp" line="65"/>
         <source>Save</source>
         <translation>저장</translation>
     </message>
@@ -199,19 +199,19 @@
         <translation>피드백</translation>
     </message>
     <message>
-        <location filename="../stacer/app.cpp" line="101"/>
         <location filename="../stacer/app.cpp" line="108"/>
-        <location filename="../stacer/app.cpp" line="161"/>
+        <location filename="../stacer/app.cpp" line="115"/>
+        <location filename="../stacer/app.cpp" line="168"/>
         <source>Quit</source>
         <translation>종료</translation>
     </message>
     <message>
-        <location filename="../stacer/app.cpp" line="103"/>
+        <location filename="../stacer/app.cpp" line="110"/>
         <source>Continue</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/app.cpp" line="109"/>
+        <location filename="../stacer/app.cpp" line="116"/>
         <source>Will the program continue to work in the system tray?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -583,7 +583,7 @@
     </message>
     <message>
         <location filename="../stacer/Pages/Helpers/host_manage.ui" line="160"/>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="36"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="39"/>
         <source>Aliases</source>
         <translation type="unfinished"></translation>
     </message>
@@ -604,32 +604,32 @@
     </message>
     <message>
         <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="26"/>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="97"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="100"/>
         <source>Hosts (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="36"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="39"/>
         <source>IP Address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="36"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="39"/>
         <source>Full Qualified</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="134"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="137"/>
         <source>Edit</source>
         <translation>수정</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="138"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="141"/>
         <source>Delete</source>
         <translation>삭제</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="146"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="149"/>
         <source>The IP and Fully Qualified fields are required.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -759,52 +759,52 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="104"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="106"/>
         <source>File System</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="120"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="122"/>
         <source>File System Type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="140"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="142"/>
         <source>Device</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="215"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="217"/>
         <source>Read: %1/s Total: %2</source>
         <translation>읽기: %1/s 전체: %2</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="220"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="222"/>
         <source>Write: %1/s Total: %2</source>
         <translation>쓰기: %1/s 전체: %2</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="257"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="259"/>
         <source>%1 Minute Average: %2</source>
         <translation>%1 분 평균: %2</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="305"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="307"/>
         <source>Download: %1/s Total: %2</source>
         <translation>다운로드: %1/s 전체: %2</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="310"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="312"/>
         <source>Upload: %1/s  Total: %2</source>
         <translation>업로드: %1/s  전체: %2</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="354"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="356"/>
         <source>Swap: %1 (%2%) %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="363"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="365"/>
         <source>Memory: %1 (%2%) %3</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1258,7 +1258,7 @@
         <translation>시작 프로그램</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="74"/>
+        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="95"/>
         <source>Save</source>
         <translation>저장</translation>
     </message>
@@ -1268,7 +1268,7 @@
         <translation>공백은 허용되지 않습니다. </translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="58"/>
+        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="65"/>
         <source>App Comment</source>
         <translation>프로그램 설명</translation>
     </message>
@@ -1278,12 +1278,22 @@
         <translation>프로그램 이름</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="97"/>
+        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="58"/>
+        <source>Generic Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="72"/>
+        <source>App Icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="79"/>
         <source>Command</source>
         <translation>실행명령</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="87"/>
+        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="108"/>
         <source>Application</source>
         <translation>프로그램</translation>
     </message>
@@ -1439,18 +1449,18 @@
         <translation>선택된 프로그램 제거</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="99"/>
+        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="102"/>
         <source>Packages (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="104"/>
+        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="107"/>
         <source>Snap Packages (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="205"/>
-        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="212"/>
+        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="208"/>
+        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="215"/>
         <source>Uninstall Selected (%1)</source>
         <translation type="unfinished"></translation>
     </message>

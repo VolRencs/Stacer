@@ -93,7 +93,7 @@
     </message>
     <message>
         <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.ui" line="338"/>
-        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.cpp" line="84"/>
+        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.cpp" line="85"/>
         <source>Add Repository</source>
         <translation>Добавить репозиторий</translation>
     </message>
@@ -113,12 +113,12 @@
         <translation>пример %1</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.cpp" line="57"/>
+        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.cpp" line="58"/>
         <source>APT Repositories (%1)</source>
         <translation>Репозиториев APT (%1)</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.cpp" line="64"/>
+        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.cpp" line="65"/>
         <source>Save</source>
         <translation>Сохранить</translation>
     </message>
@@ -199,19 +199,19 @@
         <translation>Обратная связь</translation>
     </message>
     <message>
-        <location filename="../stacer/app.cpp" line="101"/>
         <location filename="../stacer/app.cpp" line="108"/>
-        <location filename="../stacer/app.cpp" line="161"/>
+        <location filename="../stacer/app.cpp" line="115"/>
+        <location filename="../stacer/app.cpp" line="168"/>
         <source>Quit</source>
         <translation>Выход</translation>
     </message>
     <message>
-        <location filename="../stacer/app.cpp" line="103"/>
+        <location filename="../stacer/app.cpp" line="110"/>
         <source>Continue</source>
         <translation>Продолжить</translation>
     </message>
     <message>
-        <location filename="../stacer/app.cpp" line="109"/>
+        <location filename="../stacer/app.cpp" line="116"/>
         <source>Will the program continue to work in the system tray?</source>
         <translation>Продолжить работу программы в системном трее?</translation>
     </message>
@@ -583,7 +583,7 @@
     </message>
     <message>
         <location filename="../stacer/Pages/Helpers/host_manage.ui" line="160"/>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="36"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="39"/>
         <source>Aliases</source>
         <translation>Псевдонимы</translation>
     </message>
@@ -604,32 +604,32 @@
     </message>
     <message>
         <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="26"/>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="97"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="100"/>
         <source>Hosts (%1)</source>
         <translation>Хост (%1)</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="36"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="39"/>
         <source>IP Address</source>
         <translation>Адрес IP</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="36"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="39"/>
         <source>Full Qualified</source>
         <translation>Полное</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="134"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="137"/>
         <source>Edit</source>
         <translation>Изменить</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="138"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="141"/>
         <source>Delete</source>
         <translation>Удалить</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="146"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="149"/>
         <source>The IP and Fully Qualified fields are required.</source>
         <translation>Поля Адреса IP и Полного имени являются обязательными.</translation>
     </message>
@@ -759,52 +759,52 @@
         <translation>История сети</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="104"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="106"/>
         <source>File System</source>
         <translation>Файловая система</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="120"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="122"/>
         <source>File System Type</source>
         <translation>Тип файловой системы</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="140"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="142"/>
         <source>Device</source>
         <translation>Устройство</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="215"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="217"/>
         <source>Read: %1/s Total: %2</source>
         <translation>Чтение: %1/c Всего: %2</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="220"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="222"/>
         <source>Write: %1/s Total: %2</source>
         <translation>Запись: %1/c Всего: %2</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="257"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="259"/>
         <source>%1 Minute Average: %2</source>
         <translation>Среднее за %1 минут: %2</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="305"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="307"/>
         <source>Download: %1/s Total: %2</source>
         <translation>Получение: %1/c Всего: %2</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="310"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="312"/>
         <source>Upload: %1/s  Total: %2</source>
         <translation>Отправка: %1/c Всего: %2</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="354"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="356"/>
         <source>Swap: %1 (%2%) %3</source>
         <translation>Файл подкачки: %1 (%2%) %3</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="363"/>
+        <location filename="../stacer/Pages/Resources/resources_page.cpp" line="365"/>
         <source>Memory: %1 (%2%) %3</source>
         <translation>Память: %1 (%2%) %3</translation>
     </message>
@@ -1258,7 +1258,7 @@
         <translation>Автозапуск приложения</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="74"/>
+        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="95"/>
         <source>Save</source>
         <translation>Сохранить</translation>
     </message>
@@ -1268,7 +1268,7 @@
         <translation>Необходимо заполнить поля.</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="58"/>
+        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="65"/>
         <source>App Comment</source>
         <translation>Описание приложения</translation>
     </message>
@@ -1278,12 +1278,22 @@
         <translation>Имя приложения</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="97"/>
+        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="58"/>
+        <source>Generic Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="72"/>
+        <source>App Icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="79"/>
         <source>Command</source>
         <translation>Команда</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="87"/>
+        <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="108"/>
         <source>Application</source>
         <translation>Приложение</translation>
     </message>
@@ -1439,18 +1449,18 @@
         <translation>Поиск...</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="99"/>
+        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="102"/>
         <source>Packages (%1)</source>
         <translation>Пакеты (%1)</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="104"/>
+        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="107"/>
         <source>Snap Packages (%1)</source>
         <translation>Пакеты Snap (%1)</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="205"/>
-        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="212"/>
+        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="208"/>
+        <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="215"/>
         <source>Uninstall Selected (%1)</source>
         <translation>Удалить выбранные (%1)</translation>
     </message>
