@@ -49,7 +49,11 @@ void APTSourceManagerPage::loadAptSources()
 
         APTSourceRepositoryItem *aptSourceItem = new APTSourceRepositoryItem(aptSource, ui->listWidgetAptSources);
 
-        listItem->setSizeHint(aptSourceItem->sizeHint() + QSize(0, 1));
+        // Adjust size hint to fit the list widget's width
+        QSize itemSize = aptSourceItem->sizeHint();
+        int listWidth = ui->listWidgetAptSources->viewport()->width();
+        itemSize.setWidth(listWidth);
+        listItem->setSizeHint(itemSize + QSize(-10, 1));
 
         ui->listWidgetAptSources->setItemWidget(listItem, aptSourceItem);
     }
