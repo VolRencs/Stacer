@@ -126,9 +126,11 @@ void App::createQuitMessageBox()
 void App::closeEvent(QCloseEvent *event)
 {
     if (SettingManager::ins()->getAppQuitDialogDontAsk()) {
-        if (SettingManager::ins()->getAppQuitDialogChoice() == "close") {
-            event->accept();
-        } else {
+        QString quitChoice = SettingManager::ins()->getAppQuitDialogChoice();
+        
+        if (quitChoice == "close") {
+            QApplication::quit();
+        } else if (quitChoice == "hide") {
             event->ignore();
             hide();
         }
@@ -141,6 +143,7 @@ void App::closeEvent(QCloseEvent *event)
         } else if (mQuitMsgBox->clickedButton() == mBtnQuit) {
             SettingManager::ins()->setAppQuitDialogChoice("close");
             event->accept();
+            QApplication::quit();
         } else {
             event->ignore();
         }
