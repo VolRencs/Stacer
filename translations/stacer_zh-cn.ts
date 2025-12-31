@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="zh_CN">
+<TS version="2.1" language="zh_CN" sourcelanguage="en">
 <context>
     <name>APTSourceEdit</name>
     <message>
@@ -154,9 +154,9 @@
         <translation>系统清理</translation>
     </message>
     <message>
-        <location filename="../stacer/app.ui" line="362"/>
-        <source>APT Repository Manager</source>
-        <translation>APT源管理</translation>
+        <location filename="../stacer/app.ui" line="194"/>
+        <source>Search</source>
+        <translation>搜索</translation>
     </message>
     <message>
         <location filename="../stacer/app.ui" line="278"/>
@@ -169,24 +169,24 @@
         <translation>系统资源</translation>
     </message>
     <message>
+        <location filename="../stacer/app.ui" line="334"/>
+        <source>Helpers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../stacer/app.ui" line="362"/>
+        <source>APT Repository Manager</source>
+        <translation>APT源管理</translation>
+    </message>
+    <message>
         <location filename="../stacer/app.ui" line="250"/>
         <source>Processes</source>
         <translation>进程</translation>
     </message>
     <message>
-        <location filename="../stacer/app.ui" line="194"/>
-        <source>Search</source>
-        <translation>搜索</translation>
-    </message>
-    <message>
         <location filename="../stacer/app.ui" line="222"/>
         <source>Services</source>
         <translation>服务</translation>
-    </message>
-    <message>
-        <location filename="../stacer/app.ui" line="334"/>
-        <source>Helpers</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../stacer/app.ui" line="390"/>
@@ -392,14 +392,14 @@
         <translation>CPU型号: %1</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="117"/>
-        <source>CPU Speed: %1</source>
-        <translation>CPU频率: %1</translation>
-    </message>
-    <message>
         <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="116"/>
         <source>CPU Core: %1</source>
         <translation>CPU内核数: %1</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="117"/>
+        <source>CPU Speed: %1</source>
+        <translation>CPU频率: %1</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="135"/>

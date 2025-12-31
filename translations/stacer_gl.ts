@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="gl_ES">
+<TS version="2.1" language="gl_ES" sourcelanguage="en">
 <context>
     <name>APTSourceEdit</name>
     <message>
@@ -392,14 +392,14 @@
         <translation>Modelo da CPU: %1</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="117"/>
-        <source>CPU Speed: %1</source>
-        <translation>Velocidade da CPU: %1</translation>
-    </message>
-    <message>
         <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="116"/>
         <source>CPU Core: %1</source>
         <translation>Núcelos de CPU: %1</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="117"/>
+        <source>CPU Speed: %1</source>
+        <translation>Velocidade da CPU: %1</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="135"/>
@@ -502,14 +502,14 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/feedback.cpp" line="93"/>
-        <source>Fields cannot be left blank !</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../stacer/feedback.cpp" line="88"/>
         <source>Save</source>
         <translation>Gardar</translation>
+    </message>
+    <message>
+        <location filename="../stacer/feedback.cpp" line="93"/>
+        <source>Fields cannot be left blank !</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

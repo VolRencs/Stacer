@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fr_FR">
+<TS version="2.1" language="fr_FR" sourcelanguage="en">
 <context>
     <name>APTSourceEdit</name>
     <message>
@@ -154,9 +154,9 @@
         <translation>Nettoyage du système</translation>
     </message>
     <message>
-        <location filename="../stacer/app.ui" line="362"/>
-        <source>APT Repository Manager</source>
-        <translation>Gestionnaire de dépôt APT</translation>
+        <location filename="../stacer/app.ui" line="194"/>
+        <source>Search</source>
+        <translation>Recherche</translation>
     </message>
     <message>
         <location filename="../stacer/app.ui" line="278"/>
@@ -169,24 +169,24 @@
         <translation>Ressources</translation>
     </message>
     <message>
+        <location filename="../stacer/app.ui" line="334"/>
+        <source>Helpers</source>
+        <translation>Assistants</translation>
+    </message>
+    <message>
+        <location filename="../stacer/app.ui" line="362"/>
+        <source>APT Repository Manager</source>
+        <translation>Gestionnaire de dépôt APT</translation>
+    </message>
+    <message>
         <location filename="../stacer/app.ui" line="250"/>
         <source>Processes</source>
         <translation>Processus</translation>
     </message>
     <message>
-        <location filename="../stacer/app.ui" line="194"/>
-        <source>Search</source>
-        <translation>Recherche</translation>
-    </message>
-    <message>
         <location filename="../stacer/app.ui" line="222"/>
         <source>Services</source>
         <translation>Services</translation>
-    </message>
-    <message>
-        <location filename="../stacer/app.ui" line="334"/>
-        <source>Helpers</source>
-        <translation>Assistants</translation>
     </message>
     <message>
         <location filename="../stacer/app.ui" line="390"/>
@@ -392,14 +392,14 @@
         <translation>Modèle du CPU : %1</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="117"/>
-        <source>CPU Speed: %1</source>
-        <translation>Vitesse du CPU : %1</translation>
-    </message>
-    <message>
         <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="116"/>
         <source>CPU Core: %1</source>
         <translation>CPU Cœur : %1</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="117"/>
+        <source>CPU Speed: %1</source>
+        <translation>Vitesse du CPU : %1</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="135"/>
@@ -1063,7 +1063,7 @@
     <message>
         <location filename="../stacer/Pages/Services/services_page.ui" line="190"/>
         <source>Running Now ?</source>
-        <translation>En cours d'exécution ?</translation>
+        <translation>En cours d&apos;exécution ?</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Services/services_page.ui" line="244"/>
@@ -1073,7 +1073,7 @@
     <message>
         <location filename="../stacer/Pages/Services/services_page.cpp" line="32"/>
         <source>Running Status</source>
-        <translation>Statut d'exécution</translation>
+        <translation>Statut d&apos;exécution</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Services/services_page.cpp" line="32"/>

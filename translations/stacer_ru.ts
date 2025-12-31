@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ru_RU">
+<TS version="2.1" language="ru_RU" sourcelanguage="en">
 <context>
     <name>APTSourceEdit</name>
     <message>
@@ -154,9 +154,9 @@
         <translation>Очистка системы</translation>
     </message>
     <message>
-        <location filename="../stacer/app.ui" line="362"/>
-        <source>APT Repository Manager</source>
-        <translation>Менеджер репозиториев APT</translation>
+        <location filename="../stacer/app.ui" line="194"/>
+        <source>Search</source>
+        <translation>Поиск</translation>
     </message>
     <message>
         <location filename="../stacer/app.ui" line="278"/>
@@ -169,24 +169,24 @@
         <translation>Ресурсы</translation>
     </message>
     <message>
+        <location filename="../stacer/app.ui" line="334"/>
+        <source>Helpers</source>
+        <translation>Помощники</translation>
+    </message>
+    <message>
+        <location filename="../stacer/app.ui" line="362"/>
+        <source>APT Repository Manager</source>
+        <translation>Менеджер репозиториев APT</translation>
+    </message>
+    <message>
         <location filename="../stacer/app.ui" line="250"/>
         <source>Processes</source>
         <translation>Процессы</translation>
     </message>
     <message>
-        <location filename="../stacer/app.ui" line="194"/>
-        <source>Search</source>
-        <translation>Поиск</translation>
-    </message>
-    <message>
         <location filename="../stacer/app.ui" line="222"/>
         <source>Services</source>
         <translation>Службы</translation>
-    </message>
-    <message>
-        <location filename="../stacer/app.ui" line="334"/>
-        <source>Helpers</source>
-        <translation>Помощники</translation>
     </message>
     <message>
         <location filename="../stacer/app.ui" line="390"/>
@@ -392,14 +392,14 @@
         <translation>Модель ЦП: %1</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="117"/>
-        <source>CPU Speed: %1</source>
-        <translation>Частота ЦП: %1</translation>
-    </message>
-    <message>
         <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="116"/>
         <source>CPU Core: %1</source>
         <translation>Ядра ЦП: %1</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="117"/>
+        <source>CPU Speed: %1</source>
+        <translation>Частота ЦП: %1</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="135"/>
@@ -647,6 +647,11 @@
         <translation>Завершить процесс</translation>
     </message>
     <message>
+        <location filename="../stacer/Pages/Processes/processes_page.cpp" line="30"/>
+        <source>User</source>
+        <translation>Пользователь</translation>
+    </message>
+    <message>
         <location filename="../stacer/Pages/Processes/processes_page.cpp" line="29"/>
         <source>Resident Memory</source>
         <translation>Резидентная память</translation>
@@ -660,11 +665,6 @@
         <location filename="../stacer/Pages/Processes/processes_page.cpp" line="29"/>
         <source>Virtual Memory</source>
         <translation>Виртуальная память</translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/Processes/processes_page.cpp" line="30"/>
-        <source>User</source>
-        <translation>Пользователь</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Processes/processes_page.cpp" line="30"/>
@@ -1273,6 +1273,11 @@
 <context>
     <name>StartupAppsPage</name>
     <message>
+        <location filename="../stacer/Pages/StartupApps/startup_apps_page.ui" line="201"/>
+        <source>Not Found Startup Apps</source>
+        <translation>Автоматически запускаемые приложения не найдены</translation>
+    </message>
+    <message>
         <location filename="../stacer/Pages/StartupApps/startup_apps_page.ui" line="14"/>
         <source>Startup Apps</source>
         <translation>Автозапуск приложений</translation>
@@ -1281,11 +1286,6 @@
         <location filename="../stacer/Pages/StartupApps/startup_apps_page.ui" line="101"/>
         <source>Add Startup App</source>
         <translation>Добавить приложение в автозапуск</translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/StartupApps/startup_apps_page.ui" line="201"/>
-        <source>Not Found Startup Apps</source>
-        <translation>Автоматически запускаемые приложения не найдены</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/StartupApps/startup_apps_page.cpp" line="66"/>
@@ -1378,17 +1378,6 @@
 <context>
     <name>UninstallerPage</name>
     <message>
-        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="340"/>
-        <source>Uninstall Selected</source>
-        <translation>Удалить выбранные</translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="108"/>
-        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="231"/>
-        <source>Not Found Installed Packages</source>
-        <translation>Установленные пакеты не найдены</translation>
-    </message>
-    <message>
         <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="14"/>
         <source>Uninstaller</source>
         <translation>Удаление пакетов</translation>
@@ -1407,6 +1396,17 @@
         <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="442"/>
         <source>Search...</source>
         <translation>Поиск...</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="108"/>
+        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="231"/>
+        <source>Not Found Installed Packages</source>
+        <translation>Установленные пакеты не найдены</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="340"/>
+        <source>Uninstall Selected</source>
+        <translation>Удалить выбранные</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="102"/>

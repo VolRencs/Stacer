@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="zh_TW">
+<TS version="2.1" language="zh_TW" sourcelanguage="en">
 <context>
     <name>APTSourceEdit</name>
     <message>
@@ -62,16 +62,6 @@
 <context>
     <name>APTSourceManagerPage</name>
     <message>
-        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.ui" line="14"/>
-        <source>APT Repository Manager</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.ui" line="125"/>
-        <source>Not Found APT Repositories</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.ui" line="188"/>
         <source>Search...</source>
         <translation>搜尋...</translation>
@@ -80,6 +70,16 @@
         <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.ui" line="226"/>
         <source>Edit</source>
         <translation>編輯</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.ui" line="14"/>
+        <source>APT Repository Manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.ui" line="125"/>
+        <source>Not Found APT Repositories</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.ui" line="269"/>
@@ -154,6 +154,11 @@
         <translation>系統清理</translation>
     </message>
     <message>
+        <location filename="../stacer/app.ui" line="194"/>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../stacer/app.ui" line="278"/>
         <source>Uninstaller</source>
         <translation>解除安裝</translation>
@@ -164,21 +169,6 @@
         <translation>系統資源</translation>
     </message>
     <message>
-        <location filename="../stacer/app.ui" line="250"/>
-        <source>Processes</source>
-        <translation>處理程序</translation>
-    </message>
-    <message>
-        <location filename="../stacer/app.ui" line="194"/>
-        <source>Search</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../stacer/app.ui" line="222"/>
-        <source>Services</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../stacer/app.ui" line="334"/>
         <source>Helpers</source>
         <translation type="unfinished"></translation>
@@ -186,6 +176,16 @@
     <message>
         <location filename="../stacer/app.ui" line="362"/>
         <source>APT Repository Manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../stacer/app.ui" line="250"/>
+        <source>Processes</source>
+        <translation>處理程序</translation>
+    </message>
+    <message>
+        <location filename="../stacer/app.ui" line="222"/>
+        <source>Services</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -392,14 +392,14 @@
         <translation>CPU 型號: %1</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="117"/>
-        <source>CPU Speed: %1</source>
-        <translation>CPU 時脈: %1</translation>
-    </message>
-    <message>
         <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="116"/>
         <source>CPU Core: %1</source>
         <translation>CPU 核心: %1</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="117"/>
+        <source>CPU Speed: %1</source>
+        <translation>CPU 時脈: %1</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="135"/>
@@ -446,11 +446,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/feedback.ui" line="54"/>
-        <source>Message</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../stacer/feedback.ui" line="61"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
@@ -461,11 +456,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/feedback.ui" line="78"/>
-        <source>Send feedback</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../stacer/feedback.ui" line="97"/>
         <source>Send</source>
         <translation type="unfinished"></translation>
@@ -473,6 +463,16 @@
     <message>
         <location filename="../stacer/feedback.ui" line="120"/>
         <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../stacer/feedback.ui" line="54"/>
+        <source>Message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../stacer/feedback.ui" line="78"/>
+        <source>Send feedback</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -723,11 +723,6 @@
 <context>
     <name>ResourcesPage</name>
     <message>
-        <location filename="../stacer/Pages/Resources/resources_page.ui" line="14"/>
-        <source>Resources</source>
-        <translation>系統資源</translation>
-    </message>
-    <message>
         <location filename="../stacer/Pages/Resources/resources_page.cpp" line="14"/>
         <source>History of CPU</source>
         <translation type="unfinished"></translation>
@@ -801,6 +796,11 @@
         <location filename="../stacer/Pages/Resources/resources_page.cpp" line="365"/>
         <source>Memory: %1 (%2%) %3</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Resources/resources_page.ui" line="14"/>
+        <source>Resources</source>
+        <translation>系統資源</translation>
     </message>
 </context>
 <context>
@@ -1124,31 +1124,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Settings/settings_page.ui" line="158"/>
-        <source>Language</source>
-        <translation>語言</translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/Settings/settings_page.ui" line="171"/>
-        <source>Autostart Stacer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/Settings/settings_page.ui" line="213"/>
-        <source>CPU Percent</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/Settings/settings_page.ui" line="229"/>
-        <source>Alert messages (Show a warning after the specified percentage)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/Settings/settings_page.ui" line="267"/>
-        <source>Donate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../stacer/Pages/Settings/settings_page.ui" line="329"/>
         <source>App Quit Don&apos;t Ask</source>
         <translation type="unfinished"></translation>
@@ -1159,8 +1134,33 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../stacer/Pages/Settings/settings_page.ui" line="158"/>
+        <source>Language</source>
+        <translation>語言</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Settings/settings_page.ui" line="171"/>
+        <source>Autostart Stacer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Settings/settings_page.ui" line="229"/>
+        <source>Alert messages (Show a warning after the specified percentage)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../stacer/Pages/Settings/settings_page.ui" line="402"/>
         <source>Start Page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Settings/settings_page.ui" line="213"/>
+        <source>CPU Percent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Settings/settings_page.ui" line="267"/>
+        <source>Donate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1195,11 +1195,6 @@
     </message>
     <message>
         <location filename="../stacer/Pages/Settings/settings_page.cpp" line="84"/>
-        <source>Helpers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/Settings/settings_page.cpp" line="84"/>
         <source>Uninstaller</source>
         <translation>解除安裝</translation>
     </message>
@@ -1207,6 +1202,11 @@
         <location filename="../stacer/Pages/Settings/settings_page.cpp" line="84"/>
         <source>Resources</source>
         <translation>系統資源</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Settings/settings_page.cpp" line="84"/>
+        <source>Helpers</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1273,14 +1273,14 @@
 <context>
     <name>StartupAppsPage</name>
     <message>
-        <location filename="../stacer/Pages/StartupApps/startup_apps_page.ui" line="14"/>
-        <source>Startup Apps</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../stacer/Pages/StartupApps/startup_apps_page.ui" line="201"/>
         <source>Not Found Startup Apps</source>
         <translation>沒有找到系統開機啟動項目</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/StartupApps/startup_apps_page.ui" line="14"/>
+        <source>Startup Apps</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../stacer/Pages/StartupApps/startup_apps_page.ui" line="101"/>
@@ -1378,6 +1378,21 @@
 <context>
     <name>UninstallerPage</name>
     <message>
+        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="14"/>
+        <source>Uninstaller</source>
+        <translation>解除安裝</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="371"/>
+        <source>System Packages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="393"/>
+        <source>Snap Packages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="442"/>
         <source>Search...</source>
         <translation>搜尋...</translation>
@@ -1389,24 +1404,9 @@
         <translation>未發現已安裝的套件</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="14"/>
-        <source>Uninstaller</source>
-        <translation>解除安裝</translation>
-    </message>
-    <message>
         <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="340"/>
         <source>Uninstall Selected</source>
         <translation>解除安裝選中的項目</translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="371"/>
-        <source>System Packages</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="393"/>
-        <source>Snap Packages</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="102"/>

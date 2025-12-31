@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="hi_IN">
+<TS version="2.1" language="hi_IN" sourcelanguage="en">
 <context>
     <name>APTSourceEdit</name>
     <message>
@@ -154,8 +154,8 @@
         <translation>सिस्टम क्लीनर</translation>
     </message>
     <message>
-        <location filename="../stacer/app.ui" line="362"/>
-        <source>APT Repository Manager</source>
+        <location filename="../stacer/app.ui" line="194"/>
+        <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -169,23 +169,23 @@
         <translation>साधन</translation>
     </message>
     <message>
+        <location filename="../stacer/app.ui" line="334"/>
+        <source>Helpers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../stacer/app.ui" line="362"/>
+        <source>APT Repository Manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../stacer/app.ui" line="250"/>
         <source>Processes</source>
         <translation>प्रक्रियाओं</translation>
     </message>
     <message>
-        <location filename="../stacer/app.ui" line="194"/>
-        <source>Search</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../stacer/app.ui" line="222"/>
         <source>Services</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../stacer/app.ui" line="334"/>
-        <source>Helpers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -392,14 +392,14 @@
         <translation>CPU आदर्श: %1</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="117"/>
-        <source>CPU Speed: %1</source>
-        <translation>CPU गति: %1</translation>
-    </message>
-    <message>
         <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="116"/>
         <source>CPU Core: %1</source>
         <translation>CPU कोर: %1</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="117"/>
+        <source>CPU Speed: %1</source>
+        <translation>CPU गति: %1</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="135"/>
@@ -647,6 +647,11 @@
         <translation>प्रक्रिया समाप्त</translation>
     </message>
     <message>
+        <location filename="../stacer/Pages/Processes/processes_page.cpp" line="30"/>
+        <source>User</source>
+        <translation>उपयोगकर्ता</translation>
+    </message>
+    <message>
         <location filename="../stacer/Pages/Processes/processes_page.cpp" line="29"/>
         <source>Resident Memory</source>
         <translation>निवासी मेमोरी</translation>
@@ -660,11 +665,6 @@
         <location filename="../stacer/Pages/Processes/processes_page.cpp" line="29"/>
         <source>Virtual Memory</source>
         <translation>अप्रत्यक्ष स्मृति</translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/Processes/processes_page.cpp" line="30"/>
-        <source>User</source>
-        <translation>उपयोगकर्ता</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Processes/processes_page.cpp" line="30"/>
@@ -1273,6 +1273,11 @@
 <context>
     <name>StartupAppsPage</name>
     <message>
+        <location filename="../stacer/Pages/StartupApps/startup_apps_page.ui" line="201"/>
+        <source>Not Found Startup Apps</source>
+        <translation>स्टार्टअप ऐप्स नहीं मिला</translation>
+    </message>
+    <message>
         <location filename="../stacer/Pages/StartupApps/startup_apps_page.ui" line="14"/>
         <source>Startup Apps</source>
         <translation type="unfinished"></translation>
@@ -1281,11 +1286,6 @@
         <location filename="../stacer/Pages/StartupApps/startup_apps_page.ui" line="101"/>
         <source>Add Startup App</source>
         <translation>स्टार्टअप ऐप जोड़ें</translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/StartupApps/startup_apps_page.ui" line="201"/>
-        <source>Not Found Startup Apps</source>
-        <translation>स्टार्टअप ऐप्स नहीं मिला</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/StartupApps/startup_apps_page.cpp" line="66"/>
@@ -1378,17 +1378,6 @@
 <context>
     <name>UninstallerPage</name>
     <message>
-        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="340"/>
-        <source>Uninstall Selected</source>
-        <translation>स्थापना रद्द करें चयनित</translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="108"/>
-        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="231"/>
-        <source>Not Found Installed Packages</source>
-        <translation>स्थापित नहीं मिला संकुल</translation>
-    </message>
-    <message>
         <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="14"/>
         <source>Uninstaller</source>
         <translation>अनइंस्टॉलर</translation>
@@ -1407,6 +1396,17 @@
         <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="442"/>
         <source>Search...</source>
         <translation>खोज...</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="108"/>
+        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="231"/>
+        <source>Not Found Installed Packages</source>
+        <translation>स्थापित नहीं मिला संकुल</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="340"/>
+        <source>Uninstall Selected</source>
+        <translation>स्थापना रद्द करें चयनित</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="102"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="oc_FR">
+<TS version="2.1" language="oc_FR" sourcelanguage="en">
 <context>
     <name>APTSourceEdit</name>
     <message>
@@ -154,8 +154,8 @@
         <translation>Netejador sistèma</translation>
     </message>
     <message>
-        <location filename="../stacer/app.ui" line="362"/>
-        <source>APT Repository Manager</source>
+        <location filename="../stacer/app.ui" line="194"/>
+        <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -169,23 +169,23 @@
         <translation>Ressorsas</translation>
     </message>
     <message>
+        <location filename="../stacer/app.ui" line="334"/>
+        <source>Helpers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../stacer/app.ui" line="362"/>
+        <source>APT Repository Manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../stacer/app.ui" line="250"/>
         <source>Processes</source>
         <translation>Processús</translation>
     </message>
     <message>
-        <location filename="../stacer/app.ui" line="194"/>
-        <source>Search</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../stacer/app.ui" line="222"/>
         <source>Services</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../stacer/app.ui" line="334"/>
-        <source>Helpers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -392,14 +392,14 @@
         <translation>Modèl del Processor&#x202f;:&#x202f;%1</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="117"/>
-        <source>CPU Speed: %1</source>
-        <translation>Velocitat&#x202f;:&#x202f;%1</translation>
-    </message>
-    <message>
         <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="116"/>
         <source>CPU Core: %1</source>
         <translation>Nombre de còrs&#x202f;:&#x202f;%1</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="117"/>
+        <source>CPU Speed: %1</source>
+        <translation>Velocitat&#x202f;:&#x202f;%1</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="135"/>
@@ -654,7 +654,7 @@
     <message>
         <location filename="../stacer/Pages/Processes/processes_page.cpp" line="29"/>
         <source>Resident Memory</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Processes/processes_page.cpp" line="29"/>

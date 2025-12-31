@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="eu_ES">
+<TS version="2.1" language="eu_ES" sourcelanguage="en">
 <context>
     <name>APTSourceEdit</name>
     <message>
@@ -154,9 +154,9 @@
         <translation>Sistemaren garbitzailea</translation>
     </message>
     <message>
-        <location filename="../stacer/app.ui" line="362"/>
-        <source>APT Repository Manager</source>
-        <translation>APT biltegi kudeatzailea</translation>
+        <location filename="../stacer/app.ui" line="194"/>
+        <source>Search</source>
+        <translation>Bilatu</translation>
     </message>
     <message>
         <location filename="../stacer/app.ui" line="278"/>
@@ -169,24 +169,24 @@
         <translation>Baliabideak</translation>
     </message>
     <message>
+        <location filename="../stacer/app.ui" line="334"/>
+        <source>Helpers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../stacer/app.ui" line="362"/>
+        <source>APT Repository Manager</source>
+        <translation>APT biltegi kudeatzailea</translation>
+    </message>
+    <message>
         <location filename="../stacer/app.ui" line="250"/>
         <source>Processes</source>
         <translation>Prozesuak</translation>
     </message>
     <message>
-        <location filename="../stacer/app.ui" line="194"/>
-        <source>Search</source>
-        <translation>Bilatu</translation>
-    </message>
-    <message>
         <location filename="../stacer/app.ui" line="222"/>
         <source>Services</source>
         <translation>Zerbitzuak</translation>
-    </message>
-    <message>
-        <location filename="../stacer/app.ui" line="334"/>
-        <source>Helpers</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../stacer/app.ui" line="390"/>
@@ -392,14 +392,14 @@
         <translation>PUZ Modeloa: %1</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="117"/>
-        <source>CPU Speed: %1</source>
-        <translation>PUZaren abiadura: %1</translation>
-    </message>
-    <message>
         <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="116"/>
         <source>CPU Core: %1</source>
         <translation>PUZaren nukleoa:%1</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="117"/>
+        <source>CPU Speed: %1</source>
+        <translation>PUZaren abiadura: %1</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="135"/>

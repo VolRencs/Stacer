@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ml_IN">
+<TS version="2.1" language="ml_IN" sourcelanguage="en">
 <context>
     <name>APTSourceEdit</name>
     <message>
@@ -392,14 +392,14 @@
         <translation>സിപിയു: %1</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="117"/>
-        <source>CPU Speed: %1</source>
-        <translation>സിപിയു വേഗത: %1</translation>
-    </message>
-    <message>
         <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="116"/>
         <source>CPU Core: %1</source>
         <translation>സിപിയു കോർ: %1</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="117"/>
+        <source>CPU Speed: %1</source>
+        <translation>സിപിയു വേഗത: %1</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="135"/>
@@ -689,7 +689,7 @@
     <message>
         <location filename="../stacer/Pages/Processes/processes_page.cpp" line="31"/>
         <source>CPU Time</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Processes/processes_page.cpp" line="31"/>
@@ -1232,13 +1232,11 @@
     <message>
         <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="95"/>
         <source>Save</source>
-        <translatorcomment>വരുത്തിയ മാറ്റങ്ങൾ സ്ഥിരമായി സൂക്ഷിച്ചു വെക്കാൻ </translatorcomment>
         <translation>സൂക്ഷിക്കുക</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="44"/>
         <source>Fields cannot be left blank.</source>
-        <translatorcomment>ഈ ഭാഗങ്ങൾ പൂരിപ്പിക്കാതെ മുന്നോട്ടു പോകാൻ കഴിയില്ല </translatorcomment>
         <translation>നിർബന്ധമായും പൂരിപ്പിക്കേണ്ടവ. </translation>
     </message>
     <message>
@@ -1249,7 +1247,6 @@
     <message>
         <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="51"/>
         <source>App Name</source>
-        <translatorcomment>ചേർക്കാനുദ്ദേശിക്കുന്ന അപ്ലിക്കേഷന്റെ പേര്</translatorcomment>
         <translation>പ്രയോഗത്തിന്റെ പേര്</translation>
     </message>
     <message>
@@ -1270,7 +1267,6 @@
     <message>
         <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="108"/>
         <source>Application</source>
-        <translatorcomment>അപ്ലിക്കേഷൻ</translatorcomment>
         <translation>പ്രയോഗം</translation>
     </message>
 </context>
@@ -1279,7 +1275,6 @@
     <message>
         <location filename="../stacer/Pages/StartupApps/startup_apps_page.ui" line="201"/>
         <source>Not Found Startup Apps</source>
-        <translatorcomment>ഇത് വരെ പ്രയോഗങ്ങളൊന്നും ചേർക്കപ്പെട്ടിട്ടില്ല</translatorcomment>
         <translation>ഒന്നും തന്നെ കാണുന്നില്ല</translation>
     </message>
     <message>

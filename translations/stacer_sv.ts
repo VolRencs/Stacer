@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="sv_SE">
+<TS version="2.1" language="sv_SE" sourcelanguage="en">
 <context>
     <name>APTSourceEdit</name>
     <message>
@@ -154,9 +154,9 @@
         <translation>Systemrensare</translation>
     </message>
     <message>
-        <location filename="../stacer/app.ui" line="362"/>
-        <source>APT Repository Manager</source>
-        <translation>APT programkällor</translation>
+        <location filename="../stacer/app.ui" line="194"/>
+        <source>Search</source>
+        <translation>Sök</translation>
     </message>
     <message>
         <location filename="../stacer/app.ui" line="278"/>
@@ -169,24 +169,24 @@
         <translation>Resurser</translation>
     </message>
     <message>
+        <location filename="../stacer/app.ui" line="334"/>
+        <source>Helpers</source>
+        <translation>Hjälpare</translation>
+    </message>
+    <message>
+        <location filename="../stacer/app.ui" line="362"/>
+        <source>APT Repository Manager</source>
+        <translation>APT programkällor</translation>
+    </message>
+    <message>
         <location filename="../stacer/app.ui" line="250"/>
         <source>Processes</source>
         <translation>Processer</translation>
     </message>
     <message>
-        <location filename="../stacer/app.ui" line="194"/>
-        <source>Search</source>
-        <translation>Sök</translation>
-    </message>
-    <message>
         <location filename="../stacer/app.ui" line="222"/>
         <source>Services</source>
         <translation>Tjänster</translation>
-    </message>
-    <message>
-        <location filename="../stacer/app.ui" line="334"/>
-        <source>Helpers</source>
-        <translation>Hjälpare</translation>
     </message>
     <message>
         <location filename="../stacer/app.ui" line="390"/>
@@ -392,14 +392,14 @@
         <translation>CPU-modell: %1</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="117"/>
-        <source>CPU Speed: %1</source>
-        <translation>CPU-hastighet: %1</translation>
-    </message>
-    <message>
         <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="116"/>
         <source>CPU Core: %1</source>
         <translation>CPU-kärnor: %1</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="117"/>
+        <source>CPU Speed: %1</source>
+        <translation>CPU-hastighet: %1</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="135"/>
@@ -551,43 +551,6 @@
 <context>
     <name>HostManage</name>
     <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="26"/>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="100"/>
-        <source>Hosts (%1)</source>
-        <translation>Värdnamn (%1)</translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="39"/>
-        <source>IP Address</source>
-        <translation>IP-adress</translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="39"/>
-        <source>Full Qualified</source>
-        <translation>Kvalificerat namn</translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.ui" line="160"/>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="39"/>
-        <source>Aliases</source>
-        <translation>Alias</translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="137"/>
-        <source>Edit</source>
-        <translation>Redigera</translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="141"/>
-        <source>Delete</source>
-        <translation>Ta bort</translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="149"/>
-        <source>The IP and Fully Qualified fields are required.</source>
-        <translation>IP och fullt kvalificerad krävs.</translation>
-    </message>
-    <message>
         <location filename="../stacer/Pages/Helpers/host_manage.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
@@ -613,6 +576,12 @@
         <translation>Fullt kvalificerat namn *</translation>
     </message>
     <message>
+        <location filename="../stacer/Pages/Helpers/host_manage.ui" line="160"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="39"/>
+        <source>Aliases</source>
+        <translation>Alias</translation>
+    </message>
+    <message>
         <location filename="../stacer/Pages/Helpers/host_manage.ui" line="176"/>
         <source>Save</source>
         <translation>Spara</translation>
@@ -621,6 +590,37 @@
         <location filename="../stacer/Pages/Helpers/host_manage.ui" line="192"/>
         <source>Cancel</source>
         <translation>Avbryt</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="26"/>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="100"/>
+        <source>Hosts (%1)</source>
+        <translation>Värdnamn (%1)</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="39"/>
+        <source>IP Address</source>
+        <translation>IP-adress</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="39"/>
+        <source>Full Qualified</source>
+        <translation>Kvalificerat namn</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="137"/>
+        <source>Edit</source>
+        <translation>Redigera</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="141"/>
+        <source>Delete</source>
+        <translation>Ta bort</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Helpers/host_manage.cpp" line="149"/>
+        <source>The IP and Fully Qualified fields are required.</source>
+        <translation>IP och fullt kvalificerad krävs.</translation>
     </message>
 </context>
 <context>
@@ -647,6 +647,11 @@
         <translation>Avsluta process</translation>
     </message>
     <message>
+        <location filename="../stacer/Pages/Processes/processes_page.cpp" line="30"/>
+        <source>User</source>
+        <translation>Användare</translation>
+    </message>
+    <message>
         <location filename="../stacer/Pages/Processes/processes_page.cpp" line="29"/>
         <source>Resident Memory</source>
         <translation>Minne</translation>
@@ -660,11 +665,6 @@
         <location filename="../stacer/Pages/Processes/processes_page.cpp" line="29"/>
         <source>Virtual Memory</source>
         <translation>Virtuellt minne</translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/Processes/processes_page.cpp" line="30"/>
-        <source>User</source>
-        <translation>Användare</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Processes/processes_page.cpp" line="30"/>
@@ -851,6 +851,12 @@
         <translation>Rättigheter</translation>
     </message>
     <message>
+        <location filename="../stacer/Pages/Search/search_page.ui" line="490"/>
+        <location filename="../stacer/Pages/Search/search_page.cpp" line="27"/>
+        <source>Size</source>
+        <translation>Storlek</translation>
+    </message>
+    <message>
         <location filename="../stacer/Pages/Search/search_page.ui" line="514"/>
         <source>Readable</source>
         <translation>Läsbar</translation>
@@ -904,12 +910,6 @@
         <location filename="../stacer/Pages/Search/search_page.cpp" line="26"/>
         <source>Path</source>
         <translation>Sökväg</translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/Search/search_page.ui" line="490"/>
-        <location filename="../stacer/Pages/Search/search_page.cpp" line="27"/>
-        <source>Size</source>
-        <translation>Storlek</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Search/search_page.cpp" line="28"/>
@@ -1124,6 +1124,11 @@
         <translation>Diskanvändning</translation>
     </message>
     <message>
+        <location filename="../stacer/Pages/Settings/settings_page.ui" line="329"/>
+        <source>App Quit Don&apos;t Ask</source>
+        <translation>Fråga inte vid avslut</translation>
+    </message>
+    <message>
         <location filename="../stacer/Pages/Settings/settings_page.ui" line="389"/>
         <source>Disks</source>
         <translation>Diskar</translation>
@@ -1152,11 +1157,6 @@
         <location filename="../stacer/Pages/Settings/settings_page.ui" line="213"/>
         <source>CPU Percent</source>
         <translation>CPU-belastning</translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/Settings/settings_page.ui" line="329"/>
-        <source>App Quit Don&apos;t Ask</source>
-        <translation>Fråga inte vid avslut</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Settings/settings_page.ui" line="267"/>
@@ -1273,6 +1273,11 @@
 <context>
     <name>StartupAppsPage</name>
     <message>
+        <location filename="../stacer/Pages/StartupApps/startup_apps_page.ui" line="201"/>
+        <source>Not Found Startup Apps</source>
+        <translation>Inga uppstartsprogram hittades</translation>
+    </message>
+    <message>
         <location filename="../stacer/Pages/StartupApps/startup_apps_page.ui" line="14"/>
         <source>Startup Apps</source>
         <translation>Uppstartsprogram</translation>
@@ -1281,11 +1286,6 @@
         <location filename="../stacer/Pages/StartupApps/startup_apps_page.ui" line="101"/>
         <source>Add Startup App</source>
         <translation>Lägg till uppstartsprogram</translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/StartupApps/startup_apps_page.ui" line="201"/>
-        <source>Not Found Startup Apps</source>
-        <translation>Inga uppstartsprogram hittades</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/StartupApps/startup_apps_page.cpp" line="66"/>
@@ -1378,17 +1378,6 @@
 <context>
     <name>UninstallerPage</name>
     <message>
-        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="340"/>
-        <source>Uninstall Selected</source>
-        <translation>Avinstallera markerat</translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="108"/>
-        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="231"/>
-        <source>Not Found Installed Packages</source>
-        <translation>Inga installerade paket hittades</translation>
-    </message>
-    <message>
         <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="14"/>
         <source>Uninstaller</source>
         <translation>Avinstallerare</translation>
@@ -1407,6 +1396,17 @@
         <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="442"/>
         <source>Search...</source>
         <translation>Sök...</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="108"/>
+        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="231"/>
+        <source>Not Found Installed Packages</source>
+        <translation>Inga installerade paket hittades</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="340"/>
+        <source>Uninstall Selected</source>
+        <translation>Avinstallera markerat</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="102"/>

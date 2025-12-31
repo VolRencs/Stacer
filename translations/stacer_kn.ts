@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="kn_IN">
+<TS version="2.1" language="kn_IN" sourcelanguage="en">
 <context>
     <name>APTSourceEdit</name>
     <message>
@@ -154,8 +154,8 @@
         <translation>ಸಿಸ್ಟಮ್ ಕ್ಲೀನರ್</translation>
     </message>
     <message>
-        <location filename="../stacer/app.ui" line="362"/>
-        <source>APT Repository Manager</source>
+        <location filename="../stacer/app.ui" line="194"/>
+        <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -169,23 +169,23 @@
         <translation>ಸಂಪನ್ಮೂಲಗಳು</translation>
     </message>
     <message>
+        <location filename="../stacer/app.ui" line="334"/>
+        <source>Helpers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../stacer/app.ui" line="362"/>
+        <source>APT Repository Manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../stacer/app.ui" line="250"/>
         <source>Processes</source>
         <translation>ಪ್ರಕ್ರಿಯೆಗಳು</translation>
     </message>
     <message>
-        <location filename="../stacer/app.ui" line="194"/>
-        <source>Search</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../stacer/app.ui" line="222"/>
         <source>Services</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../stacer/app.ui" line="334"/>
-        <source>Helpers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -392,14 +392,14 @@
         <translation>ಸಿಪಿಯು ಮಾದರಿ: %1</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="117"/>
-        <source>CPU Speed: %1</source>
-        <translation>ಸಿಪಿಯು ವೇಗ: %1</translation>
-    </message>
-    <message>
         <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="116"/>
         <source>CPU Core: %1</source>
         <translation>ಸಿಪಿಯು ಕೋರ್ಗಳು: %1</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="117"/>
+        <source>CPU Speed: %1</source>
+        <translation>ಸಿಪಿಯು ವೇಗ: %1</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Dashboard/dashboard_page.cpp" line="135"/>
@@ -647,6 +647,11 @@
         <translation>ಪ್ರಕ್ರಿಯೆ ಕೊನೆಗೊಳಿಸಿ</translation>
     </message>
     <message>
+        <location filename="../stacer/Pages/Processes/processes_page.cpp" line="30"/>
+        <source>User</source>
+        <translation>ಬಳಕೆದಾರ</translation>
+    </message>
+    <message>
         <location filename="../stacer/Pages/Processes/processes_page.cpp" line="29"/>
         <source>Resident Memory</source>
         <translation>ನಿವಾಸ ಸ್ಮರಣೆ</translation>
@@ -660,11 +665,6 @@
         <location filename="../stacer/Pages/Processes/processes_page.cpp" line="29"/>
         <source>Virtual Memory</source>
         <translation>ವರ್ಚುವಲ್ ಸ್ಮೃತಿ</translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/Processes/processes_page.cpp" line="30"/>
-        <source>User</source>
-        <translation>ಬಳಕೆದಾರ</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Processes/processes_page.cpp" line="30"/>
@@ -1273,6 +1273,11 @@
 <context>
     <name>StartupAppsPage</name>
     <message>
+        <location filename="../stacer/Pages/StartupApps/startup_apps_page.ui" line="201"/>
+        <source>Not Found Startup Apps</source>
+        <translation>ಆರಂಭಿಕ ಅಪ್ಲಿಕೇಶನ್ಗಳು ಕಂಡುಬಂದಿಲ್ಲ</translation>
+    </message>
+    <message>
         <location filename="../stacer/Pages/StartupApps/startup_apps_page.ui" line="14"/>
         <source>Startup Apps</source>
         <translation type="unfinished"></translation>
@@ -1281,11 +1286,6 @@
         <location filename="../stacer/Pages/StartupApps/startup_apps_page.ui" line="101"/>
         <source>Add Startup App</source>
         <translation>ಆರಂಭಿಕ ಅಪ್ಲಿಕೇಶನ್ ಸೇರಿಸಿ</translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/StartupApps/startup_apps_page.ui" line="201"/>
-        <source>Not Found Startup Apps</source>
-        <translation>ಆರಂಭಿಕ ಅಪ್ಲಿಕೇಶನ್ಗಳು ಕಂಡುಬಂದಿಲ್ಲ</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/StartupApps/startup_apps_page.cpp" line="66"/>
@@ -1378,17 +1378,6 @@
 <context>
     <name>UninstallerPage</name>
     <message>
-        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="340"/>
-        <source>Uninstall Selected</source>
-        <translation>ಆಯ್ಕೆಮಾಡಿದನ್ನು ಅಸ್ಥಾಪಿಸು</translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="108"/>
-        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="231"/>
-        <source>Not Found Installed Packages</source>
-        <translation>ಸ್ಥಾಪಿಸಲಾದ ಪ್ಯಾಕೇಜುಗಳು ಕಂಡುಬಂದಿಲ್ಲ</translation>
-    </message>
-    <message>
         <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="14"/>
         <source>Uninstaller</source>
         <translation>ಅಸ್ಥಾಪನೆಗಾರ</translation>
@@ -1407,6 +1396,17 @@
         <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="442"/>
         <source>Search...</source>
         <translation>ಹುಡುಕು...</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="108"/>
+        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="231"/>
+        <source>Not Found Installed Packages</source>
+        <translation>ಸ್ಥಾಪಿಸಲಾದ ಪ್ಯಾಕೇಜುಗಳು ಕಂಡುಬಂದಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <location filename="../stacer/Pages/Uninstaller/uninstallerpage.ui" line="340"/>
+        <source>Uninstall Selected</source>
+        <translation>ಆಯ್ಕೆಮಾಡಿದನ್ನು ಅಸ್ಥಾಪಿಸು</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Uninstaller/uninstaller_page.cpp" line="102"/>
