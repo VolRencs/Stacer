@@ -4,13 +4,26 @@
 
 <h2 align="center">Linux System Optimizer and Monitoring</h2>
 
+<h3 align="center">
+    <strong>
+        <a href="https://stacer.quentium.fr/">See the website</a>
+        &middot;
+        <a href="https://launchpad.net/~quentiumyt/+archive/ubuntu/stacer">View on Launchpad</a>
+        &middot;
+        <a href="https://crowdin.com/project/stacer">Contribute to Crowdin translations</a>
+    </strong>
+</h3>
+
 <p align="center">
-	<a href="https://www.kernel.org">
+	<a title="Kernel.org" target="_blank" href="https://www.kernel.org">
 		<img alt="Platform (GNU/Linux)" src="https://img.shields.io/badge/platform-GNU/Linux-blue.svg"/>
 	</a>
-	<a href="https://github.com/QuentiumYT/Stacer/releases">
-		<img alt="Github All Releases" src="https://img.shields.io/github/downloads/QuentiumYT/Stacer/total.svg"/>
+	<a title="GitHub Releases" target="_blank" href="https://github.com/QuentiumYT/Stacer/releases">
+		<img alt="GitHub Releases Downloads" src="https://img.shields.io/github/downloads/QuentiumYT/Stacer/total.svg"/>
 	</a>
+    <a title="Crowdin Translations" target="_blank" href="https://crowdin.com/project/stacer">
+        <img alt="Crowdin Localized Percentage" src="https://badges.crowdin.net/stacer/localized.svg">
+    </a>
 </p>
 
 ## Reviews
@@ -25,7 +38,7 @@
     <a href="https://www.dobreprogramy.pl/stacer-program-do-optymalizacji-ubuntu-ktory-wyglada-jakby-uciekl-z-windowsa,6628400543275137a">
 		<img width="64px" src="https://www.dobreprogramy.pl/resources/icons/icon.png"/>
 	</a>
-    <a href="https://desdelinux.net/optimizar-debian-ubuntu-linux-mint-derivados-stacer/">
+    <a href="hhttps://blog.desdelinux.net/optimizar-debian-ubuntu-linux-mint-derivados-stacer/">
 		<img width="64px" src="https://blog.desdelinux.net/wp-content/uploads/2018/04/cropped-desdelinux.png"/>
 	</a>
 	<a href="https://www.techrepublic.com/article/how-to-install-stacer-for-quick-linux-system-optimization/">
@@ -227,5 +240,7 @@ The Stacer Settings feedback:
 ## Contributors
 
 This project exists thanks to all the people who contribute.
+
+Thanks for people that contributes on translations on [Crowdin](https://crowdin.com/project/stacer)!
 
 <a href="https://github.com/QuentiumYT/Stacer/graphs/contributors"><img src="https://opencollective.com/Stacer/contributors.svg?width=890&button=false" /></a>
