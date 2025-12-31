@@ -1,3 +1,5 @@
 .gitattributes  export-ignore
-screenshots     export-ignore
+.github         export-ignore
 debian          export-ignore
+screenshots     export-ignore
+crowdin.yml     export-ignore

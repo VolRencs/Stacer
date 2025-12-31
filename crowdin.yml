@@ -1,0 +1,3 @@
+files:
+  - source: translations/stacer_en.ts
+    translation: /translations/stacer_%two_letters_code%.ts
