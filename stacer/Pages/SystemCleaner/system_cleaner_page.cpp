@@ -33,7 +33,7 @@ void SystemCleanerPage::init()
     ui->treeWidgetScanResult->setHeaderLabels({ tr("File Name"), tr("Size") });
 
     // loaders
-    connect(SignalMapper::ins(), &SignalMapper::sigChangedAppTheme, [=] {
+    connect(SignalMapper::ins(), &SignalMapper::sigChangedAppTheme, [this] {
         QString themeName = SettingManager::ins()->getThemeName();
 
         mLoadingMovie = new QMovie(QString(":/static/themes/%1/img/scanLoading.gif").arg(themeName), {}, this);

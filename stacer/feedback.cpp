@@ -53,7 +53,7 @@ void Feedback::on_btnSend_clicked()
     }
 
     if (!name.isEmpty() && !email.isEmpty() && isEmailValid) {
-        QFuture<void> future = QtConcurrent::run([=] {
+        QFuture<void> future = QtConcurrent::run([this, name, email, message] {
             emit disableElementsS(true);
 
             ui->btnSend->setText(tr("Sending..."));

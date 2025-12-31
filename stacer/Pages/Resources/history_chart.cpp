@@ -57,7 +57,7 @@ void HistoryChart::init()
     ui->layoutHistoryChart->addWidget(mChartView, 1, 0, 1, 3);
 
     // theme changed
-    connect(SignalMapper::ins(), &SignalMapper::sigChangedAppTheme, [=] {
+    connect(SignalMapper::ins(), &SignalMapper::sigChangedAppTheme, [this] {
         QString chartLabelColor = AppManager::ins()->getStyleValues()->value("@chartLabelColor").toString();
         QString chartGridColor = AppManager::ins()->getStyleValues()->value("@chartGridColor").toString();
         QString historyChartBackground = AppManager::ins()->getStyleValues()->value("@historyChartBackgroundColor").toString();

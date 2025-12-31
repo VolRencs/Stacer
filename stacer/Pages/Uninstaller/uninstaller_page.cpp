@@ -147,7 +147,7 @@ void UninstallerPage::on_btnUninstall_clicked()
     QStringList selectedSnapPackages = getSelectedSnapPackages();
 
     if (!selectedPackages.isEmpty() || !selectedSnapPackages.isEmpty()) {
-        QFuture<void> future = QtConcurrent::run([=] {
+        QFuture<void> future = QtConcurrent::run([selectedPackages, selectedSnapPackages] {
             emit SignalMapper::ins() -> sigUninstallStarted();
 
             ToolManager::ins()->uninstallPackages(selectedPackages);

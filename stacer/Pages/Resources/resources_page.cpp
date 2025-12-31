@@ -63,7 +63,7 @@ void ResourcesPage::diskPieSeriesCustomize()
         QPieSlice *slice = mDiskPieSeries->slices().at(i);
         slice->setBrush(QColor((i < chartColors.count() ? chartColors.at(i) : i - chartColors.count())));
         slice->setBorderColor(QColor(Qt::lightGray));
-        connect(slice, &QPieSlice::hovered, this, [=](bool show) {
+        connect(slice, &QPieSlice::hovered, this, [this, slice](bool show) {
             slice->setExploded(show);
             mChartDiskPie->setTitle(QString("%1 (%2) (%3)")
                                         .arg(slice->label())
@@ -108,7 +108,7 @@ void ResourcesPage::initDiskPieChart()
     QCheckBox *checkHistoryTitle = new QCheckBox(gridWidgetDiskPie);
     checkHistoryTitle->setObjectName("checkHistoryTitle");
     checkHistoryTitle->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
-    connect(checkHistoryTitle, &QCheckBox::clicked, this, [=](bool checked) {
+    connect(checkHistoryTitle, &QCheckBox::clicked, this, [this](bool checked) {
         QLayout *charts = topLevelWidget()->findChild<QWidget *>("charts")->layout();
 
         for (int i = 0; i < charts->count(); ++i) {
@@ -121,7 +121,7 @@ void ResourcesPage::initDiskPieChart()
     QComboBox *cmbFileSystemType = new QComboBox(gridWidgetDiskPie);
     cmbFileSystemType->addItem(tr("File System Type"), -1);
     cmbFileSystemType->addItems(InfoManager::ins()->getFileSystemTypes());
-    connect(cmbFileSystemType, &QComboBox::currentTextChanged, this, [=](const QString text) {
+    connect(cmbFileSystemType, &QComboBox::currentTextChanged, this, [this, cmbFileSystemType](const QString text) {
         mChartDiskPie->removeSeries(mDiskPieSeries);
         mDiskPieSeries = new QPieSeries();
 
@@ -141,7 +141,7 @@ void ResourcesPage::initDiskPieChart()
     QComboBox *cmbDevice = new QComboBox(gridWidgetDiskPie);
     cmbDevice->addItem(tr("Device"));
     cmbDevice->addItems(InfoManager::ins()->getDevices());
-    connect(cmbDevice, &QComboBox::currentTextChanged, this, [=](const QString text) {
+    connect(cmbDevice, &QComboBox::currentTextChanged, this, [this, cmbDevice](const QString text) {
         mChartDiskPie->removeSeries(mDiskPieSeries);
         mDiskPieSeries = new QPieSeries();
 
@@ -171,7 +171,7 @@ void ResourcesPage::initDiskPieChart()
     ui->chartsLayout->addWidget(gridWidgetDiskPie);
 
     // theme changed
-    connect(SignalMapper::ins(), &SignalMapper::sigChangedAppTheme, [=] {
+    connect(SignalMapper::ins(), &SignalMapper::sigChangedAppTheme, [this] {
         QString chartLabelColor = AppManager::ins()->getStyleValues()->value("@chartLabelColor").toString();
         QString chartGridColor = AppManager::ins()->getStyleValues()->value("@chartGridColor").toString();
         QString historyChartBackground = AppManager::ins()->getStyleValues()->value("@historyChartBackgroundColor").toString();

@@ -155,10 +155,10 @@ void App::createTrayActions()
     for (QPushButton *button : mListSidebarButtons) {
         QString toolTip = button->toolTip();
         QAction *action = new QAction(toolTip, this);
-        connect(action, &QAction::triggered, [=] {
+        connect(action, &QAction::triggered, [this, toolTip] {
             clickSidebarButton(toolTip, true);
         });
-        connect(mTrayIcon, &QSystemTrayIcon::activated, this, [=](QSystemTrayIcon::ActivationReason) {
+        connect(mTrayIcon, &QSystemTrayIcon::activated, this, [this](QSystemTrayIcon::ActivationReason) {
             setVisible(true);
             activateWindow();
         });
@@ -169,7 +169,7 @@ void App::createTrayActions()
     mTrayMenu->addSeparator();
 
     QAction *quitAction = new QAction(tr("Quit"), this);
-    connect(quitAction, &QAction::triggered, [=] { qApp->quit(); });
+    connect(quitAction, &QAction::triggered, [] { qApp->quit(); });
     mTrayMenu->addAction(quitAction);
 
     mTrayIcon->setContextMenu(mTrayMenu);
