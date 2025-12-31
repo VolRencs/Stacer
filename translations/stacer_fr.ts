@@ -1063,7 +1063,7 @@
     <message>
         <location filename="../stacer/Pages/Services/services_page.ui" line="190"/>
         <source>Running Now ?</source>
-        <translation>Lancez le maintenant ?</translation>
+        <translation>En cours d'exécution ?</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Services/services_page.ui" line="244"/>
@@ -1073,17 +1073,17 @@
     <message>
         <location filename="../stacer/Pages/Services/services_page.cpp" line="32"/>
         <source>Running Status</source>
-        <translation>Statut de fonctionnement</translation>
+        <translation>Statut d'exécution</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Services/services_page.cpp" line="32"/>
         <source>Running</source>
-        <translation>Fonctionnement</translation>
+        <translation>En cours</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Services/services_page.cpp" line="32"/>
         <source>Not Running</source>
-        <translation>N’est pas en cours d’exécution</translation>
+        <translation>Non démarré</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Services/services_page.cpp" line="33"/>
@@ -1093,12 +1093,12 @@
     <message>
         <location filename="../stacer/Pages/Services/services_page.cpp" line="33"/>
         <source>Enabled</source>
-        <translation>Activer</translation>
+        <translation>Activé</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Services/services_page.cpp" line="33"/>
         <source>Disabled</source>
-        <translation>Désactiver</translation>
+        <translation>Désactivé</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Services/services_page.cpp" line="80"/>
@@ -1372,7 +1372,7 @@
     <message>
         <location filename="../stacer/Pages/SystemCleaner/system_cleaner_page.cpp" line="293"/>
         <source>%1 size files cleaned.</source>
-        <translation>%1 fichier(s) de taille nettoyés.</translation>
+        <translation>%1 de taille de fichiers nettoyés.</translation>
     </message>
 </context>
 <context>
