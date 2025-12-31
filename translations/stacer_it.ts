@@ -483,7 +483,7 @@
     <message>
         <location filename="../stacer/feedback.cpp" line="51"/>
         <source>Your message must be at least 5 characters !</source>
-        <translation>Il tuo messaggio deve contenere almeno 25 caratteri ! {5 ?}</translation>
+        <translation>Il tuo messaggio deve contenere almeno 5 caratteri !</translation>
     </message>
     <message>
         <location filename="../stacer/feedback.cpp" line="59"/>

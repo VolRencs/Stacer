@@ -483,7 +483,7 @@
     <message>
         <location filename="../stacer/feedback.cpp" line="51"/>
         <source>Your message must be at least 5 characters !</source>
-        <translation>25자 이상의 메세지를 작성하세요 ! {5 ?}</translation>
+        <translation>5자 이상의 메세지를 작성하세요 !</translation>
     </message>
     <message>
         <location filename="../stacer/feedback.cpp" line="59"/>

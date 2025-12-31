@@ -483,7 +483,7 @@
     <message>
         <location filename="../stacer/feedback.cpp" line="51"/>
         <source>Your message must be at least 5 characters !</source>
-        <translation>Az üzenetnek legalább 25 karakterből kell állnia ! {5 ?}</translation>
+        <translation>Az üzenetnek legalább 5 karakterből kell állnia !</translation>
     </message>
     <message>
         <location filename="../stacer/feedback.cpp" line="59"/>

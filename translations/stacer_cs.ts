@@ -483,7 +483,7 @@
     <message>
         <location filename="../stacer/feedback.cpp" line="51"/>
         <source>Your message must be at least 5 characters !</source>
-        <translation>Vaše zpráva musí být delší než 25 znaků! {5 ?}</translation>
+        <translation>Vaše zpráva musí být delší než 5 znaků!</translation>
     </message>
     <message>
         <location filename="../stacer/feedback.cpp" line="59"/>
