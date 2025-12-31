@@ -93,7 +93,7 @@
     </message>
     <message>
         <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.ui" line="338"/>
-        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.cpp" line="91"/>
+        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.cpp" line="95"/>
         <source>Add Repository</source>
         <translation>Csomagtárolót Hozzáad</translation>
     </message>
@@ -113,17 +113,17 @@
         <translation>például %1</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.cpp" line="59"/>
+        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.cpp" line="63"/>
         <source>APT Repositories (%1)</source>
         <translation>APT Csomagtárolók (%1)</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.cpp" line="65"/>
+        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.cpp" line="69"/>
         <source>Save</source>
         <translation>Mentés</translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.cpp" line="71"/>
+        <location filename="../stacer/Pages/AptSourceManager/apt_source_manager_page.cpp" line="75"/>
         <source>Adding...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -206,7 +206,7 @@
     <message>
         <location filename="../stacer/app.cpp" line="108"/>
         <location filename="../stacer/app.cpp" line="115"/>
-        <location filename="../stacer/app.cpp" line="168"/>
+        <location filename="../stacer/app.cpp" line="171"/>
         <source>Quit</source>
         <translation>Kilépés</translation>
     </message>
@@ -461,11 +461,6 @@
         <translation>Küldés</translation>
     </message>
     <message>
-        <location filename="../stacer/feedback.ui" line="117"/>
-        <source>danger</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../stacer/feedback.ui" line="120"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
@@ -561,12 +556,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.ui" line="60"/>
-        <location filename="../stacer/Pages/Helpers/host_manage.ui" line="173"/>
-        <source>primary</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../stacer/Pages/Helpers/host_manage.ui" line="63"/>
         <source>Save Changes</source>
         <translation type="unfinished"></translation>
@@ -596,11 +585,6 @@
         <location filename="../stacer/Pages/Helpers/host_manage.ui" line="176"/>
         <source>Save</source>
         <translation>Mentés</translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/Helpers/host_manage.ui" line="189"/>
-        <source>danger</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Helpers/host_manage.ui" line="192"/>
@@ -835,23 +819,6 @@
         <location filename="../stacer/Pages/Search/search_page.ui" line="113"/>
         <source>Search...</source>
         <translation>Keresés...</translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/Search/search_page.ui" line="145"/>
-        <source>primary</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/Search/search_page.ui" line="208"/>
-        <location filename="../stacer/Pages/Search/search_page.ui" line="367"/>
-        <location filename="../stacer/Pages/Search/search_page.ui" line="403"/>
-        <location filename="../stacer/Pages/Search/search_page.ui" line="511"/>
-        <location filename="../stacer/Pages/Search/search_page.ui" line="527"/>
-        <location filename="../stacer/Pages/Search/search_page.ui" line="543"/>
-        <location filename="../stacer/Pages/Search/search_page.ui" line="581"/>
-        <location filename="../stacer/Pages/Search/search_page.ui" line="604"/>
-        <source>circle</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../stacer/Pages/Search/search_page.ui" line="211"/>
@@ -1368,12 +1335,6 @@
         <location filename="../stacer/Pages/SystemCleaner/system_cleaner_page.ui" line="493"/>
         <location filename="../stacer/Pages/SystemCleaner/system_cleaner_page.ui" line="638"/>
         <source>Select all</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../stacer/Pages/SystemCleaner/system_cleaner_page.ui" line="574"/>
-        <location filename="../stacer/Pages/SystemCleaner/system_cleaner_page.ui" line="635"/>
-        <source>circle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

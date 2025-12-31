@@ -571,7 +571,7 @@
              </size>
             </property>
             <property name="accessibleName">
-             <string>circle</string>
+             <string notr="true">circle</string>
             </property>
             <property name="text">
              <string/>
@@ -632,7 +632,7 @@
              <enum>Qt::NoFocus</enum>
             </property>
             <property name="accessibleName">
-             <string>circle</string>
+             <string notr="true">circle</string>
             </property>
             <property name="text">
              <string>Select all</string>

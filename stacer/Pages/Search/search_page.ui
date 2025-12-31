@@ -142,7 +142,7 @@
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="accessibleName">
-        <string>primary</string>
+        <string notr="true">primary</string>
        </property>
        <property name="text">
         <string/>
@@ -205,7 +205,7 @@
          <enum>Qt::NoFocus</enum>
         </property>
         <property name="accessibleName">
-         <string>circle</string>
+         <string notr="true">circle</string>
         </property>
         <property name="text">
          <string>Case Insensitive</string>
@@ -364,7 +364,7 @@
          <enum>Qt::NoFocus</enum>
         </property>
         <property name="accessibleName">
-         <string>circle</string>
+         <string notr="true">circle</string>
         </property>
         <property name="text">
          <string>Search as Root</string>
@@ -400,7 +400,7 @@
          <enum>Qt::NoFocus</enum>
         </property>
         <property name="accessibleName">
-         <string>circle</string>
+         <string notr="true">circle</string>
         </property>
         <property name="text">
          <string>RegEx</string>
@@ -508,7 +508,7 @@
            <enum>Qt::NoFocus</enum>
           </property>
           <property name="accessibleName">
-           <string>circle</string>
+           <string notr="true">circle</string>
           </property>
           <property name="text">
            <string>Readable</string>
@@ -524,7 +524,7 @@
            <enum>Qt::NoFocus</enum>
           </property>
           <property name="accessibleName">
-           <string>circle</string>
+           <string notr="true">circle</string>
           </property>
           <property name="text">
            <string>Writable</string>
@@ -540,7 +540,7 @@
            <enum>Qt::NoFocus</enum>
           </property>
           <property name="accessibleName">
-           <string>circle</string>
+           <string notr="true">circle</string>
           </property>
           <property name="text">
            <string>Executable</string>
@@ -578,7 +578,7 @@
          <enum>Qt::NoFocus</enum>
         </property>
         <property name="accessibleName">
-         <string>circle</string>
+         <string notr="true">circle</string>
         </property>
         <property name="text">
          <string>Empty</string>
@@ -601,7 +601,7 @@
          <enum>Qt::NoFocus</enum>
         </property>
         <property name="accessibleName">
-         <string>circle</string>
+         <string notr="true">circle</string>
         </property>
         <property name="text">
          <string>Invert</string>
