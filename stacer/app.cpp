@@ -127,7 +127,7 @@ void App::closeEvent(QCloseEvent *event)
 {
     if (SettingManager::ins()->getAppQuitDialogDontAsk()) {
         QString quitChoice = SettingManager::ins()->getAppQuitDialogChoice();
-        
+
         if (quitChoice == "close") {
             QApplication::quit();
         } else if (quitChoice == "hide") {

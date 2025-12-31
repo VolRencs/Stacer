@@ -104,7 +104,7 @@ bool SettingManager::getAppQuitDialogDontAsk() const
 void SettingManager::setAppQuitDialogChoice(const QString &value)
 {
     mSettings->setValue(SettingKeys::AppQuitDialogChoice, value);
-    mSettings->sync();    
+    mSettings->sync();
 }
 
 QString SettingManager::getAppQuitDialogChoice() const
