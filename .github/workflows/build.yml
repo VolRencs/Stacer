@@ -73,9 +73,12 @@ jobs:
 
       - name: Get changelog
         id: changelog
+        if: github.event_name != 'workflow_dispatch' && matrix.codename == 'jammy'
         run: |
-          CHANGELOG=$(awk '/^stacer \(/ {if (NR!=1) exit} /^[ ]*\*/ {print}' debian/changelog)
-          echo "changelog=$CHANGELOG" >> $GITHUB_OUTPUT
+          CHANGELOG=$(awk '/^stacer \(/ {if (NR!=1) exit} /^[ ]*\*/ {print}' ${{ github.workspace }}/debian/changelog)
+          echo "changelog<<EOF" >> $GITHUB_OUTPUT
+          printf "%s\n" "$CHANGELOG" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Publish release
         uses: softprops/action-gh-release@v2
