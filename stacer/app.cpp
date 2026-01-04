@@ -107,47 +107,66 @@ void App::createQuitMessageBox()
 {
     mBtnQuit = new QPushButton(tr("Quit"), this);
     mBtnQuit->setAccessibleName("danger");
+
     mBtnContinue = new QPushButton(tr("Continue"), this);
     mBtnContinue->setAccessibleName("primary");
+
     mQuitMsgBox = new QMessageBox(this);
-    QCheckBox *check = new QCheckBox("Don't ask again.");
+
+    QCheckBox *check = new QCheckBox(tr("Don't ask again."));
     check->setAccessibleName("circle");
+
     mQuitMsgBox->setWindowTitle(tr("Quit"));
     mQuitMsgBox->setText(tr("Will the program continue to work in the system tray?"));
     mQuitMsgBox->addButton(mBtnQuit, QMessageBox::YesRole);
     mQuitMsgBox->addButton(mBtnContinue, QMessageBox::NoRole);
     mQuitMsgBox->setCheckBox(check);
 
-    connect(check, &QCheckBox::toggled, [this](bool checked) {
+    connect(check, &QCheckBox::toggled, this, [](bool checked) {
         SettingManager::ins()->setAppQuitDialogDontAsk(checked);
     });
+
+    connect(
+        mQuitMsgBox,
+        &QMessageBox::buttonClicked,
+        this,
+        [this](QAbstractButton *button) {
+            if (button == mBtnQuit) {
+                SettingManager::ins()->setAppQuitDialogChoice("close");
+                close();
+                return;
+            }
+
+            if (button == mBtnContinue) {
+                SettingManager::ins()->setAppQuitDialogChoice("hide");
+                hide();
+                return;
+            }
+        }
+    );
 }
 
 void App::closeEvent(QCloseEvent *event)
 {
     if (SettingManager::ins()->getAppQuitDialogDontAsk()) {
-        QString quitChoice = SettingManager::ins()->getAppQuitDialogChoice();
+
+        const QString quitChoice =
+            SettingManager::ins()->getAppQuitDialogChoice();
 
         if (quitChoice == "close") {
-            QApplication::quit();
-        } else if (quitChoice == "hide") {
-            event->ignore();
-            hide();
-        }
-    } else {
-        mQuitMsgBox->exec();
-        if (mQuitMsgBox->clickedButton() == mBtnContinue) {
-            SettingManager::ins()->setAppQuitDialogChoice("hide");
-            event->ignore();
-            hide();
-        } else if (mQuitMsgBox->clickedButton() == mBtnQuit) {
-            SettingManager::ins()->setAppQuitDialogChoice("close");
             event->accept();
-            QApplication::quit();
-        } else {
+            return;
+        }
+
+        if (quitChoice == "hide") {
             event->ignore();
+            hide();
+            return;
         }
     }
+
+    event->ignore();
+    mQuitMsgBox->open();
 }
 
 void App::createTrayActions()
